@@ -1,0 +1,52 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Spatial R - Using R as a GIS",
+    "section": "",
+    "text": "Welcome\nThe chimera of R and GIS",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>R als GIS</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#target-audience",
+    "href": "index.html#target-audience",
+    "title": "Spatial R - Using R as a GIS",
+    "section": "Target audience",
+    "text": "Target audience\n\nyou are fluent in the basic R syntax\nit is beneficial (but not required) if you have worked with spatial data before\nyou want to incorporate spatial data into your R workflow",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>R als GIS</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#why-r-as-gis",
+    "href": "index.html#why-r-as-gis",
+    "title": "Spatial R - Using R as a GIS",
+    "section": "Why R as GIS?",
+    "text": "Why R as GIS?\n\nopen source\nflexible (statistical) analysis\nflexible visualizations\neasy automization of processes and workflows\ncomplete reproducibility\nONE platform for data acquisition, (spatial) processing, (spatial) statistical analysis, visualization",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>R als GIS</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#aims-of-this-course",
+    "href": "index.html#aims-of-this-course",
+    "title": "Spatial R - Using R as a GIS",
+    "section": "Aims of this course",
+    "text": "Aims of this course\n\nget to know R packages for spatial data analysis\nhandling raster and vector data in R\nusing R as a “meta language” to control dedicated GIS software\ndeveloping workflows in R that involve spatial data",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>R als GIS</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#course-outline",
+    "href": "index.html#course-outline",
+    "title": "Spatial R - Using R as a GIS",
+    "section": "Course Outline",
+    "text": "Course Outline\n\nOverview of the course topics\n\n\n\n\n\n\n\n\n\nMonday\nTuesday\nWednesday\nThursday\nFriday\n\n\n\n\nGeodata I/O\nRaster data\nDigital Terrain Models\nUsing external GIS software\nProgramming\nProjects\n\n\n\n\n\n\n\n\n\nVector data\nProjections\nVisualizations\nR Markdown\nProjects",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>R als GIS</span>"
+    ]
+  }
+]

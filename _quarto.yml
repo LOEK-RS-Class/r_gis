@@ -1,0 +1,25 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "Spatial R - Using R as a GIS"
+  author: "Marvin Ludwig, Hanna Meyer"
+  date: "29/01/2024"
+  chapters:
+    - index.qmd
+    - references.qmd
+
+bibliography: "../../literature/zotero/references.bib"
+number-depth: 0
+
+format:
+  html:
+    theme: materia
+    number-sections: false
+    grid:
+      sidebar-width: 350px
+execute: 
+  warning: false
+  message: false
+

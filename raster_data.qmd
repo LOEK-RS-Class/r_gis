@@ -1,0 +1,39 @@
+# Raster Data
+
+
+## What is raster data?
+
+
+![Digital Photography](https://www.heise.de/select/ct/2019/16/1564492523348234/contentimages/image-1563263232981928.jpg)
+
+![Koopa](https://www.seekpng.com/png/detail/169-1692024_mario-pixel-art-koopa.png)
+
+![Excel Sheets](https://media.techeblog.com/images/mona_lisa_excel.jpg)
+
+
+## Raster data content
+
+```{r, fig.cap = "Values in the raster", echo = FALSE}
+knitr::include_graphics("assets/koopa_raster.png")
+```
+
+
+** here rs imagery **
+
+
+
+## What makes a raster spatial?
+
+* extent
+* pixel size / spatial resolution
+* coordinate reference system
+
+
+
+
+
+
+
+
+
+
