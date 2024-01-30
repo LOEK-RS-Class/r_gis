@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Spatial R - Using R as a GIS",
     "section": "",
-    "text": "Welcome\nThe chimera of R and GIS",
+    "text": "Welcome",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>R als GIS</span>"
     ]
@@ -47,6 +47,96 @@
     "text": "Course Outline\n\nOverview of the course topics\n\n\n\n\n\n\n\n\n\nMonday\nTuesday\nWednesday\nThursday\nFriday\n\n\n\n\nGeodata I/O\nRaster data\nDigital Terrain Models\nUsing external GIS software\nProgramming\nProjects\n\n\n\n\n\n\n\n\n\nVector data\nProjections\nVisualizations\nR Markdown\nProjects",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>R als GIS</span>"
+    ]
+  },
+  {
+    "objectID": "vector_ex01.html",
+    "href": "vector_ex01.html",
+    "title": "Vector Exercise 01",
+    "section": "",
+    "text": "The OSM Logo\n\n\n\n\n\n\n\n\n\n\nTask 1: OSM Data\n\n\n\n\ndownload OpenStreetMap as shapefile data for Muenster here: https://download.geofabrik.de/\nload the points of interest (POIs), land use and streets into R\nplot the data with the mapview package\n\n\n\n\nLogical operators\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTask 2: Thematic querries\n\n\n\n\nHow many bakeries are there in Muenster?\nHow many hotels and hostels are there in Muenster?\nWhere is the A1?\nHow many “recreation_ground” are Freibäder? (i.e. have “Freibad” or “freibad” in their name)\n\n\n\n\n\n\n\n\nGeometric operations of the sf package; source: Geocomputation with R\n\n\n\n\n\n\n\n\n\n\nTask 3: Topological / Spatial querries\n\n\n\n\nHow many benches are in forests?\nWhich forests are within 25km distance to the A1?\n\nTipp: st_is_within_distance()\nWhat could be a different solution to this problem?\n\nHow many bakeries are within 1km from the Geo1 building?\n\n\n\n\n\n\n\n\n\nTask 4: Distances, Lengths, Areas\n\n\n\nTest the functions st_area(), st_length() and st_distance() in the following examples:\n\nHow large are the forests in the Münsterland on average?\nHow long is the A1 in the Münsterland?\nHow far away are bakeries in the Münsterland on average from the next bakery? What is the standard deviation?",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Vector Exercise 01</span>"
+    ]
+  },
+  {
+    "objectID": "raster_data.html",
+    "href": "raster_data.html",
+    "title": "Raster Data",
+    "section": "",
+    "text": "What is raster data?\na: Digital Photography\n\n\n\n\n\n\n\nb: Pixel Art\n\n\n\n\n\n\n\n\n\nc: Mona Lisa in Excel\n\n\n\n\nDifferent forms of raster data\nTechnically, raster images are a regular grid of values. This is pretty easy to imagine and visualize with the pixel art depicted in Figure Values in the raster image where each grid cell contains the color information. In the same way, remote sensing imagery is build from regular grids of values. In most cases, we have multiple layers in the raster. Each layer contains different information - for example the blue, green and red color information from the Sentinel-2 Sensor (Figure Sentinel-2 bands contain color information that can be visualized as a True Color Composite)\nFigure 4.1: Values in the raster image\nFigure 4.2: Sentinel-2 bands contain color information that can be visualized as a True Color Composite",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Raster Data</span>"
+    ]
+  },
+  {
+    "objectID": "raster_data.html#what-makes-a-raster-spatial",
+    "href": "raster_data.html#what-makes-a-raster-spatial",
+    "title": "Raster Data",
+    "section": "What makes a raster spatial?",
+    "text": "What makes a raster spatial?\n\nextent\npixel size / spatial resolution\ncoordinate reference system",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Raster Data</span>"
+    ]
+  },
+  {
+    "objectID": "raster_ex01.html",
+    "href": "raster_ex01.html",
+    "title": "Raster Exercise 01",
+    "section": "",
+    "text": "Task 1: Raster Input\n\n\n\n\nLoad the SRTM and land cover tiles into R.\nCreate one combined SRTM layer and one combines land cover layer out of the tiles.\n\n\n\n\n\n\n\n\n\nTask 2: Simple querries\n\n\n\n\nHow often does each land cover class occur in this area?\nWhat is the lowest and highest elevation in this area?\n\n\n\n\n\n\n\n\n\n\n\nFigure 5.1: Raster with different spatial properties\n\n\n\n\n\n\n\n\n\n\n\nTask 3: Think first!\n\n\n\n\nWhich steps are needed (conceptually), such that the SRTM and land cover raster fit exactly on top of each other?\n\n\n\n\n\n\n\n\n\nTask 4: Multi-layer raster\n\n\n\n\nCreate a multi-layer raster from the SRTM and land cover raster.\nGive both layers an appropriate name.\nPlot the raster.\nSave the raster as a “.grd” file.\n\n\n\n\n\n\n\n\n\nTask 5: Advanced raster querries\n\n\n\n\nOn average, are forests or agricultural areas found at higher elevations?\nDivide the terrain model into “slopes” and “flats”.\nIn flat areas, which land cover class is the most common?\nFind and visualize all forests at southern slopes.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Raster Exercise 01</span>"
+    ]
+  },
+  {
+    "objectID": "projections.html",
+    "href": "projections.html",
+    "title": "Projections",
+    "section": "",
+    "text": "Why Projections in this course?\nIf you gather spatial data for your project, in own field campaigns or through download form different web sources there is a very high chance that the projection i.e. the coordinate reference system is not the same for all data. During processing, in the best case you will get error messages left and right about missmatches due to different projections. In the worst case, function still work without errors, however, the results will not be the one you desire. For a proper processing and analysis of spatial data in R, handling projection is therefore crucial for trustful results. In short:",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Projections</span>"
+    ]
+  },
+  {
+    "objectID": "projections.html#why-projections-in-this-course",
+    "href": "projections.html#why-projections-in-this-course",
+    "title": "Projections",
+    "section": "",
+    "text": "In R, there is no “on the fly” projection\nsome functions change the projection internally, some not This is problematic\nConsequence for you: Check that every dataset is in the same projection.\nProjections in R are defined as\n\na WKT2 String\na proj4string (kind of outdated)\na EPSG Code",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Projections</span>"
+    ]
+  },
+  {
+    "objectID": "projections.html#about-map-projections-and-some-examples",
+    "href": "projections.html#about-map-projections-and-some-examples",
+    "title": "Projections",
+    "section": "About map projections and some Examples",
+    "text": "About map projections and some Examples\n\n\nA field guide to map projections:\n\nhttps://cdn.shopify.com/s/files/1/0279/4094/5994/files/WEM_Map_Projections2020_2.jpg?v=1580582102\n\n\n\n\n\n\n\n\n\n\nInteractive website to compare different projections: https://map-projections.net/imglist.php",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Projections</span>"
+    ]
+  },
+  {
+    "objectID": "projections.html#projections-in-r",
+    "href": "projections.html#projections-in-r",
+    "title": "Projections",
+    "section": "Projections in R",
+    "text": "Projections in R\n\nRaster\n\nlibrary(terra)\n\nr = rast(system.file(\"ex/elev.tif\", package = \"terra\"))\nr\n\nclass       : SpatRaster \ndimensions  : 90, 95, 1  (nrow, ncol, nlyr)\nresolution  : 0.008333333, 0.008333333  (x, y)\nextent      : 5.741667, 6.533333, 49.44167, 50.19167  (xmin, xmax, ymin, ymax)\ncoord. ref. : lon/lat WGS 84 (EPSG:4326) \nsource      : elev.tif \nname        : elevation \nmin value   :       141 \nmax value   :       547 \n\n# using a proj4string\nr_lambert = project(r, \"+proj=lcc +lon_0=-90 +lat_1=33 +lat_2=45\")\n\n# using a EPSG code\nr_ee = project(r, \"EPSG:8857\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nVectors I: spatvector\n\nv &lt;- vect(system.file(\"ex/lux.shp\", package = \"terra\"))\nv\n\n class       : SpatVector \n geometry    : polygons \n dimensions  : 12, 6  (geometries, attributes)\n extent      : 5.74414, 6.528252, 49.44781, 50.18162  (xmin, xmax, ymin, ymax)\n source      : lux.shp\n coord. ref. : lon/lat WGS 84 (EPSG:4326) \n names       :  ID_1   NAME_1  ID_2   NAME_2  AREA   POP\n type        : &lt;num&gt;    &lt;chr&gt; &lt;num&gt;    &lt;chr&gt; &lt;num&gt; &lt;int&gt;\n values      :     1 Diekirch     1 Clervaux   312 18081\n                   1 Diekirch     2 Diekirch   218 32543\n                   1 Diekirch     3  Redange   259 18664\n\n# UTM zone of luxemburg\nv_utm31 = project(v, \"EPSG:25831\")\n\n# UTM zone of ireland\nv_utm29 = project(v, \"EPSG:32629\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIf you are interested in the difference between ETRS89 and WGS84 UTM format here is an article that explains it.\n\n\nVectors II: sf\n\nlibrary(rnaturalearth)\nlibrary(sf)\n\n\nearth = rnaturalearth::ne_countries(returnclass = \"sf\")\nearth = earth[,\"name\"]\n\n# sf stores the projection as a wkt string\nst_crs(earth)\n\nCoordinate Reference System:\n  User input: WGS 84 \n  wkt:\nGEOGCRS[\"WGS 84\",\n    DATUM[\"World Geodetic System 1984\",\n        ELLIPSOID[\"WGS 84\",6378137,298.257223563,\n            LENGTHUNIT[\"metre\",1]]],\n    PRIMEM[\"Greenwich\",0,\n        ANGLEUNIT[\"degree\",0.0174532925199433]],\n    CS[ellipsoidal,2],\n        AXIS[\"geodetic latitude (Lat)\",north,\n            ORDER[1],\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n        AXIS[\"geodetic longitude (Lon)\",east,\n            ORDER[2],\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n    ID[\"EPSG\",4326]]\n\n# but you can use just the EPSG number\nearth_ee = st_transform(earth, 8857)\n\n# or a proj4string\nearth_moll = st_transform(earth, \"+proj=moll +lon_0=0 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs +type=crs\")\n\n# or the \"EPSG:XX\" format\nearth_pseudo = st_transform(earth, \"EPSG:3857\")",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Projections</span>"
+    ]
+  },
+  {
+    "objectID": "projections.html#what-if-the-projection-is-missing",
+    "href": "projections.html#what-if-the-projection-is-missing",
+    "title": "Projections",
+    "section": "What if the projection is missing?",
+    "text": "What if the projection is missing?\n\ncorrupted_raster\n\nclass       : SpatRaster \ndimensions  : 10, 10, 1  (nrow, ncol, nlyr)\nresolution  : 36, 18  (x, y)\nextent      : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)\ncoord. ref. :  \n\n\n\n# manually assign a projection\ncrs(corrupted_raster) &lt;- \"EPSG:32632\"\ncorrupted_raster\n\nclass       : SpatRaster \ndimensions  : 10, 10, 1  (nrow, ncol, nlyr)\nresolution  : 36, 18  (x, y)\nextent      : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)\ncoord. ref. : WGS 84 / UTM zone 32N (EPSG:32632) \n\n\nWith the sf package, the function would be st_crs(corrupted_vector) &lt;- \"EPSG:32632\".",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Projections</span>"
     ]
   }
 ]

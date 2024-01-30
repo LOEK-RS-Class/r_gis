@@ -6,11 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Marvin Ludwig">
-<meta name="dcterms.date" content="2026-05-01">
-<meta name="description" content="This is a slide and exercise collection for the ILOEK Course “R als GIS”.">
 
-<title>Spatial R - Using R as a GIS</title>
+<title>Spatial R - Using R as a GIS - Vector Exercise 01</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -33,7 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./vector_data.html" rel="next">
+<link href="./raster_data.html" rel="next">
+<link href="./vector_data.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -83,7 +81,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-title">R als GIS</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./vector_ex01.html"><span class="chapter-title">Vector Exercise 01</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -110,7 +108,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">R als GIS</span></a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">R als GIS</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -120,7 +118,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./vector_ex01.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Vector Exercise 01</span></a>
+  <a href="./vector_ex01.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Vector Exercise 01</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -154,13 +152,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#welcome" id="toc-welcome" class="nav-link active" data-scroll-target="#welcome">Welcome</a>
-  <ul class="collapse">
-  <li><a href="#target-audience" id="toc-target-audience" class="nav-link" data-scroll-target="#target-audience">Target audience</a></li>
-  <li><a href="#why-r-as-gis" id="toc-why-r-as-gis" class="nav-link" data-scroll-target="#why-r-as-gis">Why R as GIS?</a></li>
-  <li><a href="#aims-of-this-course" id="toc-aims-of-this-course" class="nav-link" data-scroll-target="#aims-of-this-course">Aims of this course</a></li>
-  <li><a href="#course-outline" id="toc-course-outline" class="nav-link" data-scroll-target="#course-outline">Course Outline</a></li>
-  </ul></li>
+  <li><a href="#logical-operators" id="toc-logical-operators" class="nav-link active" data-scroll-target="#logical-operators">Logical operators</a></li>
   </ul>
 </nav>
     </div>
@@ -169,31 +161,14 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Spatial R - Using R as a GIS</h1>
+<h1 class="title"><span class="chapter-title">Vector Exercise 01</span></h1>
 </div>
 
-<div>
-  <div class="description">
-    <p>This is a slide and exercise collection for the ILOEK Course “R als GIS”.</p>
-  </div>
-</div>
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Marvin Ludwig </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">May 1, 2026</p>
-    </div>
-  </div>
   
     
   </div>
@@ -203,85 +178,113 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="welcome" class="level1 unnumbered">
-<h1 class="unnumbered">Welcome</h1>
-<section id="target-audience" class="level2">
-<h2 class="anchored" data-anchor-id="target-audience">Target audience</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Openstreetmap_logo.svg" class="img-fluid figure-img"></p>
+<figcaption>The OSM Logo</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Task 1: OSM Data
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ul>
-<li>you are fluent in the basic R syntax</li>
-<li>it is beneficial (but not required) if you have worked with spatial data before</li>
-<li>you want to incorporate spatial data into your R workflow</li>
+<li>download OpenStreetMap as shapefile data for Muenster here: <a href="https://download.geofabrik.de/">https://download.geofabrik.de/</a></li>
+<li>load the points of interest (POIs), land use and streets into R</li>
+<li>plot the data with the <code>mapview</code> package</li>
 </ul>
-</section>
-<section id="why-r-as-gis" class="level2">
-<h2 class="anchored" data-anchor-id="why-r-as-gis">Why R as GIS?</h2>
+</div>
+</div>
+<section id="logical-operators" class="level3">
+<h3 class="anchored" data-anchor-id="logical-operators">Logical operators</h3>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="https://bookdown.org/ndphillips/YaRrr/YaRrr_files/figure-html/comparison-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Task 2: Thematic querries
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>How many bakeries are there in Muenster?</li>
+<li>How many hotels and hostels are there in Muenster?</li>
+<li>Where is the A1?</li>
+<li>How many “recreation_ground” are Freibäder? (i.e.&nbsp;have “Freibad” or “freibad” in their name)</li>
+</ol>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://r.geocompx.org/figures/venn-clip-1.png" class="img-fluid figure-img"></p>
+<figcaption>Geometric operations of the sf package; source: Geocomputation with R</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Task 3: Topological / Spatial querries
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ul>
-<li>open source</li>
-<li>flexible (statistical) analysis</li>
-<li>flexible visualizations</li>
-<li>easy automization of processes and workflows</li>
-<li>complete reproducibility</li>
-<li>ONE platform for data acquisition, (spatial) processing, (spatial) statistical analysis, visualization</li>
-</ul>
-</section>
-<section id="aims-of-this-course" class="level2">
-<h2 class="anchored" data-anchor-id="aims-of-this-course">Aims of this course</h2>
+<li>How many benches are in forests?</li>
+<li>Which forests are within 25km distance to the A1?
 <ul>
-<li>get to know R packages for spatial data analysis</li>
-<li>handling raster and vector data in R</li>
-<li>using R as a “meta language” to control dedicated GIS software</li>
-<li>developing workflows in R that involve spatial data</li>
+<li>Tipp: <code>st_is_within_distance()</code></li>
+<li>What could be a different solution to this problem?</li>
+</ul></li>
+<li>How many bakeries are within 1km from the Geo1 building?</li>
 </ul>
-</section>
-<section id="course-outline" class="level2">
-<h2 class="anchored" data-anchor-id="course-outline">Course Outline</h2>
-<table class="table">
-<caption>Overview of the course topics</caption>
-<colgroup>
-<col style="width: 15%">
-<col style="width: 18%">
-<col style="width: 33%">
-<col style="width: 15%">
-<col style="width: 13%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Monday</th>
-<th>Tuesday</th>
-<th>Wednesday</th>
-<th>Thursday</th>
-<th>Friday</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Geodata I/O</td>
-<td>Raster data</td>
-<td>Digital Terrain Models<br>
-Using external GIS software</td>
-<td>Programming</td>
-<td>Projects</td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Vector data</td>
-<td>Projections<br>
-Visualizations</td>
-<td>R Markdown</td>
-<td>Projects</td>
-<td></td>
-</tr>
-</tbody>
-</table>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Task 4: Distances, Lengths, Areas
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Test the functions <code>st_area()</code>, <code>st_length()</code> and <code>st_distance()</code> in the following examples:</p>
+<ul>
+<li>How large are the forests in the Münsterland on average?</li>
+<li>How long is the A1 in the Münsterland?</li>
+<li>How far away are bakeries in the Münsterland on average from the next bakery? What is the standard deviation?</li>
+</ul>
+</div>
+</div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -674,10 +677,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./vector_data.html" class="pagination-link  aria-label=" &lt;span="" data&lt;="" span&gt;"="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Vector Data</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./vector_data.html" class="pagination-link" aria-label="<span class='chapter-number'>2</span>&nbsp; <span class='chapter-title'>Vector Data</span>">
-        <span class="nav-page-text"><span class="chapter-title">Vector Data</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./raster_data.html" class="pagination-link" aria-label="<span class='chapter-number'>4</span>&nbsp; <span class='chapter-title'>Raster Data</span>">
+        <span class="nav-page-text"><span class="chapter-title">Raster Data</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

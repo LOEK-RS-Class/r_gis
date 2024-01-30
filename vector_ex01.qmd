@@ -1,0 +1,77 @@
+# Vector Exercise 01
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, include = TRUE)
+```
+
+
+```{r}
+#| fig-cap: "The OSM Logo"
+knitr::include_graphics("https://upload.wikimedia.org/wikipedia/commons/b/b0/Openstreetmap_logo.svg")
+```
+
+
+
+::: {.callout-important}
+## Task 1: OSM Data
+
+* download OpenStreetMap as shapefile data for Muenster here: [https://download.geofabrik.de/](https://download.geofabrik.de/)
+* load the points of interest (POIs), land use and streets into R
+* plot the data with the `mapview` package
+
+:::
+
+
+### Logical operators
+
+
+```{r}
+knitr::include_graphics("https://bookdown.org/ndphillips/YaRrr/YaRrr_files/figure-html/comparison-1.png")
+```
+
+
+
+::: {.callout-important}
+## Task 2: Thematic querries
+
+1. How many bakeries are there in Muenster?
+2. How many hotels and hostels are there in Muenster?
+3. Where is the A1?
+4. How many "recreation_ground" are Freibäder? (i.e. have "Freibad" or "freibad" in their name)
+
+:::
+
+```{r}
+#| fig-cap: "Geometric operations of the sf package; source: Geocomputation with R"
+knitr::include_graphics("https://r.geocompx.org/figures/venn-clip-1.png")
+```
+
+
+
+:::{.callout-important}
+## Task 3: Topological / Spatial querries
+
+* How many benches are in forests?
+* Which forests are within 25km distance to the A1?
+  * Tipp: `st_is_within_distance()`
+  * What could be a different solution to this problem?
+* How many bakeries are within 1km from the Geo1 building?
+
+:::
+
+
+
+:::{.callout-important}
+## Task 4: Distances, Lengths, Areas
+
+Test the functions `st_area()`, `st_length()` and `st_distance()` in the following examples:
+
+* How large are the forests in the Münsterland on average?
+* How long is the A1 in the Münsterland?
+* How far away are bakeries in the Münsterland on average from the next bakery? What is the standard deviation?
+
+
+:::
+
+
+

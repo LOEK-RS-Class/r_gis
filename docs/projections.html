@@ -6,11 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Marvin Ludwig">
-<meta name="dcterms.date" content="2026-05-01">
-<meta name="description" content="This is a slide and exercise collection for the ILOEK Course “R als GIS”.">
 
-<title>Spatial R - Using R as a GIS</title>
+<title>Spatial R - Using R as a GIS - Projections</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -33,7 +64,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./vector_data.html" rel="next">
+<link href="./references.html" rel="next">
+<link href="./raster_ex01.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -83,7 +115,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-title">R als GIS</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./projections.html"><span class="chapter-title">Projections</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -110,7 +142,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">R als GIS</span></a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">R als GIS</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -135,7 +167,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./projections.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Projections</span></a>
+  <a href="./projections.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Projections</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -154,13 +186,15 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#welcome" id="toc-welcome" class="nav-link active" data-scroll-target="#welcome">Welcome</a>
+  <li><a href="#why-projections-in-this-course" id="toc-why-projections-in-this-course" class="nav-link active" data-scroll-target="#why-projections-in-this-course">Why Projections in this course?</a></li>
+  <li><a href="#about-map-projections-and-some-examples" id="toc-about-map-projections-and-some-examples" class="nav-link" data-scroll-target="#about-map-projections-and-some-examples">About map projections and some Examples</a></li>
+  <li><a href="#projections-in-r" id="toc-projections-in-r" class="nav-link" data-scroll-target="#projections-in-r">Projections in R</a>
   <ul class="collapse">
-  <li><a href="#target-audience" id="toc-target-audience" class="nav-link" data-scroll-target="#target-audience">Target audience</a></li>
-  <li><a href="#why-r-as-gis" id="toc-why-r-as-gis" class="nav-link" data-scroll-target="#why-r-as-gis">Why R as GIS?</a></li>
-  <li><a href="#aims-of-this-course" id="toc-aims-of-this-course" class="nav-link" data-scroll-target="#aims-of-this-course">Aims of this course</a></li>
-  <li><a href="#course-outline" id="toc-course-outline" class="nav-link" data-scroll-target="#course-outline">Course Outline</a></li>
+  <li><a href="#raster" id="toc-raster" class="nav-link" data-scroll-target="#raster">Raster</a></li>
+  <li><a href="#vectors-i-spatvector" id="toc-vectors-i-spatvector" class="nav-link" data-scroll-target="#vectors-i-spatvector">Vectors I: spatvector</a></li>
+  <li><a href="#vectors-ii-sf" id="toc-vectors-ii-sf" class="nav-link" data-scroll-target="#vectors-ii-sf">Vectors II: sf</a></li>
   </ul></li>
+  <li><a href="#what-if-the-projection-is-missing" id="toc-what-if-the-projection-is-missing" class="nav-link" data-scroll-target="#what-if-the-projection-is-missing">What if the projection is missing?</a></li>
   </ul>
 </nav>
     </div>
@@ -169,31 +203,14 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Spatial R - Using R as a GIS</h1>
+<h1 class="title"><span class="chapter-title">Projections</span></h1>
 </div>
 
-<div>
-  <div class="description">
-    <p>This is a slide and exercise collection for the ILOEK Course “R als GIS”.</p>
-  </div>
-</div>
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Marvin Ludwig </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">May 1, 2026</p>
-    </div>
-  </div>
   
     
   </div>
@@ -203,85 +220,219 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="welcome" class="level1 unnumbered">
-<h1 class="unnumbered">Welcome</h1>
-<section id="target-audience" class="level2">
-<h2 class="anchored" data-anchor-id="target-audience">Target audience</h2>
+<section id="why-projections-in-this-course" class="level2">
+<h2 class="anchored" data-anchor-id="why-projections-in-this-course">Why Projections in this course?</h2>
+<p>If you gather spatial data for your project, in own field campaigns or through download form different web sources there is a very high chance that the projection i.e.&nbsp;the coordinate reference system is not the same for all data. During processing, in the <strong>best case</strong> you will get error messages left and right about missmatches due to different projections. In the <strong>worst case</strong>, function still work without errors, however, the results will not be the one you desire. For a proper processing and analysis of spatial data in R, handling projection is therefore crucial for trustful results. In short:</p>
 <ul>
-<li>you are fluent in the basic R syntax</li>
-<li>it is beneficial (but not required) if you have worked with spatial data before</li>
-<li>you want to incorporate spatial data into your R workflow</li>
+<li>In R, there is no “on the fly” projection</li>
+<li>some functions change the projection internally, some not <strong>This is problematic</strong></li>
+<li><strong>Consequence for you:</strong> Check that every dataset is in the same projection.</li>
+<li>Projections in R are defined as
+<ul>
+<li>a <a href="https://docs.ogc.org/is/18-010r7/18-010r7.html">WKT2 String</a></li>
+<li>a <a href="https://inbo.github.io/tutorials/tutorials/spatial_crs_coding/">proj4string</a> (kind of outdated)</li>
+<li>a <a href="https://spatialreference.org/">EPSG Code</a></li>
+</ul></li>
 </ul>
 </section>
-<section id="why-r-as-gis" class="level2">
-<h2 class="anchored" data-anchor-id="why-r-as-gis">Why R as GIS?</h2>
-<ul>
-<li>open source</li>
-<li>flexible (statistical) analysis</li>
-<li>flexible visualizations</li>
-<li>easy automization of processes and workflows</li>
-<li>complete reproducibility</li>
-<li>ONE platform for data acquisition, (spatial) processing, (spatial) statistical analysis, visualization</li>
-</ul>
+<section id="about-map-projections-and-some-examples" class="level2">
+<h2 class="anchored" data-anchor-id="about-map-projections-and-some-examples">About map projections and some Examples</h2>
+<details>
+<summary>
+A field guide to map projections:
+</summary>
+<p><a href="https://cdn.shopify.com/s/files/1/0279/4094/5994/files/WEM_Map_Projections2020_2.jpg?v=1580582102">https://cdn.shopify.com/s/files/1/0279/4094/5994/files/WEM_Map_Projections2020_2.jpg?v=1580582102</a></p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="https://cdn.shopify.com/s/files/1/0279/4094/5994/files/WEM_Map_Projections2020_2.jpg?v=1580582102" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</details>
+<p>Interactive website to compare different projections: <a href="https://map-projections.net/imglist.php">https://map-projections.net/imglist.php</a></p>
 </section>
-<section id="aims-of-this-course" class="level2">
-<h2 class="anchored" data-anchor-id="aims-of-this-course">Aims of this course</h2>
-<ul>
-<li>get to know R packages for spatial data analysis</li>
-<li>handling raster and vector data in R</li>
-<li>using R as a “meta language” to control dedicated GIS software</li>
-<li>developing workflows in R that involve spatial data</li>
-</ul>
+<section id="projections-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="projections-in-r">Projections in R</h2>
+<section id="raster" class="level3">
+<h3 class="anchored" data-anchor-id="raster">Raster</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(terra)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>r <span class="ot">=</span> <span class="fu">rast</span>(<span class="fu">system.file</span>(<span class="st">"ex/elev.tif"</span>, <span class="at">package =</span> <span class="st">"terra"</span>))</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>r</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>class       : SpatRaster 
+dimensions  : 90, 95, 1  (nrow, ncol, nlyr)
+resolution  : 0.008333333, 0.008333333  (x, y)
+extent      : 5.741667, 6.533333, 49.44167, 50.19167  (xmin, xmax, ymin, ymax)
+coord. ref. : lon/lat WGS 84 (EPSG:4326) 
+source      : elev.tif 
+name        : elevation 
+min value   :       141 
+max value   :       547 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># using a proj4string</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>r_lambert <span class="ot">=</span> <span class="fu">project</span>(r, <span class="st">"+proj=lcc +lon_0=-90 +lat_1=33 +lat_2=45"</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># using a EPSG code</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>r_ee <span class="ot">=</span> <span class="fu">project</span>(r, <span class="st">"EPSG:8857"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div>
+
+</div>
+<div class="cell quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="projections_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="projections_files/figure-html/unnamed-chunk-3-2.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="projections_files/figure-html/unnamed-chunk-3-3.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</div>
 </section>
-<section id="course-outline" class="level2">
-<h2 class="anchored" data-anchor-id="course-outline">Course Outline</h2>
-<table class="table">
-<caption>Overview of the course topics</caption>
-<colgroup>
-<col style="width: 15%">
-<col style="width: 18%">
-<col style="width: 33%">
-<col style="width: 15%">
-<col style="width: 13%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Monday</th>
-<th>Tuesday</th>
-<th>Wednesday</th>
-<th>Thursday</th>
-<th>Friday</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Geodata I/O</td>
-<td>Raster data</td>
-<td>Digital Terrain Models<br>
-Using external GIS software</td>
-<td>Programming</td>
-<td>Projects</td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Vector data</td>
-<td>Projections<br>
-Visualizations</td>
-<td>R Markdown</td>
-<td>Projects</td>
-<td></td>
-</tr>
-</tbody>
-</table>
+<section id="vectors-i-spatvector" class="level3">
+<h3 class="anchored" data-anchor-id="vectors-i-spatvector">Vectors I: spatvector</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>v <span class="ot">&lt;-</span> <span class="fu">vect</span>(<span class="fu">system.file</span>(<span class="st">"ex/lux.shp"</span>, <span class="at">package =</span> <span class="st">"terra"</span>))</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>v</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> class       : SpatVector 
+ geometry    : polygons 
+ dimensions  : 12, 6  (geometries, attributes)
+ extent      : 5.74414, 6.528252, 49.44781, 50.18162  (xmin, xmax, ymin, ymax)
+ source      : lux.shp
+ coord. ref. : lon/lat WGS 84 (EPSG:4326) 
+ names       :  ID_1   NAME_1  ID_2   NAME_2  AREA   POP
+ type        : &lt;num&gt;    &lt;chr&gt; &lt;num&gt;    &lt;chr&gt; &lt;num&gt; &lt;int&gt;
+ values      :     1 Diekirch     1 Clervaux   312 18081
+                   1 Diekirch     2 Diekirch   218 32543
+                   1 Diekirch     3  Redange   259 18664</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># UTM zone of luxemburg</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>v_utm31 <span class="ot">=</span> <span class="fu">project</span>(v, <span class="st">"EPSG:25831"</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># UTM zone of ireland</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>v_utm29 <span class="ot">=</span> <span class="fu">project</span>(v, <span class="st">"EPSG:32629"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div>
+
+</div>
+<div class="cell quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="projections_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="projections_files/figure-html/unnamed-chunk-5-2.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="projections_files/figure-html/unnamed-chunk-5-3.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</div>
+<p>If you are interested in the difference between ETRS89 and WGS84 UTM format <a href="https://www.killetsoft.de/t_1009_e.htm">here is an article that explains it</a>.</p>
+</section>
+<section id="vectors-ii-sf" class="level3">
+<h3 class="anchored" data-anchor-id="vectors-ii-sf">Vectors II: sf</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rnaturalearth)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>earth <span class="ot">=</span> rnaturalearth<span class="sc">::</span><span class="fu">ne_countries</span>(<span class="at">returnclass =</span> <span class="st">"sf"</span>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>earth <span class="ot">=</span> earth[,<span class="st">"name"</span>]</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="co"># sf stores the projection as a wkt string</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="fu">st_crs</span>(earth)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Coordinate Reference System:
+  User input: WGS 84 
+  wkt:
+GEOGCRS["WGS 84",
+    DATUM["World Geodetic System 1984",
+        ELLIPSOID["WGS 84",6378137,298.257223563,
+            LENGTHUNIT["metre",1]]],
+    PRIMEM["Greenwich",0,
+        ANGLEUNIT["degree",0.0174532925199433]],
+    CS[ellipsoidal,2],
+        AXIS["geodetic latitude (Lat)",north,
+            ORDER[1],
+            ANGLEUNIT["degree",0.0174532925199433]],
+        AXIS["geodetic longitude (Lon)",east,
+            ORDER[2],
+            ANGLEUNIT["degree",0.0174532925199433]],
+    ID["EPSG",4326]]</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># but you can use just the EPSG number</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>earth_ee <span class="ot">=</span> <span class="fu">st_transform</span>(earth, <span class="dv">8857</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># or a proj4string</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>earth_moll <span class="ot">=</span> <span class="fu">st_transform</span>(earth, <span class="st">"+proj=moll +lon_0=0 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs +type=crs"</span>)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co"># or the "EPSG:XX" format</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>earth_pseudo <span class="ot">=</span> <span class="fu">st_transform</span>(earth, <span class="st">"EPSG:3857"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div>
+
+</div>
+<div class="cell quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="projections_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="projections_files/figure-html/unnamed-chunk-7-2.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="projections_files/figure-html/unnamed-chunk-7-3.png" class="img-fluid" width="672"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="projections_files/figure-html/unnamed-chunk-7-4.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="what-if-the-projection-is-missing" class="level2">
+<h2 class="anchored" data-anchor-id="what-if-the-projection-is-missing">What if the projection is missing?</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>corrupted_raster</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>class       : SpatRaster 
+dimensions  : 10, 10, 1  (nrow, ncol, nlyr)
+resolution  : 36, 18  (x, y)
+extent      : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+coord. ref. :  </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># manually assign a projection</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">crs</span>(corrupted_raster) <span class="ot">&lt;-</span> <span class="st">"EPSG:32632"</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>corrupted_raster</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>class       : SpatRaster 
+dimensions  : 10, 10, 1  (nrow, ncol, nlyr)
+resolution  : 36, 18  (x, y)
+extent      : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+coord. ref. : WGS 84 / UTM zone 32N (EPSG:32632) </code></pre>
+</div>
+</div>
+<p>With the <code>sf</code> package, the function would be <code>st_crs(corrupted_vector) &lt;- "EPSG:32632"</code>.</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -674,10 +825,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./raster_ex01.html" class="pagination-link  aria-label=" &lt;span="" exercise="" 01&lt;="" span&gt;"="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Raster Exercise 01</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./vector_data.html" class="pagination-link" aria-label="<span class='chapter-number'>2</span>&nbsp; <span class='chapter-title'>Vector Data</span>">
-        <span class="nav-page-text"><span class="chapter-title">Vector Data</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./references.html" class="pagination-link" aria-label="References">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

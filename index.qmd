@@ -5,7 +5,18 @@ description: |
   This is a slide and exercise collection for the ILOEK Course "R als GIS".
 link-citations: true
 github-repo: LOEK-RS-Class/r_gis
+crossrefs-hover: true
+crossref: 
+  fig-labels: arabic
 ---
+
+
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, include = FALSE)
+```
+
+
 
 # Welcome {.unnumbered}
 

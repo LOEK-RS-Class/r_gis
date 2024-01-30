@@ -1,0 +1,155 @@
+# Projections
+
+## Why Projections in this course?
+
+If you gather spatial data for your project, in own field campaigns or through download form different web sources there is a very high chance that the projection i.e. the coordinate reference system is not the same for all data. During processing, in the **best case** you will get error messages left and right about missmatches due to different projections. In the **worst case**, function still work without errors, however, the results will not be the one you desire. For a proper processing and analysis of spatial data in R, handling projection is therefore crucial for trustful results. In short:
+
+* In R, there is no "on the fly" projection
+* some functions change the projection internally, some not **This is problematic**
+* **Consequence for you:** Check that every dataset is in the same projection.
+* Projections in R are defined as 
+  * a [WKT2 String](https://docs.ogc.org/is/18-010r7/18-010r7.html)
+  * a [proj4string](https://inbo.github.io/tutorials/tutorials/spatial_crs_coding/) (kind of outdated)
+  * a [EPSG Code](https://spatialreference.org/)
+
+
+
+## About map projections and some Examples
+
+<details>
+<summary>A field guide to map projections:</summary>
+
+[https://cdn.shopify.com/s/files/1/0279/4094/5994/files/WEM_Map_Projections2020_2.jpg?v=1580582102](https://cdn.shopify.com/s/files/1/0279/4094/5994/files/WEM_Map_Projections2020_2.jpg?v=1580582102)
+
+```{r}
+#| echo: false
+knitr::include_graphics("https://cdn.shopify.com/s/files/1/0279/4094/5994/files/WEM_Map_Projections2020_2.jpg?v=1580582102")
+```
+</details>
+
+
+
+Interactive website to compare different projections: [https://map-projections.net/imglist.php](https://map-projections.net/imglist.php)
+
+
+## Projections in R
+
+
+### Raster
+
+
+```{r}
+library(terra)
+
+r = rast(system.file("ex/elev.tif", package = "terra"))
+r
+
+# using a proj4string
+r_lambert = project(r, "+proj=lcc +lon_0=-90 +lat_1=33 +lat_2=45")
+
+# using a EPSG code
+r_ee = project(r, "EPSG:8857")
+```
+
+
+
+```{r}
+#| layout-ncol: 2
+#| echo: false
+
+plot(r, main =  "lat/lon WGS84")
+plot(r_lambert, main = "Labert Conformal Conic Projection")
+plot(r_ee, main = "Equal Earth Projection")
+```
+
+
+### Vectors I: spatvector
+
+
+```{r}
+v <- vect(system.file("ex/lux.shp", package = "terra"))
+v
+
+# UTM zone of luxemburg
+v_utm31 = project(v, "EPSG:25831")
+
+# UTM zone of ireland
+v_utm29 = project(v, "EPSG:32629")
+```
+
+```{r}
+#| layout-ncol: 2
+#| echo: false
+
+plot(v, main = "lat/lon WGS84")
+plot(v_utm31, main = "ETRS89 / UTM zone 31N")
+plot(v_utm29, main = "WGS 84 / UTM zone 29N")
+```
+
+
+
+
+If you are interested in the difference between ETRS89 and WGS84 UTM format [here is an article that explains it](https://www.killetsoft.de/t_1009_e.htm).
+
+
+### Vectors II: sf
+
+
+```{r}
+library(rnaturalearth)
+library(sf)
+
+
+earth = rnaturalearth::ne_countries(returnclass = "sf")
+earth = earth[,"name"]
+
+# sf stores the projection as a wkt string
+st_crs(earth)
+
+# but you can use just the EPSG number
+earth_ee = st_transform(earth, 8857)
+
+# or a proj4string
+earth_moll = st_transform(earth, "+proj=moll +lon_0=0 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs +type=crs")
+
+# or the "EPSG:XX" format
+earth_pseudo = st_transform(earth, "EPSG:3857")
+```
+
+
+```{r}
+#| layout-ncol: 2
+#| echo: false
+
+plot(earth, main = "lat/lon WGS84")
+plot(earth_ee, main = "Equal Earth")
+plot(earth_moll, main = "Mollweide")
+plot(earth_pseudo, main = "WGS84 / Pseudo-Mercator")
+```
+
+
+## What if the projection is missing?
+
+
+```{r}
+#| include: false
+
+corrupted_raster = rast(nrow = 10, ncol = 10)
+crs(corrupted_raster) = NA
+```
+
+
+```{r}
+corrupted_raster
+```
+
+```{r}
+# manually assign a projection
+crs(corrupted_raster) <- "EPSG:32632"
+corrupted_raster
+```
+
+With the `sf` package, the function would be `st_crs(corrupted_vector) <- "EPSG:32632"`.
+
+
+
