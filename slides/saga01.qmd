@@ -1,0 +1,37 @@
+---
+title: "SAGA GIS"
+format:
+  revealjs: 
+    slide-number: true
+    chalkboard: 
+      buttons: false
+    preview-links: auto
+---
+
+## Simple terrain modell processing
+
+
+
+
+## Why extrernal GIS Software?
+
+* some functionalities not implemented in R but in QGIS, SAGA, GRASS, ArcGIS...
+* e.g. tools in the field of hydrology and morphometry not common in R but in SAGA
+* Links to functionalities via R Packages: RSAGA, rgrass7, RQIS, RPyGeo
+* Workflow-centric in R
+  * no manual processing steps
+  * reproducible
+  
+  
+## SAGA GIS
+
+image 01 
+
+## Task
+
+image 02
+
+## Flow accumulation
+
+image 03
+

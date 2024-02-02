@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Spatial R - Using R as a GIS - Projections</title>
+<title>Spatial R - Using R as a GIS</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,8 +64,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./references.html" rel="next">
-<link href="./raster_ex01.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -106,7 +104,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -115,12 +113,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./projections.html"><span class="chapter-title">Projections</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./projections.html">Advanced</a></li><li class="breadcrumb-item"><a href="./projections.html">Projections</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
     </div>
   </nav>
 </header>
@@ -133,93 +128,121 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <a href="./">Spatial R - Using R as a GIS</a> 
     </div>
       </div>
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">R als GIS</span></a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R als GIS</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Basics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./vector_data.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Vector Data</span></a>
+  <a href="./geodata.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction to Geodata</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./vector_ex01.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Vector Exercise 01</span></a>
+  <a href="./vector_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Vector Data</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./raster_data.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Raster Data</span></a>
+  <a href="./vector_ex01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Vector Exercise 01</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./raster_ex01.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Raster Exercise 01</span></a>
+  <a href="./raster_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Raster Data</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./projections.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Projections</span></a>
+  <a href="./raster_ex01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Raster Exercise 01</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">Advanced</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./projections.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Projections</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./gis_software.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">External GIS Software</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./rsaga.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">RSAGA</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text">Additional Resources</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./literature.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Recommendations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">References</span></a>
   </div>
 </li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#why-projections-in-this-course" id="toc-why-projections-in-this-course" class="nav-link active" data-scroll-target="#why-projections-in-this-course">Why Projections in this course?</a></li>
-  <li><a href="#about-map-projections-and-some-examples" id="toc-about-map-projections-and-some-examples" class="nav-link" data-scroll-target="#about-map-projections-and-some-examples">About map projections and some Examples</a></li>
-  <li><a href="#projections-in-r" id="toc-projections-in-r" class="nav-link" data-scroll-target="#projections-in-r">Projections in R</a>
-  <ul class="collapse">
-  <li><a href="#raster" id="toc-raster" class="nav-link" data-scroll-target="#raster">Raster</a></li>
-  <li><a href="#vectors-i-spatvector" id="toc-vectors-i-spatvector" class="nav-link" data-scroll-target="#vectors-i-spatvector">Vectors I: spatvector</a></li>
-  <li><a href="#vectors-ii-sf" id="toc-vectors-ii-sf" class="nav-link" data-scroll-target="#vectors-ii-sf">Vectors II: sf</a></li>
-  </ul></li>
-  <li><a href="#what-if-the-projection-is-missing" id="toc-what-if-the-projection-is-missing" class="nav-link" data-scroll-target="#what-if-the-projection-is-missing">What if the projection is missing?</a></li>
-  </ul>
-</nav>
-    </div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title"><span class="chapter-title">Projections</span></h1>
-</div>
 
 
 
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
+<section id="projections" class="level1">
+<h1>Projections</h1>
 <section id="why-projections-in-this-course" class="level2">
 <h2 class="anchored" data-anchor-id="why-projections-in-this-course">Why Projections in this course?</h2>
 <p>If you gather spatial data for your project, in own field campaigns or through download form different web sources there is a very high chance that the projection i.e.&nbsp;the coordinate reference system is not the same for all data. During processing, in the <strong>best case</strong> you will get error messages left and right about missmatches due to different projections. In the <strong>worst case</strong>, function still work without errors, however, the results will not be the one you desire. For a proper processing and analysis of spatial data in R, handling projection is therefore crucial for trustful results. In short:</p>
@@ -433,6 +456,7 @@ coord. ref. : WGS 84 / UTM zone 32N (EPSG:32632) </code></pre>
 <p>With the <code>sf</code> package, the function would be <code>st_crs(corrupted_vector) &lt;- "EPSG:32632"</code>.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -823,18 +847,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="./raster_ex01.html" class="pagination-link  aria-label=" &lt;span="" exercise="" 01&lt;="" span&gt;"="">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Raster Exercise 01</span></span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="./references.html" class="pagination-link" aria-label="References">
-        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 
 

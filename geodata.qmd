@@ -1,0 +1,7 @@
+# Introduction to Geodata
+
+
+```{r}
+knitr::include_url("slides/geodata.pdf")
+```
+

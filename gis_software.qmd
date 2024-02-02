@@ -1,0 +1,40 @@
+# External GIS Software
+
+
+```{r}
+#| echo: false
+knitr::include_url("slides/saga01.html")
+```
+
+
+Before we combine R and SAGA, let's first have a look at a SAGA module separately to get a feel for what we can do with it.
+
+:::{.callout-important}
+## Task: SAGA GIS I
+* Import a terrain model into SAGA.
+  * Import/Export
+  * GDAL
+  * Import Raster
+
+* Preprocess the terrain model for the hydrological analysis with the `Fill Sinks` tool.
+
+:::
+
+
+```{r}
+#| echo: false
+#| fig-cap: "Fill Sinks for flow accumulation (https://sagatutorials.wordpress.com/preprocessing-and-catchment-deliniation/)"
+#| fig-link: "https://sagatutorials.wordpress.com/preprocessing-and-catchment-deliniation/"
+knitr::include_graphics("https://sagatutorials.files.wordpress.com/2016/11/image072.png")
+```
+
+
+:::{.callout-important}
+## Task: SAGA GIS II
+* Delinate catchment areas from the preprocessed terrain model with the tool `Channel network and Drainage Basins`.
+* Also calculate the flow accumulation.
+
+:::
+
+
+

@@ -1,6 +1,5 @@
 ---
 title: "R als GIS"
-author: "Marvin Ludwig"
 description: |
   This is a slide and exercise collection for the ILOEK Course "R als GIS".
 link-citations: true
@@ -13,12 +12,10 @@ crossref:
 
 
 ```{r setup, include = FALSE}
-knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, include = FALSE)
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, include = TRUE)
 ```
 
 
-
-# Welcome {.unnumbered}
 
 ```{r, fig.cap = "The chimera of R and GIS", echo = FALSE}
 knitr::include_graphics("assets/rgis.png")
