@@ -1,21 +1,21 @@
 [
   {
-    "objectID": "vector_ex01.html",
-    "href": "vector_ex01.html",
-    "title": "Vector Exercise 01",
+    "objectID": "geodata_r.html",
+    "href": "geodata_r.html",
+    "title": "Geodata in R",
     "section": "",
-    "text": "Vector Exercise 01\n\n\n\n\n\nThe OSM Logo\n\n\n\n\n\n\n\n\n\n\nTask 1: OSM Data\n\n\n\n\ndownload OpenStreetMap as shapefile data for Muenster here: https://download.geofabrik.de/\nload the points of interest (POIs), land use and streets into R\nplot the data with the mapview package\n\n\n\n\nLogical operators\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTask 2: Thematic querries\n\n\n\n\nHow many bakeries are there in Muenster?\nHow many hotels and hostels are there in Muenster?\nWhere is the A1?\nHow many “recreation_ground” are Freibäder? (i.e. have “Freibad” or “freibad” in their name)\n\n\n\n\n\n\n\n\nGeometric operations of the sf package; source: Geocomputation with R\n\n\n\n\n\n\n\n\n\n\nTask 3: Topological / Spatial querries\n\n\n\n\nHow many benches are in forests?\nWhich forests are within 25km distance to the A1?\n\nTipp: st_is_within_distance()\nWhat could be a different solution to this problem?\n\nHow many bakeries are within 1km from the Geo1 building?\n\n\n\n\n\n\n\n\n\nTask 4: Distances, Lengths, Areas\n\n\n\nTest the functions st_area(), st_length() and st_distance() in the following examples:\n\nHow large are the forests in the Münsterland on average?\nHow long is the A1 in the Münsterland?\nHow far away are bakeries in the Münsterland on average from the next bakery? What is the standard deviation?",
-    "crumbs": [
-      "Basics",
-      "Vector Exercise 01"
-    ]
+    "text": "Geodata in R\nWe will use two main packages in this course for working with geodata. sf (simple features) is used for vector data and terra will handle raster data.\nBoth packages are relatively new and are successors: * sf replaces the deprecated package sp. * terra replaces the deprecated package raster.\nYou will probably find a lot of code examples online (e.g. on Stack Overflow) that uses these old packages. DO NOT USE the sp OR the raster PACKAGES ANYMORE!\n\n\n\n\n\n\nTask: Geodata I/O\n\n\n\n\nOrganize yourself some geodata.\nInstall the terra and sf packages.\nTry to load a raster and a vector dataset into R.\nWhat attributes does the geodata have?\nVisualize the data.\n\n\n\n\n\n\n\n\n\nTask: Geodata R Convinience\n\n\n\n\nInstall the geodata package\nCheck out what it can do."
   },
   {
-    "objectID": "intro.html",
-    "href": "intro.html",
-    "title": "Introduction",
+    "objectID": "literature.html",
+    "href": "literature.html",
+    "title": "Recommendations",
     "section": "",
-    "text": "Introduction\nThis is a book created from markdown and executable code.\nSee (knuth84?) for additional discussion of literate programming.\n\n1 + 1\n\n[1] 2"
+    "text": "Recommendations",
+    "crumbs": [
+      "Additional Resources",
+      "Recommendations"
+    ]
   },
   {
     "objectID": "raster_ex01.html",
@@ -29,39 +29,46 @@
     ]
   },
   {
-    "objectID": "slides/saga01.html#simple-terrain-modell-processing",
-    "href": "slides/saga01.html#simple-terrain-modell-processing",
-    "title": "SAGA GIS",
-    "section": "Simple terrain modell processing",
-    "text": "Simple terrain modell processing"
+    "objectID": "slides/intro.html#target-audience",
+    "href": "slides/intro.html#target-audience",
+    "title": "Spatial R - Using R as a GIS",
+    "section": "Target audience",
+    "text": "Target audience\n\nyou are fluent in the basic R syntax\nit is beneficial (but not required) if you have worked with spatial data before\nyou want to incorporate spatial data into your R workflow"
   },
   {
-    "objectID": "slides/saga01.html#why-extrernal-gis-software",
-    "href": "slides/saga01.html#why-extrernal-gis-software",
-    "title": "SAGA GIS",
-    "section": "Why extrernal GIS Software?",
-    "text": "Why extrernal GIS Software?\n\nsome functionalities not implemented in R but in QGIS, SAGA, GRASS, ArcGIS…\ne.g. tools in the field of hydrology and morphometry not common in R but in SAGA\nLinks to functionalities via R Packages: RSAGA, rgrass7, RQIS, RPyGeo\nWorkflow-centric in R\n\nno manual processing steps\nreproducible"
+    "objectID": "slides/intro.html#why-r-as-gis",
+    "href": "slides/intro.html#why-r-as-gis",
+    "title": "Spatial R - Using R as a GIS",
+    "section": "Why R as GIS?",
+    "text": "Why R as GIS?\n\nopen source\nflexible (statistical) analysis\nflexible visualizations\neasy automization of processes and workflows\ncomplete reproducibility\nONE platform for data acquisition, (spatial) processing, (spatial) statistical analysis, visualization"
   },
   {
-    "objectID": "slides/saga01.html#saga-gis",
-    "href": "slides/saga01.html#saga-gis",
-    "title": "SAGA GIS",
-    "section": "SAGA GIS",
-    "text": "SAGA GIS\nimage 01"
+    "objectID": "slides/intro.html#aims-of-this-course",
+    "href": "slides/intro.html#aims-of-this-course",
+    "title": "Spatial R - Using R as a GIS",
+    "section": "Aims of this course",
+    "text": "Aims of this course\n\nget to know R packages for spatial data analysis\nhandling raster and vector data in R\nusing R as a “meta language” to control dedicated GIS software\ndeveloping workflows in R that involve spatial data"
   },
   {
-    "objectID": "slides/saga01.html#task",
-    "href": "slides/saga01.html#task",
-    "title": "SAGA GIS",
-    "section": "Task",
-    "text": "Task\nimage 02"
+    "objectID": "slides/slides_geodata.html#geodaten",
+    "href": "slides/slides_geodata.html#geodaten",
+    "title": "Spatial R - Using R as a GIS",
+    "section": "Geodaten",
+    "text": "Geodaten\nVereinfachte Definition: Digitale Informationen, denen eine räumlichen Position auf der Erdoberfläche zugewiesen werden kann"
   },
   {
-    "objectID": "slides/saga01.html#flow-accumulation",
-    "href": "slides/saga01.html#flow-accumulation",
-    "title": "SAGA GIS",
-    "section": "Flow accumulation",
-    "text": "Flow accumulation\nimage 03"
+    "objectID": "slides/slides_geodata.html#section",
+    "href": "slides/slides_geodata.html#section",
+    "title": "Spatial R - Using R as a GIS",
+    "section": "",
+    "text": "Geobasisdaten\n\nRaumbezug hertellende Geodaten\ni.d.R. von Vermessungsämtern zur Verfügung gestellt\nBeispiel: erwaltungsgrenzen, Digitale Höhenmodelle, digitale Landschaftsmodelle, …\nFür NRW: https://www.opengeodata.nrw.de/produkte/geobasis/\n\nGeofachdaten\n\naus deinem bestimmten Fachgebiet\nz.B. Vorkommen von Arten, Wetterdaten, Satellitendaten, …\n\n\n\n\n\n\n\nTask\n\n\nTauscht euch mit euren Nachbarn aus und sammelt mit was für Geodaten ihr in eurem Studium in Berührung kommt oder schon selbst verwendet/erfasst habt."
+  },
+  {
+    "objectID": "slides/slides_geodata.html#geodaten-modelle",
+    "href": "slides/slides_geodata.html#geodaten-modelle",
+    "title": "Spatial R - Using R as a GIS",
+    "section": "Geodaten Modelle",
+    "text": "Geodaten Modelle\nVektordaten\nRasterdaten"
   },
   {
     "objectID": "references.html",
@@ -79,7 +86,18 @@
     "href": "geodata.html",
     "title": "Introduction to Geodata",
     "section": "",
-    "text": "Introduction to Geodata\n\nknitr::include_url(\"slides/geodata.pdf\")",
+    "text": "knitr::include_url(\"slides/slides_geodata.html\")\n\n\n\n\n\n\n\nOpenGeodata.NRW\n\n\n\n\n\n\n\n\n\n\n\n\nGlobal administrative areas\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nworldwide collaborative and free web map\nhttps://download.geofabrik.de/europe/germany/nordrhein-westfalen.html\n\n\n\n\nhistorical climatic data and future projections\nhttps://www.worldclim.org/data/index.html\n\n\n\n\n\n\n\n\n\n\n\n\nhttps://land.copernicus.eu/en/products/corine-land-cover\n\n\n\nSpecies occurrence data\n\n\n\n\n\n\n\n\n\nhttps://www.gbif.org/",
+    "crumbs": [
+      "Basics",
+      "Introduction to Geodata"
+    ]
+  },
+  {
+    "objectID": "geodata.html#open-data-examples",
+    "href": "geodata.html#open-data-examples",
+    "title": "Introduction to Geodata",
+    "section": "",
+    "text": "OpenGeodata.NRW\n\n\n\n\n\n\n\n\n\n\n\n\nGlobal administrative areas\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nworldwide collaborative and free web map\nhttps://download.geofabrik.de/europe/germany/nordrhein-westfalen.html\n\n\n\n\nhistorical climatic data and future projections\nhttps://www.worldclim.org/data/index.html\n\n\n\n\n\n\n\n\n\n\n\n\nhttps://land.copernicus.eu/en/products/corine-land-cover\n\n\n\nSpecies occurrence data\n\n\n\n\n\n\n\n\n\nhttps://www.gbif.org/",
     "crumbs": [
       "Basics",
       "Introduction to Geodata"
@@ -138,46 +156,6 @@
     "crumbs": [
       "Advanced",
       "Projections"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "R als GIS",
-    "section": "",
-    "text": "The chimera of R and GIS",
-    "crumbs": [
-      "R als GIS"
-    ]
-  },
-  {
-    "objectID": "index.html#target-audience",
-    "href": "index.html#target-audience",
-    "title": "R als GIS",
-    "section": "Target audience",
-    "text": "Target audience\n\nyou are fluent in the basic R syntax\nit is beneficial (but not required) if you have worked with spatial data before\nyou want to incorporate spatial data into your R workflow",
-    "crumbs": [
-      "R als GIS"
-    ]
-  },
-  {
-    "objectID": "index.html#why-r-as-gis",
-    "href": "index.html#why-r-as-gis",
-    "title": "R als GIS",
-    "section": "Why R as GIS?",
-    "text": "Why R as GIS?\n\nopen source\nflexible (statistical) analysis\nflexible visualizations\neasy automization of processes and workflows\ncomplete reproducibility\nONE platform for data acquisition, (spatial) processing, (spatial) statistical analysis, visualization",
-    "crumbs": [
-      "R als GIS"
-    ]
-  },
-  {
-    "objectID": "index.html#aims-of-this-course",
-    "href": "index.html#aims-of-this-course",
-    "title": "R als GIS",
-    "section": "Aims of this course",
-    "text": "Aims of this course\n\nget to know R packages for spatial data analysis\nhandling raster and vector data in R\nusing R as a “meta language” to control dedicated GIS software\ndeveloping workflows in R that involve spatial data",
-    "crumbs": [
-      "R als GIS"
     ]
   },
   {
@@ -246,6 +224,41 @@
     ]
   },
   {
+    "objectID": "slides/saga01.html#simple-terrain-modell-processing",
+    "href": "slides/saga01.html#simple-terrain-modell-processing",
+    "title": "SAGA GIS",
+    "section": "Simple terrain modell processing",
+    "text": "Simple terrain modell processing"
+  },
+  {
+    "objectID": "slides/saga01.html#why-extrernal-gis-software",
+    "href": "slides/saga01.html#why-extrernal-gis-software",
+    "title": "SAGA GIS",
+    "section": "Why extrernal GIS Software?",
+    "text": "Why extrernal GIS Software?\n\nsome functionalities not implemented in R but in QGIS, SAGA, GRASS, ArcGIS…\ne.g. tools in the field of hydrology and morphometry not common in R but in SAGA\nLinks to functionalities via R Packages: RSAGA, rgrass7, RQIS, RPyGeo\nWorkflow-centric in R\n\nno manual processing steps\nreproducible"
+  },
+  {
+    "objectID": "slides/saga01.html#saga-gis",
+    "href": "slides/saga01.html#saga-gis",
+    "title": "SAGA GIS",
+    "section": "SAGA GIS",
+    "text": "SAGA GIS\nimage 01"
+  },
+  {
+    "objectID": "slides/saga01.html#task",
+    "href": "slides/saga01.html#task",
+    "title": "SAGA GIS",
+    "section": "Task",
+    "text": "Task\nimage 02"
+  },
+  {
+    "objectID": "slides/saga01.html#flow-accumulation",
+    "href": "slides/saga01.html#flow-accumulation",
+    "title": "SAGA GIS",
+    "section": "Flow accumulation",
+    "text": "Flow accumulation\nimage 03"
+  },
+  {
     "objectID": "gis_software.html",
     "href": "gis_software.html",
     "title": "External GIS Software",
@@ -290,14 +303,14 @@
     ]
   },
   {
-    "objectID": "literature.html",
-    "href": "literature.html",
-    "title": "Recommendations",
+    "objectID": "vector_ex01.html",
+    "href": "vector_ex01.html",
+    "title": "Vector Exercise 01",
     "section": "",
-    "text": "Recommendations",
+    "text": "Vector Exercise 01\n\n\n\n\n\nThe OSM Logo\n\n\n\n\n\n\n\n\n\n\nTask 1: OSM Data\n\n\n\n\ndownload OpenStreetMap as shapefile data for Muenster here: https://download.geofabrik.de/\nload the points of interest (POIs), land use and streets into R\nplot the data with the mapview package\n\n\n\n\nLogical operators\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTask 2: Thematic querries\n\n\n\n\nHow many bakeries are there in Muenster?\nHow many hotels and hostels are there in Muenster?\nWhere is the A1?\nHow many “recreation_ground” are Freibäder? (i.e. have “Freibad” or “freibad” in their name)\n\n\n\n\n\n\n\n\nGeometric operations of the sf package; source: Geocomputation with R\n\n\n\n\n\n\n\n\n\n\nTask 3: Topological / Spatial querries\n\n\n\n\nHow many benches are in forests?\nWhich forests are within 25km distance to the A1?\n\nTipp: st_is_within_distance()\nWhat could be a different solution to this problem?\n\nHow many bakeries are within 1km from the Geo1 building?\n\n\n\n\n\n\n\n\n\nTask 4: Distances, Lengths, Areas\n\n\n\nTest the functions st_area(), st_length() and st_distance() in the following examples:\n\nHow large are the forests in the Münsterland on average?\nHow long is the A1 in the Münsterland?\nHow far away are bakeries in the Münsterland on average from the next bakery? What is the standard deviation?",
     "crumbs": [
-      "Additional Resources",
-      "Recommendations"
+      "Basics",
+      "Vector Exercise 01"
     ]
   }
 ]

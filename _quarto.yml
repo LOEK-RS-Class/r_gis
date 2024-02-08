@@ -12,6 +12,7 @@ website:
       - section: "Basics"
         contents:
           - geodata.qmd
+          - geodata_r.qmd
           - vector_data.qmd
           - vector_ex01.qmd
           - raster_data.qmd

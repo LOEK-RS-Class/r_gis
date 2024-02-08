@@ -2,6 +2,80 @@
 
 
 ```{r}
-knitr::include_url("slides/geodata.pdf")
+#| echo: false
+knitr::include_url("slides/slides_geodata.html")
 ```
+
+
+
+
+## Open Data Examples
+
+### opengeodata.nrw.de
+
+[OpenGeodata.NRW](https://www.opengeodata.nrw.de/produkte/)
+
+```{r}
+#| echo: false
+knitr::include_graphics("https://www.wms.nrw.de/rssfeeds/content/geoportal/images/komkonzepte_vorschau.PNG")
+```
+
+
+
+
+### GADM
+
+[Global administrative areas](https://gadm.org/)
+
+
+```{r}
+#| echo: false
+knitr::include_graphics("https://gadm.org/img/480/gadm/CHE/CHE_divs.png")
+```
+
+
+
+### OpenStreetMap
+
+```{r}
+#| echo: false
+knitr::include_graphics("https://www.openstreetmap.de/img/btn_map.png")
+```
+
+
+* worldwide collaborative and free web map
+* [https://download.geofabrik.de/europe/germany/nordrhein-westfalen.html](https://download.geofabrik.de/europe/germany/nordrhein-westfalen.html)
+
+
+### Worldclim
+
+historical climatic data and future projections
+
+[https://www.worldclim.org/data/index.html](https://www.worldclim.org/data/index.html)
+
+
+### Corine Land Cover
+
+```{r}
+#| echo: false
+knitr::include_graphics("https://land.copernicus.eu/en/products/corine-land-cover/@@images/image-400-7d8e8dfc63d50c9bf89ff5a7475dcd46.png")
+```
+
+
+[https://land.copernicus.eu/en/products/corine-land-cover](https://land.copernicus.eu/en/products/corine-land-cover)
+
+### GBIF
+
+Species occurrence data
+
+```{r}
+#| echo: false
+knitr::include_graphics("https://observation.org/media/download/gbif-observation.org.jpg")
+```
+
+
+
+[https://www.gbif.org/](https://www.gbif.org/)
+
+
 

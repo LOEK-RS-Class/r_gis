@@ -1,0 +1,47 @@
+---
+format: revealjs
+---
+
+## Geodaten
+
+Vereinfachte Definition: 
+Digitale Informationen, denen eine räumlichen Position auf der Erdoberfläche
+zugewiesen werden kann
+
+##
+
+### Geobasisdaten
+
+* Raumbezug hertellende Geodaten
+* i.d.R. von Vermessungsämtern zur Verfügung gestellt
+* Beispiel: erwaltungsgrenzen, Digitale Höhenmodelle, digitale Landschaftsmodelle, ...
+* Für NRW: [https://www.opengeodata.nrw.de/produkte/geobasis/](https://www.opengeodata.nrw.de/produkte/geobasis/)
+
+### Geofachdaten
+
+* aus deinem bestimmten Fachgebiet
+* z.B. Vorkommen von Arten, Wetterdaten, Satellitendaten, ...
+
+:::{.callout-important }
+## Task
+
+Tauscht euch mit euren Nachbarn aus und sammelt mit was für Geodaten ihr in eurem Studium
+in Berührung kommt oder schon selbst verwendet/erfasst habt.
+
+:::
+
+
+## Geodaten Modelle
+
+### Vektordaten
+
+
+### Rasterdaten
+
+
+
+
+
+
+
+

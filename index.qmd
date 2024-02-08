@@ -16,35 +16,11 @@ knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, include = 
 ```
 
 
-
-```{r, fig.cap = "The chimera of R and GIS", echo = FALSE}
-knitr::include_graphics("assets/rgis.png")
+```{r}
+#| echo: false
+knitr::include_url("slides/intro.html")
 ```
 
-## Target audience
-
-- you are fluent in the basic R syntax
-- it is beneficial (but not required) if you have worked with spatial data before
-- you want to incorporate spatial data into your R workflow
-
-
-## Why R as GIS?
-
-- open source
-- flexible (statistical) analysis
-- flexible visualizations
-- easy automization of processes and workflows
-- complete reproducibility
-- ONE platform for data acquisition, (spatial) processing, (spatial) statistical analysis, visualization
-
-
-
-## Aims of this course
-
--   get to know R packages for spatial data analysis
--   handling raster and vector data in R
--   using R as a "meta language" to control dedicated GIS software
--   developing workflows in R that involve spatial data
 
 ## Course Outline
 
