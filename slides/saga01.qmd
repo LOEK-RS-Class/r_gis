@@ -8,7 +8,14 @@ format:
     preview-links: auto
 ---
 
-## Simple terrain modell processing
+## Simple terrain model processing
+
+```{r}
+#| echo: false
+knitr::include_graphics("../assets/flowacc01.png")
+```
+
+
 
 
 
@@ -25,13 +32,26 @@ format:
   
 ## SAGA GIS
 
-image 01 
+```{r}
+#| echo: false
+knitr::include_graphics("https://saga-gis.sourceforge.io/_images/start_02.jpg")
+```
+
+
+
 
 ## Task
 
-image 02
+```{r}
+#| echo: false
+knitr::include_graphics("../assets/flowacc02.png")
+```
+
 
 ## Flow accumulation
 
-image 03
 
+```{r}
+#| echo: false
+knitr::include_graphics("https://pro.arcgis.com/de/pro-app/latest/tool-reference/spatial-analyst/GUID-9C3A8153-1359-4F0B-8D9A-BC256957AD28-web.png")
+```

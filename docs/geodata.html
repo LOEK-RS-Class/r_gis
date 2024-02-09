@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -113,7 +79,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./geodata.html">Basics</a></li><li class="breadcrumb-item"><a href="./geodata.html">Introduction to Geodata</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./geodata.html">Introduction to Geodata</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -136,10 +102,52 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">R als GIS</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./geodata.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Introduction to Geodata</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./geodata_r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Geodata in R</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./vector_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Vector Data</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./vector_ex01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Vector Exercise 01</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./raster_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Raster Data</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./raster_ex01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Raster Exercise 01</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./projections.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Projections</span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
- <span class="menu-text">Basics</span></a>
+ <span class="menu-text">GIS Software</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -147,32 +155,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./geodata.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Introduction to Geodata</span></a>
+  <a href="./gis_software.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">SAGA GIS</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./vector_data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Vector Data</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./vector_ex01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Vector Exercise 01</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./raster_data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Raster Data</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./raster_ex01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Raster Exercise 01</span></a>
+  <a href="./rsaga.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">RSAGA</span></a>
   </div>
 </li>
       </ul>
@@ -180,7 +170,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
- <span class="menu-text">Advanced</span></a>
+ <span class="menu-text">Advanced R</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -188,20 +178,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./projections.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Projections</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./gis_software.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">External GIS Software</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./rsaga.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">RSAGA</span></a>
+  <a href="./r_programming.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R Control Structures</span></a>
   </div>
 </li>
       </ul>
@@ -244,85 +222,90 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="introduction-to-geodata" class="level1">
 <h1>Introduction to Geodata</h1>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_url</span>(<span class="st">"slides/slides_geodata.html"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <iframe src="slides/slides_geodata.html" width="672" height="400px" data-external="1">
 </iframe>
 </div>
 <section id="open-data-examples" class="level2">
 <h2 class="anchored" data-anchor-id="open-data-examples">Open Data Examples</h2>
 <section id="opengeodata.nrw.de" class="level3">
-<h3 class="anchored" data-anchor-id="opengeodata.nrw.de">opengeodata.nrw.de</h3>
-<p><a href="https://www.opengeodata.nrw.de/produkte/">OpenGeodata.NRW</a></p>
+<h3 class="anchored" data-anchor-id="opengeodata.nrw.de"><a href="https://www.opengeodata.nrw.de/produkte/">opengeodata.nrw.de</a></h3>
 <div class="cell">
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="https://www.wms.nrw.de/rssfeeds/content/geoportal/images/komkonzepte_vorschau.PNG" class="img-fluid figure-img"></p>
+<p><a href="https://www.opengeodata.nrw.de/produkte/"><img src="https://www.wms.nrw.de/rssfeeds/content/geoportal/images/komkonzepte_vorschau.PNG" class="img-fluid figure-img"></a></p>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="gadm" class="level3">
-<h3 class="anchored" data-anchor-id="gadm">GADM</h3>
-<p><a href="https://gadm.org/">Global administrative areas</a></p>
+<section id="gadm---global-administrative-areas" class="level3">
+<h3 class="anchored" data-anchor-id="gadm---global-administrative-areas"><a href="https://gadm.org/">GADM - Global administrative areas</a></h3>
 <div class="cell">
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="https://gadm.org/img/480/gadm/CHE/CHE_divs.png" class="img-fluid figure-img"></p>
+<p><a href="https://gadm.org/"><img src="https://gadm.org/img/480/gadm/CHE/CHE_divs.png" class="img-fluid figure-img"></a></p>
 </figure>
 </div>
 </div>
 </div>
 </section>
 <section id="openstreetmap" class="level3">
-<h3 class="anchored" data-anchor-id="openstreetmap">OpenStreetMap</h3>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="https://www.openstreetmap.de/img/btn_map.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
+<h3 class="anchored" data-anchor-id="openstreetmap"><a href="https://www.openstreetmap.de">OpenStreetMap</a></h3>
 <ul>
 <li>worldwide collaborative and free web map</li>
 <li><a href="https://download.geofabrik.de/europe/germany/nordrhein-westfalen.html">https://download.geofabrik.de/europe/germany/nordrhein-westfalen.html</a></li>
 </ul>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><a href="https://www.openstreetmap.de"><img src="https://www.openstreetmap.de/img/btn_map.png" class="img-fluid figure-img"></a></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
 <section id="worldclim" class="level3">
-<h3 class="anchored" data-anchor-id="worldclim">Worldclim</h3>
-<p>historical climatic data and future projections</p>
-<p><a href="https://www.worldclim.org/data/index.html">https://www.worldclim.org/data/index.html</a></p>
+<h3 class="anchored" data-anchor-id="worldclim"><a href="https://www.worldclim.org/data/index.html">Worldclim</a></h3>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><a href="https://www.worldclim.org/data/index.html"><img src="https://developers.google.com/earth-engine/datasets/images/WORLDCLIM/WORLDCLIM_V1_MONTHLY_sample.png" class="img-fluid figure-img"></a></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
 <section id="corine-land-cover" class="level3">
-<h3 class="anchored" data-anchor-id="corine-land-cover">Corine Land Cover</h3>
+<h3 class="anchored" data-anchor-id="corine-land-cover"><a href="https://land.copernicus.eu/en/products/corine-land-cover">Corine Land Cover</a></h3>
 <div class="cell">
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="https://land.copernicus.eu/en/products/corine-land-cover/@@images/image-400-7d8e8dfc63d50c9bf89ff5a7475dcd46.png" class="img-fluid figure-img"></p>
+<p><a href="https://land.copernicus.eu/en/products/corine-land-cover"><img src="https://land.copernicus.eu/en/products/corine-land-cover/@@images/image-400-7d8e8dfc63d50c9bf89ff5a7475dcd46.png" class="img-fluid figure-img"></a></p>
 </figure>
 </div>
 </div>
 </div>
-<p><a href="https://land.copernicus.eu/en/products/corine-land-cover">https://land.copernicus.eu/en/products/corine-land-cover</a></p>
 </section>
-<section id="gbif" class="level3">
-<h3 class="anchored" data-anchor-id="gbif">GBIF</h3>
-<p>Species occurrence data</p>
+<section id="gbif-the-global-biodiversity-information-facility" class="level3">
+<h3 class="anchored" data-anchor-id="gbif-the-global-biodiversity-information-facility"><a href="https://www.gbif.org/">GBIF — the Global Biodiversity Information Facility</a></h3>
+<ul>
+<li>Species occurrence data</li>
+<li></li>
+</ul>
 <div class="cell">
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="https://observation.org/media/download/gbif-observation.org.jpg" class="img-fluid figure-img"></p>
+<p><a href="https://www.gbif.org/"><img src="https://observation.org/media/download/gbif-observation.org.jpg" class="img-fluid figure-img"></a></p>
 </figure>
 </div>
 </div>
 </div>
-<p><a href="https://www.gbif.org/">https://www.gbif.org/</a></p>
 
 
 </section>

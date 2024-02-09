@@ -1,0 +1,170 @@
+# R Control Structures
+
+
+
+## Loops
+
+* repetition of the same tasks
+* e.g. same processing steps for multiple datasets
+* reduces code redundancies
+  * less work
+  * clearer workflow
+  * errors easier to fix
+  
+  
+## for-loops
+
+* do something **for** every element of e.g. a vector
+* the iterator (`i` in the examples below) can be used directly
+
+
+```{r}
+x <- seq(10)
+
+for(i in x){
+  print(2^i)
+}
+
+```
+
+* or as an index for something else
+
+```{r}
+for(i in c(2, 4, 11, 7)){
+  print(x[i]^2)
+}
+```
+
+
+:::{.callout-important}
+## NA?
+Why is there an `NA` output in the second example?
+:::
+
+
+```{r}
+x <- 1:10
+result <- c()
+
+for(i in seq(x)){
+  result[i] <- x[i]^2
+}
+
+result
+```
+
+
+:::{.callout-important}
+## Task
+* Create a vector with 10 random numbers.
+* Create a loop that does the following:
+  * multiply the number with 2 and print the result
+  * divide the number by 3 and save the result
+:::
+
+
+## for-loops or apply-loops?
+
+* for-loops are not R-specific but implemented in nearly every programming language
+* R has some more specific loop types that work very well with `vectors`, `lists` and `functions`
+* these are called `apply` loops in R
+
+```{r}
+#| eval: false
+lapply() # list apply
+
+sapply() # apply with vector output
+
+apply() # loop over rows or columns of a data.frame
+```
+
+```{r}
+sapply(seq(10), function(x){
+  x^2
+})
+```
+
+
+
+## Conditionals
+
+* sometimes you want code that executes only in certain conditions
+
+```{r}
+#| eval: false
+
+if(condition){
+  # Command 1
+  
+} else{
+  # Command 2
+  
+}
+
+```
+
+
+:::{.callout-important}
+## Task
+* Create a random number between 1 and 10.
+* If the number is larger than 5, print the message "A large number".
+* If the number is smaller than 5, print the message "A small number".
+* If the number is exactly 5, print "It's 5"
+:::
+
+
+## Functions
+
+* for common tasks and computations
+* helps to structure code
+* reduces code redundancies
+* integration into packages with documentation
+
+
+```{r}
+myFunction <- function(arg1){
+  print("I will now multiply you input with 5.")
+  result <- arg1 * 5
+  return(result)
+}
+
+
+a <- myFunction(arg1 = 8)
+a
+
+```
+
+If you need examples, all R package source codes consist of functions: [https://github.com/r-spatial/sf/tree/master/R](https://github.com/r-spatial/sf/tree/master/R)
+
+
+
+:::{.callout-important}
+## Task
+* Write a function `rmse` that calculates the Root Mean Squared Error.
+* Test the function with the dataset below.
+:::
+
+```{r}
+#| echo: false
+knitr::include_graphics("https://community.qlik.com/legacyfs/online/128958_2016-06-23%2013_45_36-Root%20Mean%20Squared%20Error%20_%20Kaggle.png")
+```
+
+
+
+```{r}
+#| eval: false
+x = c(2,5,3,4)
+y = c(2,6,5,5)
+```
+
+
+
+
+
+:::{.callout-important}
+## Task
+* Write a function `calcNDVI` that calculates the NDVI.
+* The function should have two raster bands as inputs and return one raster band.
+* Test the function with a satellite imagery.
+:::
+

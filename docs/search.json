@@ -4,7 +4,10 @@
     "href": "geodata_r.html",
     "title": "Geodata in R",
     "section": "",
-    "text": "Geodata in R\nWe will use two main packages in this course for working with geodata. sf (simple features) is used for vector data and terra will handle raster data.\nBoth packages are relatively new and are successors: * sf replaces the deprecated package sp. * terra replaces the deprecated package raster.\nYou will probably find a lot of code examples online (e.g. on Stack Overflow) that uses these old packages. DO NOT USE the sp OR the raster PACKAGES ANYMORE!\n\n\n\n\n\n\nTask: Geodata I/O\n\n\n\n\nOrganize yourself some geodata.\nInstall the terra and sf packages.\nTry to load a raster and a vector dataset into R.\nWhat attributes does the geodata have?\nVisualize the data.\n\n\n\n\n\n\n\n\n\nTask: Geodata R Convinience\n\n\n\n\nInstall the geodata package\nCheck out what it can do."
+    "text": "Geodata in R\nWe will use two main packages in this course for working with geodata. sf (simple features) is used for vector data and terra will handle raster data.\nBoth packages are relatively new and are successors: * sf replaces the deprecated package sp. * terra replaces the deprecated package raster.\nYou will probably find a lot of code examples online (e.g. on Stack Overflow) that uses these old packages. DO NOT USE the sp OR the raster PACKAGES ANYMORE!\n\n\n\n\n\n\nTask: Geodata I/O\n\n\n\n\nOrganize yourself some geodata.\nInstall the terra and sf packages.\nTry to load a raster and a vector dataset into R.\nWhat attributes does the geodata have?\nVisualize the data.\n\n\n\n\n\n\n\n\n\nTask: Geodata R Convinience\n\n\n\n\nInstall the geodata package\nCheck out what it can do.",
+    "crumbs": [
+      "Geodata in R"
+    ]
   },
   {
     "objectID": "literature.html",
@@ -24,9 +27,227 @@
     "section": "",
     "text": "Raster Exercise 01\n\n\n\n\n\n\nTask 1: Raster Input\n\n\n\n\nLoad the SRTM and land cover tiles into R.\nCreate one combined SRTM layer and one combines land cover layer out of the tiles.\n\n\n\n\n\n\n\n\n\nTask 2: Simple querries\n\n\n\n\nHow often does each land cover class occur in this area?\nWhat is the lowest and highest elevation in this area?\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: Raster with different spatial properties\n\n\n\n\n\n\n\n\n\n\n\nTask 3: Think first!\n\n\n\n\nWhich steps are needed (conceptually), such that the SRTM and land cover raster fit exactly on top of each other?\n\n\n\n\n\n\n\n\n\nTask 4: Multi-layer raster\n\n\n\n\nCreate a multi-layer raster from the SRTM and land cover raster.\nGive both layers an appropriate name.\nPlot the raster.\nSave the raster as a “.grd” file.\n\n\n\n\n\n\n\n\n\nTask 5: Advanced raster querries\n\n\n\n\nOn average, are forests or agricultural areas found at higher elevations?\nDivide the terrain model into “slopes” and “flats”.\nIn flat areas, which land cover class is the most common?\nFind and visualize all forests at southern slopes.",
     "crumbs": [
-      "Basics",
       "Raster Exercise 01"
     ]
+  },
+  {
+    "objectID": "gis_software.html",
+    "href": "gis_software.html",
+    "title": "SAGA GIS",
+    "section": "",
+    "text": "SAGA GIS\n\n\n\n\nBefore we combine R and SAGA, let’s first have a look at a SAGA module separately to get a feel for what we can do with it.\n\n\n\n\n\n\nTask: SAGA GIS I\n\n\n\n\nImport a terrain model into SAGA.\n\nImport/Export\nGDAL\nImport Raster\n\nPreprocess the terrain model for the hydrological analysis with the Fill Sinks tool.\n\n\n\n\n\n\n\n\nFill Sinks for flow accumulation (https://sagatutorials.wordpress.com/preprocessing-and-catchment-deliniation/)\n\n\n\n\n\n\n\n\n\n\nTask: SAGA GIS II\n\n\n\n\nDelinate catchment areas from the preprocessed terrain model with the tool Channel network and Drainage Basins.\nAlso calculate the flow accumulation.",
+    "crumbs": [
+      "GIS Software",
+      "SAGA GIS"
+    ]
+  },
+  {
+    "objectID": "slides/saga01.html#simple-terrain-model-processing",
+    "href": "slides/saga01.html#simple-terrain-model-processing",
+    "title": "SAGA GIS",
+    "section": "Simple terrain model processing",
+    "text": "Simple terrain model processing"
+  },
+  {
+    "objectID": "slides/saga01.html#why-extrernal-gis-software",
+    "href": "slides/saga01.html#why-extrernal-gis-software",
+    "title": "SAGA GIS",
+    "section": "Why extrernal GIS Software?",
+    "text": "Why extrernal GIS Software?\n\nsome functionalities not implemented in R but in QGIS, SAGA, GRASS, ArcGIS…\ne.g. tools in the field of hydrology and morphometry not common in R but in SAGA\nLinks to functionalities via R Packages: RSAGA, rgrass7, RQIS, RPyGeo\nWorkflow-centric in R\n\nno manual processing steps\nreproducible"
+  },
+  {
+    "objectID": "slides/saga01.html#saga-gis",
+    "href": "slides/saga01.html#saga-gis",
+    "title": "SAGA GIS",
+    "section": "SAGA GIS",
+    "text": "SAGA GIS"
+  },
+  {
+    "objectID": "slides/saga01.html#task",
+    "href": "slides/saga01.html#task",
+    "title": "SAGA GIS",
+    "section": "Task",
+    "text": "Task"
+  },
+  {
+    "objectID": "slides/saga01.html#flow-accumulation",
+    "href": "slides/saga01.html#flow-accumulation",
+    "title": "SAGA GIS",
+    "section": "Flow accumulation",
+    "text": "Flow accumulation"
+  },
+  {
+    "objectID": "vector_data.html",
+    "href": "vector_data.html",
+    "title": "Vector Data",
+    "section": "",
+    "text": "Vector Data",
+    "crumbs": [
+      "Vector Data"
+    ]
+  },
+  {
+    "objectID": "rsaga.html",
+    "href": "rsaga.html",
+    "title": "RSAGA",
+    "section": "",
+    "text": "In SAGA GIS we have seen how hydrological analysis is done with SAGA GIS. However, the work we did there is not optimal:\n\nit required manual clicking\nthe overall workflow was brocken\nno documentation\nhard to reproduce\n\nWe want to change all of this by working with SAGA GIS modules from inside a R Script.\n\n\n\nSAGA has to be installed on your computer and R needs to know where\n\n\nlibrary(RSAGA)\nrsaga.env()\n\nSearch for SAGA command line program and modules... \nDone\n\n\n$workspace\n[1] \".\"\n\n$cmd\n[1] \"saga_cmd\"\n\n$path\n[1] \"/usr/bin\"\n\n$modules\n[1] \"/usr/lib64/saga\"\n\n$version\n[1] \"9.3.1\"\n\n$cores\n[1] NA\n\n$parallel\n[1] FALSE\n\n$lib.prefix\n[1] \"lib\"\n\n\nIf for some reason (e.g. working with a university computer) RSAGA throws an error, try the following:\n\nlibrary(link2GI)\nlinkSAGA() # wenn Pfad zu SAGA unbekannt\nmyenv &lt;- rsaga.env(path=\"C:\\\\Program Files\\\\QGIS 3.8\\\\apps\\\\saga-ltr\")\n\n\n\n\n\nrsaga.get.libraries()\n\nSearch for SAGA command line program and modules... \nDone\n\n\n [1] \"climate_tools\"           \"contrib_perego\"         \n [3] \"db_odbc\"                 \"db_pgsql\"               \n [5] \"docs_html\"               \"garden_fractals\"        \n [7] \"garden_games\"            \"garden_webservices\"     \n [9] \"grid_analysis\"           \"grid_calculus_bsl\"      \n[11] \"grid_calculus\"           \"grid_filter\"            \n[13] \"grid_gridding\"           \"grid_spline\"            \n[15] \"grid_tools\"              \"grid_visualisation\"     \n[17] \"grids_tools\"             \"imagery_classification\" \n[19] \"imagery_isocluster\"      \"imagery_maxent\"         \n[21] \"imagery_opencv\"          \"imagery_photogrammetry\" \n[23] \"imagery_segmentation\"    \"imagery_svm\"            \n[25] \"imagery_tools\"           \"io_esri_e00\"            \n[27] \"io_gdal\"                 \"io_gps\"                 \n[29] \"io_grid_image\"           \"io_grid\"                \n[31] \"io_shapes\"               \"io_table\"               \n[33] \"io_virtual\"              \"io_webservices\"         \n[35] \"pj_georeference\"         \"pj_geotrans\"            \n[37] \"pj_proj4\"                \"pointcloud_tools\"       \n[39] \"shapes_grid\"             \"shapes_lines\"           \n[41] \"shapes_points\"           \"shapes_polygons\"        \n[43] \"shapes_tools\"            \"shapes_transect\"        \n[45] \"sim_air_flow\"            \"sim_cellular_automata\"  \n[47] \"sim_ecosystems_hugget\"   \"sim_erosion\"            \n[49] \"sim_fire_spreading\"      \"sim_geomorphology\"      \n[51] \"sim_hydrology\"           \"sim_ihacres\"            \n[53] \"sim_landscape_evolution\" \"sim_qm_of_esp\"          \n[55] \"sim_rivflow\"             \"statistics_grid\"        \n[57] \"statistics_kriging\"      \"statistics_points\"      \n[59] \"statistics_regression\"   \"ta_channels\"            \n[61] \"ta_cliffmetrics\"         \"ta_compound\"            \n[63] \"ta_hydrology\"            \"ta_lighting\"            \n[65] \"ta_morphometry\"          \"ta_preprocessor\"        \n[67] \"ta_profiles\"             \"ta_slope_stability\"     \n[69] \"table_calculus\"          \"table_tools\"            \n[71] \"tin_tools\"               \"vis_3d_viewer\"          \n\n\n\nrsaga.get.modules(libs = \"ta_hydrology\")\n\nSearch for SAGA command line program and modules... \nDone\n\n\n$ta_hydrology\n   code                                   name interactive\n1     0           Flow Accumulation (Top-Down)       FALSE\n2     1          Flow Accumulation (Recursive)       FALSE\n3     2       Flow Accumulation (Flow Tracing)       FALSE\n4     4                           Upslope Area       FALSE\n5     6                       Flow Path Length       FALSE\n6     7                           Slope Length       FALSE\n7    10                           Cell Balance       FALSE\n8    13                     Edge Contamination       FALSE\n9    15                     SAGA Wetness Index       FALSE\n10   18   Flow Accumulation (Mass-Flux Method)       FALSE\n11   19 Flow Width and Specific Catchment Area       FALSE\n12   20              Topographic Wetness Index       FALSE\n13   21                     Stream Power Index       FALSE\n14   22                              LS Factor       FALSE\n15   23               Melton Ruggedness Number       FALSE\n16   24                                TCI Low       FALSE\n17   25                 LS-Factor, Field Based       FALSE\n18   26        Slope Limited Flow Accumulation       FALSE\n19   27               Maximum Flow Path Length       FALSE\n20   28                    Flow between fields       FALSE\n21   29     Flow Accumulation (Parallelizable)       FALSE\n22   30              Isochrones Variable Speed       FALSE\n23   31                              CIT Index       FALSE\n24   32                       Terrain Flooding       FALSE\n\n\n\nrsaga.get.usage(lib = \"ta_hydrology\", module = \"SAGA Wetness Index\")\n\nSearch for SAGA command line program and modules... \nDone\nlibrary path: /usr/lib/saga/\nlibrary path: /usr/lib/saga/\nlibrary name: libta_hydrology\nlibrary     : ta_hydrology\nUsage: saga_cmd ta_hydrology 15 [-DEM &lt;str&gt;] [-WEIGHT &lt;str&gt;] [-AREA &lt;str&gt;] [-SLOPE &lt;str&gt;] [-AREA_MOD &lt;str&gt;] [-TWI &lt;str&gt;] [-SUCTION &lt;double&gt;] [-AREA_TYPE &lt;str&gt;] [-SLOPE_TYPE &lt;str&gt;] [-SLOPE_MIN &lt;double&gt;] [-SLOPE_OFF &lt;double&gt;] [-SLOPE_WEIGHT &lt;double&gt;]\n  -DEM:&lt;str&gt;                Elevation\n    grid, input\n  -WEIGHT:&lt;str&gt;             Weights\n    grid, input, optional\n  -AREA:&lt;str&gt;               Catchment Area\n    grid, output, optional\n  -SLOPE:&lt;str&gt;              Catchment Slope\n    grid, output, optional\n  -AREA_MOD:&lt;str&gt;           Modified Catchment Area\n    grid, output, optional\n  -TWI:&lt;str&gt;                Topographic Wetness Index\n    grid, output\n  -SUCTION:&lt;double&gt;         Suction\n    floating point number\n    Minimum: 0.000000\n    Default: 10.000000\n  -AREA_TYPE:&lt;str&gt;          Type of Area\n    choice\n    Available Choices:\n    [0] total catchment area\n    [1] square root of catchment area\n    [2] specific catchment area\n    Default: 2\n  -SLOPE_TYPE:&lt;str&gt;         Type of Slope\n    choice\n    Available Choices:\n    [0] local slope\n    [1] catchment slope\n    Default: 1\n  -SLOPE_MIN:&lt;double&gt;       Minimum Slope\n    floating point number\n    Minimum: 0.000000\n    Default: 0.000000\n  -SLOPE_OFF:&lt;double&gt;       Offset Slope\n    floating point number\n    Minimum: 0.000000\n    Default: 0.100000\n  -SLOPE_WEIGHT:&lt;double&gt;    Slope Weighting\n    floating point number\n    Minimum: 0.000000\n    Default: 1.000000 \n\n\n\n\n\n\nparams &lt;- list(DEM = \"dem.tif\", TWI =\"twi\")\nrsaga.geoprocessor(lib = \"ta_hydrology\",\n                   module = \"SAGA Wetness Index\",\n                   param = params)\n\n\n\n\n\n\n\nImportant\n\n\n\ndem.tif is a file on your computer! NOT an R Object!\n\n\nSome SAGA modules are are easier to execute via wrapper functions (see https://cran.r-project.org/web/packages/RSAGA/index.html)\nWith such a wrapper, the Topographic Wetness Index can be computed like this:\n\nrsaga.wetness.index(in.dem = \"dem.tif\", out.wetness.index = \"twi\")\n\n\n\n\n\n\n\nTask: SAGA R Workflows\n\n\n\nCreate a reproducible workflow with SAGA and RSAGA for flow accumulation from a digital elevation model.\n\nFill Sinks\nChannel Network and Drainage Basins\nFlow Accumulation\n\nVisualize the results in R.",
+    "crumbs": [
+      "GIS Software",
+      "RSAGA"
+    ]
+  },
+  {
+    "objectID": "rsaga.html#rsaga-setup",
+    "href": "rsaga.html#rsaga-setup",
+    "title": "RSAGA",
+    "section": "",
+    "text": "SAGA has to be installed on your computer and R needs to know where\n\n\nlibrary(RSAGA)\nrsaga.env()\n\nSearch for SAGA command line program and modules... \nDone\n\n\n$workspace\n[1] \".\"\n\n$cmd\n[1] \"saga_cmd\"\n\n$path\n[1] \"/usr/bin\"\n\n$modules\n[1] \"/usr/lib64/saga\"\n\n$version\n[1] \"9.3.1\"\n\n$cores\n[1] NA\n\n$parallel\n[1] FALSE\n\n$lib.prefix\n[1] \"lib\"\n\n\nIf for some reason (e.g. working with a university computer) RSAGA throws an error, try the following:\n\nlibrary(link2GI)\nlinkSAGA() # wenn Pfad zu SAGA unbekannt\nmyenv &lt;- rsaga.env(path=\"C:\\\\Program Files\\\\QGIS 3.8\\\\apps\\\\saga-ltr\")",
+    "crumbs": [
+      "GIS Software",
+      "RSAGA"
+    ]
+  },
+  {
+    "objectID": "rsaga.html#rsaga-functions",
+    "href": "rsaga.html#rsaga-functions",
+    "title": "RSAGA",
+    "section": "",
+    "text": "rsaga.get.libraries()\n\nSearch for SAGA command line program and modules... \nDone\n\n\n [1] \"climate_tools\"           \"contrib_perego\"         \n [3] \"db_odbc\"                 \"db_pgsql\"               \n [5] \"docs_html\"               \"garden_fractals\"        \n [7] \"garden_games\"            \"garden_webservices\"     \n [9] \"grid_analysis\"           \"grid_calculus_bsl\"      \n[11] \"grid_calculus\"           \"grid_filter\"            \n[13] \"grid_gridding\"           \"grid_spline\"            \n[15] \"grid_tools\"              \"grid_visualisation\"     \n[17] \"grids_tools\"             \"imagery_classification\" \n[19] \"imagery_isocluster\"      \"imagery_maxent\"         \n[21] \"imagery_opencv\"          \"imagery_photogrammetry\" \n[23] \"imagery_segmentation\"    \"imagery_svm\"            \n[25] \"imagery_tools\"           \"io_esri_e00\"            \n[27] \"io_gdal\"                 \"io_gps\"                 \n[29] \"io_grid_image\"           \"io_grid\"                \n[31] \"io_shapes\"               \"io_table\"               \n[33] \"io_virtual\"              \"io_webservices\"         \n[35] \"pj_georeference\"         \"pj_geotrans\"            \n[37] \"pj_proj4\"                \"pointcloud_tools\"       \n[39] \"shapes_grid\"             \"shapes_lines\"           \n[41] \"shapes_points\"           \"shapes_polygons\"        \n[43] \"shapes_tools\"            \"shapes_transect\"        \n[45] \"sim_air_flow\"            \"sim_cellular_automata\"  \n[47] \"sim_ecosystems_hugget\"   \"sim_erosion\"            \n[49] \"sim_fire_spreading\"      \"sim_geomorphology\"      \n[51] \"sim_hydrology\"           \"sim_ihacres\"            \n[53] \"sim_landscape_evolution\" \"sim_qm_of_esp\"          \n[55] \"sim_rivflow\"             \"statistics_grid\"        \n[57] \"statistics_kriging\"      \"statistics_points\"      \n[59] \"statistics_regression\"   \"ta_channels\"            \n[61] \"ta_cliffmetrics\"         \"ta_compound\"            \n[63] \"ta_hydrology\"            \"ta_lighting\"            \n[65] \"ta_morphometry\"          \"ta_preprocessor\"        \n[67] \"ta_profiles\"             \"ta_slope_stability\"     \n[69] \"table_calculus\"          \"table_tools\"            \n[71] \"tin_tools\"               \"vis_3d_viewer\"          \n\n\n\nrsaga.get.modules(libs = \"ta_hydrology\")\n\nSearch for SAGA command line program and modules... \nDone\n\n\n$ta_hydrology\n   code                                   name interactive\n1     0           Flow Accumulation (Top-Down)       FALSE\n2     1          Flow Accumulation (Recursive)       FALSE\n3     2       Flow Accumulation (Flow Tracing)       FALSE\n4     4                           Upslope Area       FALSE\n5     6                       Flow Path Length       FALSE\n6     7                           Slope Length       FALSE\n7    10                           Cell Balance       FALSE\n8    13                     Edge Contamination       FALSE\n9    15                     SAGA Wetness Index       FALSE\n10   18   Flow Accumulation (Mass-Flux Method)       FALSE\n11   19 Flow Width and Specific Catchment Area       FALSE\n12   20              Topographic Wetness Index       FALSE\n13   21                     Stream Power Index       FALSE\n14   22                              LS Factor       FALSE\n15   23               Melton Ruggedness Number       FALSE\n16   24                                TCI Low       FALSE\n17   25                 LS-Factor, Field Based       FALSE\n18   26        Slope Limited Flow Accumulation       FALSE\n19   27               Maximum Flow Path Length       FALSE\n20   28                    Flow between fields       FALSE\n21   29     Flow Accumulation (Parallelizable)       FALSE\n22   30              Isochrones Variable Speed       FALSE\n23   31                              CIT Index       FALSE\n24   32                       Terrain Flooding       FALSE\n\n\n\nrsaga.get.usage(lib = \"ta_hydrology\", module = \"SAGA Wetness Index\")\n\nSearch for SAGA command line program and modules... \nDone\nlibrary path: /usr/lib/saga/\nlibrary path: /usr/lib/saga/\nlibrary name: libta_hydrology\nlibrary     : ta_hydrology\nUsage: saga_cmd ta_hydrology 15 [-DEM &lt;str&gt;] [-WEIGHT &lt;str&gt;] [-AREA &lt;str&gt;] [-SLOPE &lt;str&gt;] [-AREA_MOD &lt;str&gt;] [-TWI &lt;str&gt;] [-SUCTION &lt;double&gt;] [-AREA_TYPE &lt;str&gt;] [-SLOPE_TYPE &lt;str&gt;] [-SLOPE_MIN &lt;double&gt;] [-SLOPE_OFF &lt;double&gt;] [-SLOPE_WEIGHT &lt;double&gt;]\n  -DEM:&lt;str&gt;                Elevation\n    grid, input\n  -WEIGHT:&lt;str&gt;             Weights\n    grid, input, optional\n  -AREA:&lt;str&gt;               Catchment Area\n    grid, output, optional\n  -SLOPE:&lt;str&gt;              Catchment Slope\n    grid, output, optional\n  -AREA_MOD:&lt;str&gt;           Modified Catchment Area\n    grid, output, optional\n  -TWI:&lt;str&gt;                Topographic Wetness Index\n    grid, output\n  -SUCTION:&lt;double&gt;         Suction\n    floating point number\n    Minimum: 0.000000\n    Default: 10.000000\n  -AREA_TYPE:&lt;str&gt;          Type of Area\n    choice\n    Available Choices:\n    [0] total catchment area\n    [1] square root of catchment area\n    [2] specific catchment area\n    Default: 2\n  -SLOPE_TYPE:&lt;str&gt;         Type of Slope\n    choice\n    Available Choices:\n    [0] local slope\n    [1] catchment slope\n    Default: 1\n  -SLOPE_MIN:&lt;double&gt;       Minimum Slope\n    floating point number\n    Minimum: 0.000000\n    Default: 0.000000\n  -SLOPE_OFF:&lt;double&gt;       Offset Slope\n    floating point number\n    Minimum: 0.000000\n    Default: 0.100000\n  -SLOPE_WEIGHT:&lt;double&gt;    Slope Weighting\n    floating point number\n    Minimum: 0.000000\n    Default: 1.000000",
+    "crumbs": [
+      "GIS Software",
+      "RSAGA"
+    ]
+  },
+  {
+    "objectID": "rsaga.html#topographic-wetness-index",
+    "href": "rsaga.html#topographic-wetness-index",
+    "title": "RSAGA",
+    "section": "",
+    "text": "params &lt;- list(DEM = \"dem.tif\", TWI =\"twi\")\nrsaga.geoprocessor(lib = \"ta_hydrology\",\n                   module = \"SAGA Wetness Index\",\n                   param = params)\n\n\n\n\n\n\n\nImportant\n\n\n\ndem.tif is a file on your computer! NOT an R Object!\n\n\nSome SAGA modules are are easier to execute via wrapper functions (see https://cran.r-project.org/web/packages/RSAGA/index.html)\nWith such a wrapper, the Topographic Wetness Index can be computed like this:\n\nrsaga.wetness.index(in.dem = \"dem.tif\", out.wetness.index = \"twi\")\n\n\n\n\n\n\n\nTask: SAGA R Workflows\n\n\n\nCreate a reproducible workflow with SAGA and RSAGA for flow accumulation from a digital elevation model.\n\nFill Sinks\nChannel Network and Drainage Basins\nFlow Accumulation\n\nVisualize the results in R.",
+    "crumbs": [
+      "GIS Software",
+      "RSAGA"
+    ]
+  },
+  {
+    "objectID": "index.html#course-outline",
+    "href": "index.html#course-outline",
+    "title": "R als GIS",
+    "section": "Course Outline",
+    "text": "Course Outline\n\nOverview of the course topics\n\n\n\n\n\n\n\n\n\nMonday\nTuesday\nWednesday\nThursday\nFriday\n\n\n\n\nGeodata I/O\nRaster data\nDigital Terrain Models\nUsing external GIS software\nProgramming\nProjects\n\n\n\n\n\n\n\n\n\nVector data\nProjections\nVisualizations\nR Markdown\nProjects",
+    "crumbs": [
+      "R als GIS"
+    ]
+  },
+  {
+    "objectID": "projections.html",
+    "href": "projections.html",
+    "title": "Projections",
+    "section": "",
+    "text": "If you gather spatial data for your project, in own field campaigns or through download form different web sources there is a very high chance that the projection i.e. the coordinate reference system is not the same for all data. During processing, in the best case you will get error messages left and right about missmatches due to different projections. In the worst case, function still work without errors, however, the results will not be the one you desire. For a proper processing and analysis of spatial data in R, handling projection is therefore crucial for trustful results. In short:\n\nIn R, there is no “on the fly” projection\nsome functions change the projection internally, some not This is problematic\nConsequence for you: Check that every dataset is in the same projection.\nProjections in R are defined as\n\na WKT2 String\na proj4string (kind of outdated)\na EPSG Code\n\n\n\n\n\n\n\nA field guide to map projections:\n\nhttps://cdn.shopify.com/s/files/1/0279/4094/5994/files/WEM_Map_Projections2020_2.jpg?v=1580582102\n\n\n\n\n\n\n\n\n\n\nInteractive website to compare different projections: https://map-projections.net/imglist.php\n\n\n\n\n\n\nlibrary(terra)\n\nr = rast(system.file(\"ex/elev.tif\", package = \"terra\"))\nr\n\nclass       : SpatRaster \ndimensions  : 90, 95, 1  (nrow, ncol, nlyr)\nresolution  : 0.008333333, 0.008333333  (x, y)\nextent      : 5.741667, 6.533333, 49.44167, 50.19167  (xmin, xmax, ymin, ymax)\ncoord. ref. : lon/lat WGS 84 (EPSG:4326) \nsource      : elev.tif \nname        : elevation \nmin value   :       141 \nmax value   :       547 \n\n# using a proj4string\nr_lambert = project(r, \"+proj=lcc +lon_0=-90 +lat_1=33 +lat_2=45\")\n\n# using a EPSG code\nr_ee = project(r, \"EPSG:8857\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nv &lt;- vect(system.file(\"ex/lux.shp\", package = \"terra\"))\nv\n\n class       : SpatVector \n geometry    : polygons \n dimensions  : 12, 6  (geometries, attributes)\n extent      : 5.74414, 6.528252, 49.44781, 50.18162  (xmin, xmax, ymin, ymax)\n source      : lux.shp\n coord. ref. : lon/lat WGS 84 (EPSG:4326) \n names       :  ID_1   NAME_1  ID_2   NAME_2  AREA   POP\n type        : &lt;num&gt;    &lt;chr&gt; &lt;num&gt;    &lt;chr&gt; &lt;num&gt; &lt;int&gt;\n values      :     1 Diekirch     1 Clervaux   312 18081\n                   1 Diekirch     2 Diekirch   218 32543\n                   1 Diekirch     3  Redange   259 18664\n\n# UTM zone of luxemburg\nv_utm31 = project(v, \"EPSG:25831\")\n\n# UTM zone of ireland\nv_utm29 = project(v, \"EPSG:32629\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIf you are interested in the difference between ETRS89 and WGS84 UTM format here is an article that explains it.\n\n\n\n\nlibrary(rnaturalearth)\nlibrary(sf)\n\n\nearth = rnaturalearth::ne_countries(returnclass = \"sf\")\nearth = earth[,\"name\"]\n\n# sf stores the projection as a wkt string\nst_crs(earth)\n\nCoordinate Reference System:\n  User input: WGS 84 \n  wkt:\nGEOGCRS[\"WGS 84\",\n    DATUM[\"World Geodetic System 1984\",\n        ELLIPSOID[\"WGS 84\",6378137,298.257223563,\n            LENGTHUNIT[\"metre\",1]]],\n    PRIMEM[\"Greenwich\",0,\n        ANGLEUNIT[\"degree\",0.0174532925199433]],\n    CS[ellipsoidal,2],\n        AXIS[\"geodetic latitude (Lat)\",north,\n            ORDER[1],\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n        AXIS[\"geodetic longitude (Lon)\",east,\n            ORDER[2],\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n    ID[\"EPSG\",4326]]\n\n# but you can use just the EPSG number\nearth_ee = st_transform(earth, 8857)\n\n# or a proj4string\nearth_moll = st_transform(earth, \"+proj=moll +lon_0=0 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs +type=crs\")\n\n# or the \"EPSG:XX\" format\nearth_pseudo = st_transform(earth, \"EPSG:3857\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ncorrupted_raster\n\nclass       : SpatRaster \ndimensions  : 10, 10, 1  (nrow, ncol, nlyr)\nresolution  : 36, 18  (x, y)\nextent      : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)\ncoord. ref. :  \n\n\n\n# manually assign a projection\ncrs(corrupted_raster) &lt;- \"EPSG:32632\"\ncorrupted_raster\n\nclass       : SpatRaster \ndimensions  : 10, 10, 1  (nrow, ncol, nlyr)\nresolution  : 36, 18  (x, y)\nextent      : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)\ncoord. ref. : WGS 84 / UTM zone 32N (EPSG:32632) \n\n\nWith the sf package, the function would be st_crs(corrupted_vector) &lt;- \"EPSG:32632\".",
+    "crumbs": [
+      "Projections"
+    ]
+  },
+  {
+    "objectID": "projections.html#why-projections-in-this-course",
+    "href": "projections.html#why-projections-in-this-course",
+    "title": "Projections",
+    "section": "",
+    "text": "If you gather spatial data for your project, in own field campaigns or through download form different web sources there is a very high chance that the projection i.e. the coordinate reference system is not the same for all data. During processing, in the best case you will get error messages left and right about missmatches due to different projections. In the worst case, function still work without errors, however, the results will not be the one you desire. For a proper processing and analysis of spatial data in R, handling projection is therefore crucial for trustful results. In short:\n\nIn R, there is no “on the fly” projection\nsome functions change the projection internally, some not This is problematic\nConsequence for you: Check that every dataset is in the same projection.\nProjections in R are defined as\n\na WKT2 String\na proj4string (kind of outdated)\na EPSG Code",
+    "crumbs": [
+      "Projections"
+    ]
+  },
+  {
+    "objectID": "projections.html#about-map-projections-and-some-examples",
+    "href": "projections.html#about-map-projections-and-some-examples",
+    "title": "Projections",
+    "section": "",
+    "text": "A field guide to map projections:\n\nhttps://cdn.shopify.com/s/files/1/0279/4094/5994/files/WEM_Map_Projections2020_2.jpg?v=1580582102\n\n\n\n\n\n\n\n\n\n\nInteractive website to compare different projections: https://map-projections.net/imglist.php",
+    "crumbs": [
+      "Projections"
+    ]
+  },
+  {
+    "objectID": "projections.html#projections-in-r",
+    "href": "projections.html#projections-in-r",
+    "title": "Projections",
+    "section": "",
+    "text": "library(terra)\n\nr = rast(system.file(\"ex/elev.tif\", package = \"terra\"))\nr\n\nclass       : SpatRaster \ndimensions  : 90, 95, 1  (nrow, ncol, nlyr)\nresolution  : 0.008333333, 0.008333333  (x, y)\nextent      : 5.741667, 6.533333, 49.44167, 50.19167  (xmin, xmax, ymin, ymax)\ncoord. ref. : lon/lat WGS 84 (EPSG:4326) \nsource      : elev.tif \nname        : elevation \nmin value   :       141 \nmax value   :       547 \n\n# using a proj4string\nr_lambert = project(r, \"+proj=lcc +lon_0=-90 +lat_1=33 +lat_2=45\")\n\n# using a EPSG code\nr_ee = project(r, \"EPSG:8857\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nv &lt;- vect(system.file(\"ex/lux.shp\", package = \"terra\"))\nv\n\n class       : SpatVector \n geometry    : polygons \n dimensions  : 12, 6  (geometries, attributes)\n extent      : 5.74414, 6.528252, 49.44781, 50.18162  (xmin, xmax, ymin, ymax)\n source      : lux.shp\n coord. ref. : lon/lat WGS 84 (EPSG:4326) \n names       :  ID_1   NAME_1  ID_2   NAME_2  AREA   POP\n type        : &lt;num&gt;    &lt;chr&gt; &lt;num&gt;    &lt;chr&gt; &lt;num&gt; &lt;int&gt;\n values      :     1 Diekirch     1 Clervaux   312 18081\n                   1 Diekirch     2 Diekirch   218 32543\n                   1 Diekirch     3  Redange   259 18664\n\n# UTM zone of luxemburg\nv_utm31 = project(v, \"EPSG:25831\")\n\n# UTM zone of ireland\nv_utm29 = project(v, \"EPSG:32629\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIf you are interested in the difference between ETRS89 and WGS84 UTM format here is an article that explains it.\n\n\n\n\nlibrary(rnaturalearth)\nlibrary(sf)\n\n\nearth = rnaturalearth::ne_countries(returnclass = \"sf\")\nearth = earth[,\"name\"]\n\n# sf stores the projection as a wkt string\nst_crs(earth)\n\nCoordinate Reference System:\n  User input: WGS 84 \n  wkt:\nGEOGCRS[\"WGS 84\",\n    DATUM[\"World Geodetic System 1984\",\n        ELLIPSOID[\"WGS 84\",6378137,298.257223563,\n            LENGTHUNIT[\"metre\",1]]],\n    PRIMEM[\"Greenwich\",0,\n        ANGLEUNIT[\"degree\",0.0174532925199433]],\n    CS[ellipsoidal,2],\n        AXIS[\"geodetic latitude (Lat)\",north,\n            ORDER[1],\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n        AXIS[\"geodetic longitude (Lon)\",east,\n            ORDER[2],\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n    ID[\"EPSG\",4326]]\n\n# but you can use just the EPSG number\nearth_ee = st_transform(earth, 8857)\n\n# or a proj4string\nearth_moll = st_transform(earth, \"+proj=moll +lon_0=0 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs +type=crs\")\n\n# or the \"EPSG:XX\" format\nearth_pseudo = st_transform(earth, \"EPSG:3857\")",
+    "crumbs": [
+      "Projections"
+    ]
+  },
+  {
+    "objectID": "projections.html#what-if-the-projection-is-missing",
+    "href": "projections.html#what-if-the-projection-is-missing",
+    "title": "Projections",
+    "section": "",
+    "text": "corrupted_raster\n\nclass       : SpatRaster \ndimensions  : 10, 10, 1  (nrow, ncol, nlyr)\nresolution  : 36, 18  (x, y)\nextent      : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)\ncoord. ref. :  \n\n\n\n# manually assign a projection\ncrs(corrupted_raster) &lt;- \"EPSG:32632\"\ncorrupted_raster\n\nclass       : SpatRaster \ndimensions  : 10, 10, 1  (nrow, ncol, nlyr)\nresolution  : 36, 18  (x, y)\nextent      : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)\ncoord. ref. : WGS 84 / UTM zone 32N (EPSG:32632) \n\n\nWith the sf package, the function would be st_crs(corrupted_vector) &lt;- \"EPSG:32632\".",
+    "crumbs": [
+      "Projections"
+    ]
+  },
+  {
+    "objectID": "geodata.html",
+    "href": "geodata.html",
+    "title": "Introduction to Geodata",
+    "section": "",
+    "text": "worldwide collaborative and free web map\nhttps://download.geofabrik.de/europe/germany/nordrhein-westfalen.html\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSpecies occurrence data",
+    "crumbs": [
+      "Introduction to Geodata"
+    ]
+  },
+  {
+    "objectID": "geodata.html#open-data-examples",
+    "href": "geodata.html#open-data-examples",
+    "title": "Introduction to Geodata",
+    "section": "",
+    "text": "worldwide collaborative and free web map\nhttps://download.geofabrik.de/europe/germany/nordrhein-westfalen.html\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSpecies occurrence data",
+    "crumbs": [
+      "Introduction to Geodata"
+    ]
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "References",
+    "crumbs": [
+      "Additional Resources",
+      "References"
+    ]
+  },
+  {
+    "objectID": "slides/slides_geodata.html#geodaten",
+    "href": "slides/slides_geodata.html#geodaten",
+    "title": "Spatial R - Using R as a GIS",
+    "section": "Geodaten",
+    "text": "Geodaten\nVereinfachte Definition: Digitale Informationen, denen eine räumlichen Position auf der Erdoberfläche zugewiesen werden kann"
+  },
+  {
+    "objectID": "slides/slides_geodata.html#section",
+    "href": "slides/slides_geodata.html#section",
+    "title": "Spatial R - Using R as a GIS",
+    "section": "",
+    "text": "Geobasisdaten\n\nRaumbezug hertellende Geodaten\ni.d.R. von Vermessungsämtern zur Verfügung gestellt\nBeispiel: erwaltungsgrenzen, Digitale Höhenmodelle, digitale Landschaftsmodelle, …\nFür NRW: https://www.opengeodata.nrw.de/produkte/geobasis/\n\nGeofachdaten\n\naus deinem bestimmten Fachgebiet\nz.B. Vorkommen von Arten, Wetterdaten, Satellitendaten, …"
+  },
+  {
+    "objectID": "slides/slides_geodata.html#geodaten-modelle",
+    "href": "slides/slides_geodata.html#geodaten-modelle",
+    "title": "Spatial R - Using R as a GIS",
+    "section": "Geodaten Modelle",
+    "text": "Geodaten Modelle\nVektordaten\nRasterdaten\n\n\n\n\n\n\nTask\n\n\nTauscht euch mit euren Nachbarn aus und sammelt mit was für Geodaten ihr in eurem Studium in Berührung kommt oder schon selbst verwendet/erfasst habt."
+  },
+  {
+    "objectID": "slides/intro.html#section",
+    "href": "slides/intro.html#section",
+    "title": "Spatial R - Using R as a GIS",
+    "section": "",
+    "text": "Hanna Meyer & Marvin Ludwig"
   },
   {
     "objectID": "slides/intro.html#target-audience",
@@ -50,223 +271,69 @@
     "text": "Aims of this course\n\nget to know R packages for spatial data analysis\nhandling raster and vector data in R\nusing R as a “meta language” to control dedicated GIS software\ndeveloping workflows in R that involve spatial data"
   },
   {
-    "objectID": "slides/slides_geodata.html#geodaten",
-    "href": "slides/slides_geodata.html#geodaten",
-    "title": "Spatial R - Using R as a GIS",
-    "section": "Geodaten",
-    "text": "Geodaten\nVereinfachte Definition: Digitale Informationen, denen eine räumlichen Position auf der Erdoberfläche zugewiesen werden kann"
-  },
-  {
-    "objectID": "slides/slides_geodata.html#section",
-    "href": "slides/slides_geodata.html#section",
-    "title": "Spatial R - Using R as a GIS",
+    "objectID": "r_programming.html",
+    "href": "r_programming.html",
+    "title": "R Control Structures",
     "section": "",
-    "text": "Geobasisdaten\n\nRaumbezug hertellende Geodaten\ni.d.R. von Vermessungsämtern zur Verfügung gestellt\nBeispiel: erwaltungsgrenzen, Digitale Höhenmodelle, digitale Landschaftsmodelle, …\nFür NRW: https://www.opengeodata.nrw.de/produkte/geobasis/\n\nGeofachdaten\n\naus deinem bestimmten Fachgebiet\nz.B. Vorkommen von Arten, Wetterdaten, Satellitendaten, …\n\n\n\n\n\n\n\nTask\n\n\nTauscht euch mit euren Nachbarn aus und sammelt mit was für Geodaten ihr in eurem Studium in Berührung kommt oder schon selbst verwendet/erfasst habt."
-  },
-  {
-    "objectID": "slides/slides_geodata.html#geodaten-modelle",
-    "href": "slides/slides_geodata.html#geodaten-modelle",
-    "title": "Spatial R - Using R as a GIS",
-    "section": "Geodaten Modelle",
-    "text": "Geodaten Modelle\nVektordaten\nRasterdaten"
-  },
-  {
-    "objectID": "references.html",
-    "href": "references.html",
-    "title": "References",
-    "section": "",
-    "text": "References",
+    "text": "repetition of the same tasks\ne.g. same processing steps for multiple datasets\nreduces code redundancies\n\nless work\nclearer workflow\nerrors easier to fix\n\n\n\n\n\n\ndo something for every element of e.g. a vector\nthe iterator (i in the examples below) can be used directly\n\n\nx &lt;- seq(10)\n\nfor(i in x){\n  print(2^i)\n}\n\n[1] 2\n[1] 4\n[1] 8\n[1] 16\n[1] 32\n[1] 64\n[1] 128\n[1] 256\n[1] 512\n[1] 1024\n\n\n\nor as an index for something else\n\n\nfor(i in c(2, 4, 11, 7)){\n  print(x[i]^2)\n}\n\n[1] 4\n[1] 16\n[1] NA\n[1] 49\n\n\n\n\n\n\n\n\nNA?\n\n\n\nWhy is there an NA output in the second example?\n\n\n\nx &lt;- 1:10\nresult &lt;- c()\n\nfor(i in seq(x)){\n  result[i] &lt;- x[i]^2\n}\n\nresult\n\n [1]   1   4   9  16  25  36  49  64  81 100\n\n\n\n\n\n\n\n\nTask\n\n\n\n\nCreate a vector with 10 random numbers.\nCreate a loop that does the following:\n\nmultiply the number with 2 and print the result\ndivide the number by 3 and save the result\n\n\n\n\n\n\n\n\nfor-loops are not R-specific but implemented in nearly every programming language\nR has some more specific loop types that work very well with vectors, lists and functions\nthese are called apply loops in R\n\n\nlapply() # list apply\n\nsapply() # apply with vector output\n\napply() # loop over rows or columns of a data.frame\n\n\nsapply(seq(10), function(x){\n  x^2\n})\n\n [1]   1   4   9  16  25  36  49  64  81 100\n\n\n\n\n\n\nsometimes you want code that executes only in certain conditions\n\n\nif(condition){\n  # Command 1\n  \n} else{\n  # Command 2\n  \n}\n\n\n\n\n\n\n\nTask\n\n\n\n\nCreate a random number between 1 and 10.\nIf the number is larger than 5, print the message “A large number”.\nIf the number is smaller than 5, print the message “A small number”.\nIf the number is exactly 5, print “It’s 5”\n\n\n\n\n\n\n\nfor common tasks and computations\nhelps to structure code\nreduces code redundancies\nintegration into packages with documentation\n\n\nmyFunction &lt;- function(arg1){\n  print(\"I will now multiply you input with 5.\")\n  result &lt;- arg1 * 5\n  return(result)\n}\n\n\na &lt;- myFunction(arg1 = 8)\n\n[1] \"I will now multiply you input with 5.\"\n\na\n\n[1] 40\n\n\nIf you need examples, all R package source codes consist of functions: https://github.com/r-spatial/sf/tree/master/R\n\n\n\n\n\n\nTask\n\n\n\n\nWrite a function rmse that calculates the Root Mean Squared Error.\nTest the function with the dataset below.\n\n\n\n\n\n\n\n\n\n\n\n\n\nx = c(2,5,3,4)\ny = c(2,6,5,5)\n\n\n\n\n\n\n\nTask\n\n\n\n\nWrite a function calcNDVI that calculates the NDVI.\nThe function should have two raster bands as inputs and return one raster band.\nTest the function with a satellite imagery.",
     "crumbs": [
-      "Additional Resources",
-      "References"
+      "Advanced R",
+      "R Control Structures"
     ]
   },
   {
-    "objectID": "geodata.html",
-    "href": "geodata.html",
-    "title": "Introduction to Geodata",
+    "objectID": "r_programming.html#loops",
+    "href": "r_programming.html#loops",
+    "title": "R Control Structures",
     "section": "",
-    "text": "knitr::include_url(\"slides/slides_geodata.html\")\n\n\n\n\n\n\n\nOpenGeodata.NRW\n\n\n\n\n\n\n\n\n\n\n\n\nGlobal administrative areas\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nworldwide collaborative and free web map\nhttps://download.geofabrik.de/europe/germany/nordrhein-westfalen.html\n\n\n\n\nhistorical climatic data and future projections\nhttps://www.worldclim.org/data/index.html\n\n\n\n\n\n\n\n\n\n\n\n\nhttps://land.copernicus.eu/en/products/corine-land-cover\n\n\n\nSpecies occurrence data\n\n\n\n\n\n\n\n\n\nhttps://www.gbif.org/",
+    "text": "repetition of the same tasks\ne.g. same processing steps for multiple datasets\nreduces code redundancies\n\nless work\nclearer workflow\nerrors easier to fix",
     "crumbs": [
-      "Basics",
-      "Introduction to Geodata"
+      "Advanced R",
+      "R Control Structures"
     ]
   },
   {
-    "objectID": "geodata.html#open-data-examples",
-    "href": "geodata.html#open-data-examples",
-    "title": "Introduction to Geodata",
+    "objectID": "r_programming.html#for-loops",
+    "href": "r_programming.html#for-loops",
+    "title": "R Control Structures",
     "section": "",
-    "text": "OpenGeodata.NRW\n\n\n\n\n\n\n\n\n\n\n\n\nGlobal administrative areas\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nworldwide collaborative and free web map\nhttps://download.geofabrik.de/europe/germany/nordrhein-westfalen.html\n\n\n\n\nhistorical climatic data and future projections\nhttps://www.worldclim.org/data/index.html\n\n\n\n\n\n\n\n\n\n\n\n\nhttps://land.copernicus.eu/en/products/corine-land-cover\n\n\n\nSpecies occurrence data\n\n\n\n\n\n\n\n\n\nhttps://www.gbif.org/",
+    "text": "do something for every element of e.g. a vector\nthe iterator (i in the examples below) can be used directly\n\n\nx &lt;- seq(10)\n\nfor(i in x){\n  print(2^i)\n}\n\n[1] 2\n[1] 4\n[1] 8\n[1] 16\n[1] 32\n[1] 64\n[1] 128\n[1] 256\n[1] 512\n[1] 1024\n\n\n\nor as an index for something else\n\n\nfor(i in c(2, 4, 11, 7)){\n  print(x[i]^2)\n}\n\n[1] 4\n[1] 16\n[1] NA\n[1] 49\n\n\n\n\n\n\n\n\nNA?\n\n\n\nWhy is there an NA output in the second example?\n\n\n\nx &lt;- 1:10\nresult &lt;- c()\n\nfor(i in seq(x)){\n  result[i] &lt;- x[i]^2\n}\n\nresult\n\n [1]   1   4   9  16  25  36  49  64  81 100\n\n\n\n\n\n\n\n\nTask\n\n\n\n\nCreate a vector with 10 random numbers.\nCreate a loop that does the following:\n\nmultiply the number with 2 and print the result\ndivide the number by 3 and save the result",
     "crumbs": [
-      "Basics",
-      "Introduction to Geodata"
+      "Advanced R",
+      "R Control Structures"
     ]
   },
   {
-    "objectID": "projections.html",
-    "href": "projections.html",
-    "title": "Projections",
+    "objectID": "r_programming.html#for-loops-or-apply-loops",
+    "href": "r_programming.html#for-loops-or-apply-loops",
+    "title": "R Control Structures",
     "section": "",
-    "text": "If you gather spatial data for your project, in own field campaigns or through download form different web sources there is a very high chance that the projection i.e. the coordinate reference system is not the same for all data. During processing, in the best case you will get error messages left and right about missmatches due to different projections. In the worst case, function still work without errors, however, the results will not be the one you desire. For a proper processing and analysis of spatial data in R, handling projection is therefore crucial for trustful results. In short:\n\nIn R, there is no “on the fly” projection\nsome functions change the projection internally, some not This is problematic\nConsequence for you: Check that every dataset is in the same projection.\nProjections in R are defined as\n\na WKT2 String\na proj4string (kind of outdated)\na EPSG Code\n\n\n\n\n\n\n\nA field guide to map projections:\n\nhttps://cdn.shopify.com/s/files/1/0279/4094/5994/files/WEM_Map_Projections2020_2.jpg?v=1580582102\n\n\n\n\n\n\n\n\n\n\nInteractive website to compare different projections: https://map-projections.net/imglist.php\n\n\n\n\n\n\nlibrary(terra)\n\nr = rast(system.file(\"ex/elev.tif\", package = \"terra\"))\nr\n\nclass       : SpatRaster \ndimensions  : 90, 95, 1  (nrow, ncol, nlyr)\nresolution  : 0.008333333, 0.008333333  (x, y)\nextent      : 5.741667, 6.533333, 49.44167, 50.19167  (xmin, xmax, ymin, ymax)\ncoord. ref. : lon/lat WGS 84 (EPSG:4326) \nsource      : elev.tif \nname        : elevation \nmin value   :       141 \nmax value   :       547 \n\n# using a proj4string\nr_lambert = project(r, \"+proj=lcc +lon_0=-90 +lat_1=33 +lat_2=45\")\n\n# using a EPSG code\nr_ee = project(r, \"EPSG:8857\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nv &lt;- vect(system.file(\"ex/lux.shp\", package = \"terra\"))\nv\n\n class       : SpatVector \n geometry    : polygons \n dimensions  : 12, 6  (geometries, attributes)\n extent      : 5.74414, 6.528252, 49.44781, 50.18162  (xmin, xmax, ymin, ymax)\n source      : lux.shp\n coord. ref. : lon/lat WGS 84 (EPSG:4326) \n names       :  ID_1   NAME_1  ID_2   NAME_2  AREA   POP\n type        : &lt;num&gt;    &lt;chr&gt; &lt;num&gt;    &lt;chr&gt; &lt;num&gt; &lt;int&gt;\n values      :     1 Diekirch     1 Clervaux   312 18081\n                   1 Diekirch     2 Diekirch   218 32543\n                   1 Diekirch     3  Redange   259 18664\n\n# UTM zone of luxemburg\nv_utm31 = project(v, \"EPSG:25831\")\n\n# UTM zone of ireland\nv_utm29 = project(v, \"EPSG:32629\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIf you are interested in the difference between ETRS89 and WGS84 UTM format here is an article that explains it.\n\n\n\n\nlibrary(rnaturalearth)\nlibrary(sf)\n\n\nearth = rnaturalearth::ne_countries(returnclass = \"sf\")\nearth = earth[,\"name\"]\n\n# sf stores the projection as a wkt string\nst_crs(earth)\n\nCoordinate Reference System:\n  User input: WGS 84 \n  wkt:\nGEOGCRS[\"WGS 84\",\n    DATUM[\"World Geodetic System 1984\",\n        ELLIPSOID[\"WGS 84\",6378137,298.257223563,\n            LENGTHUNIT[\"metre\",1]]],\n    PRIMEM[\"Greenwich\",0,\n        ANGLEUNIT[\"degree\",0.0174532925199433]],\n    CS[ellipsoidal,2],\n        AXIS[\"geodetic latitude (Lat)\",north,\n            ORDER[1],\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n        AXIS[\"geodetic longitude (Lon)\",east,\n            ORDER[2],\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n    ID[\"EPSG\",4326]]\n\n# but you can use just the EPSG number\nearth_ee = st_transform(earth, 8857)\n\n# or a proj4string\nearth_moll = st_transform(earth, \"+proj=moll +lon_0=0 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs +type=crs\")\n\n# or the \"EPSG:XX\" format\nearth_pseudo = st_transform(earth, \"EPSG:3857\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ncorrupted_raster\n\nclass       : SpatRaster \ndimensions  : 10, 10, 1  (nrow, ncol, nlyr)\nresolution  : 36, 18  (x, y)\nextent      : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)\ncoord. ref. :  \n\n\n\n# manually assign a projection\ncrs(corrupted_raster) &lt;- \"EPSG:32632\"\ncorrupted_raster\n\nclass       : SpatRaster \ndimensions  : 10, 10, 1  (nrow, ncol, nlyr)\nresolution  : 36, 18  (x, y)\nextent      : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)\ncoord. ref. : WGS 84 / UTM zone 32N (EPSG:32632) \n\n\nWith the sf package, the function would be st_crs(corrupted_vector) &lt;- \"EPSG:32632\".",
+    "text": "for-loops are not R-specific but implemented in nearly every programming language\nR has some more specific loop types that work very well with vectors, lists and functions\nthese are called apply loops in R\n\n\nlapply() # list apply\n\nsapply() # apply with vector output\n\napply() # loop over rows or columns of a data.frame\n\n\nsapply(seq(10), function(x){\n  x^2\n})\n\n [1]   1   4   9  16  25  36  49  64  81 100",
     "crumbs": [
-      "Advanced",
-      "Projections"
+      "Advanced R",
+      "R Control Structures"
     ]
   },
   {
-    "objectID": "projections.html#why-projections-in-this-course",
-    "href": "projections.html#why-projections-in-this-course",
-    "title": "Projections",
+    "objectID": "r_programming.html#conditionals",
+    "href": "r_programming.html#conditionals",
+    "title": "R Control Structures",
     "section": "",
-    "text": "If you gather spatial data for your project, in own field campaigns or through download form different web sources there is a very high chance that the projection i.e. the coordinate reference system is not the same for all data. During processing, in the best case you will get error messages left and right about missmatches due to different projections. In the worst case, function still work without errors, however, the results will not be the one you desire. For a proper processing and analysis of spatial data in R, handling projection is therefore crucial for trustful results. In short:\n\nIn R, there is no “on the fly” projection\nsome functions change the projection internally, some not This is problematic\nConsequence for you: Check that every dataset is in the same projection.\nProjections in R are defined as\n\na WKT2 String\na proj4string (kind of outdated)\na EPSG Code",
+    "text": "sometimes you want code that executes only in certain conditions\n\n\nif(condition){\n  # Command 1\n  \n} else{\n  # Command 2\n  \n}\n\n\n\n\n\n\n\nTask\n\n\n\n\nCreate a random number between 1 and 10.\nIf the number is larger than 5, print the message “A large number”.\nIf the number is smaller than 5, print the message “A small number”.\nIf the number is exactly 5, print “It’s 5”",
     "crumbs": [
-      "Advanced",
-      "Projections"
+      "Advanced R",
+      "R Control Structures"
     ]
   },
   {
-    "objectID": "projections.html#about-map-projections-and-some-examples",
-    "href": "projections.html#about-map-projections-and-some-examples",
-    "title": "Projections",
+    "objectID": "r_programming.html#functions",
+    "href": "r_programming.html#functions",
+    "title": "R Control Structures",
     "section": "",
-    "text": "A field guide to map projections:\n\nhttps://cdn.shopify.com/s/files/1/0279/4094/5994/files/WEM_Map_Projections2020_2.jpg?v=1580582102\n\n\n\n\n\n\n\n\n\n\nInteractive website to compare different projections: https://map-projections.net/imglist.php",
+    "text": "for common tasks and computations\nhelps to structure code\nreduces code redundancies\nintegration into packages with documentation\n\n\nmyFunction &lt;- function(arg1){\n  print(\"I will now multiply you input with 5.\")\n  result &lt;- arg1 * 5\n  return(result)\n}\n\n\na &lt;- myFunction(arg1 = 8)\n\n[1] \"I will now multiply you input with 5.\"\n\na\n\n[1] 40\n\n\nIf you need examples, all R package source codes consist of functions: https://github.com/r-spatial/sf/tree/master/R\n\n\n\n\n\n\nTask\n\n\n\n\nWrite a function rmse that calculates the Root Mean Squared Error.\nTest the function with the dataset below.\n\n\n\n\n\n\n\n\n\n\n\n\n\nx = c(2,5,3,4)\ny = c(2,6,5,5)\n\n\n\n\n\n\n\nTask\n\n\n\n\nWrite a function calcNDVI that calculates the NDVI.\nThe function should have two raster bands as inputs and return one raster band.\nTest the function with a satellite imagery.",
     "crumbs": [
-      "Advanced",
-      "Projections"
-    ]
-  },
-  {
-    "objectID": "projections.html#projections-in-r",
-    "href": "projections.html#projections-in-r",
-    "title": "Projections",
-    "section": "",
-    "text": "library(terra)\n\nr = rast(system.file(\"ex/elev.tif\", package = \"terra\"))\nr\n\nclass       : SpatRaster \ndimensions  : 90, 95, 1  (nrow, ncol, nlyr)\nresolution  : 0.008333333, 0.008333333  (x, y)\nextent      : 5.741667, 6.533333, 49.44167, 50.19167  (xmin, xmax, ymin, ymax)\ncoord. ref. : lon/lat WGS 84 (EPSG:4326) \nsource      : elev.tif \nname        : elevation \nmin value   :       141 \nmax value   :       547 \n\n# using a proj4string\nr_lambert = project(r, \"+proj=lcc +lon_0=-90 +lat_1=33 +lat_2=45\")\n\n# using a EPSG code\nr_ee = project(r, \"EPSG:8857\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nv &lt;- vect(system.file(\"ex/lux.shp\", package = \"terra\"))\nv\n\n class       : SpatVector \n geometry    : polygons \n dimensions  : 12, 6  (geometries, attributes)\n extent      : 5.74414, 6.528252, 49.44781, 50.18162  (xmin, xmax, ymin, ymax)\n source      : lux.shp\n coord. ref. : lon/lat WGS 84 (EPSG:4326) \n names       :  ID_1   NAME_1  ID_2   NAME_2  AREA   POP\n type        : &lt;num&gt;    &lt;chr&gt; &lt;num&gt;    &lt;chr&gt; &lt;num&gt; &lt;int&gt;\n values      :     1 Diekirch     1 Clervaux   312 18081\n                   1 Diekirch     2 Diekirch   218 32543\n                   1 Diekirch     3  Redange   259 18664\n\n# UTM zone of luxemburg\nv_utm31 = project(v, \"EPSG:25831\")\n\n# UTM zone of ireland\nv_utm29 = project(v, \"EPSG:32629\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIf you are interested in the difference between ETRS89 and WGS84 UTM format here is an article that explains it.\n\n\n\n\nlibrary(rnaturalearth)\nlibrary(sf)\n\n\nearth = rnaturalearth::ne_countries(returnclass = \"sf\")\nearth = earth[,\"name\"]\n\n# sf stores the projection as a wkt string\nst_crs(earth)\n\nCoordinate Reference System:\n  User input: WGS 84 \n  wkt:\nGEOGCRS[\"WGS 84\",\n    DATUM[\"World Geodetic System 1984\",\n        ELLIPSOID[\"WGS 84\",6378137,298.257223563,\n            LENGTHUNIT[\"metre\",1]]],\n    PRIMEM[\"Greenwich\",0,\n        ANGLEUNIT[\"degree\",0.0174532925199433]],\n    CS[ellipsoidal,2],\n        AXIS[\"geodetic latitude (Lat)\",north,\n            ORDER[1],\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n        AXIS[\"geodetic longitude (Lon)\",east,\n            ORDER[2],\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n    ID[\"EPSG\",4326]]\n\n# but you can use just the EPSG number\nearth_ee = st_transform(earth, 8857)\n\n# or a proj4string\nearth_moll = st_transform(earth, \"+proj=moll +lon_0=0 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs +type=crs\")\n\n# or the \"EPSG:XX\" format\nearth_pseudo = st_transform(earth, \"EPSG:3857\")",
-    "crumbs": [
-      "Advanced",
-      "Projections"
-    ]
-  },
-  {
-    "objectID": "projections.html#what-if-the-projection-is-missing",
-    "href": "projections.html#what-if-the-projection-is-missing",
-    "title": "Projections",
-    "section": "",
-    "text": "corrupted_raster\n\nclass       : SpatRaster \ndimensions  : 10, 10, 1  (nrow, ncol, nlyr)\nresolution  : 36, 18  (x, y)\nextent      : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)\ncoord. ref. :  \n\n\n\n# manually assign a projection\ncrs(corrupted_raster) &lt;- \"EPSG:32632\"\ncorrupted_raster\n\nclass       : SpatRaster \ndimensions  : 10, 10, 1  (nrow, ncol, nlyr)\nresolution  : 36, 18  (x, y)\nextent      : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)\ncoord. ref. : WGS 84 / UTM zone 32N (EPSG:32632) \n\n\nWith the sf package, the function would be st_crs(corrupted_vector) &lt;- \"EPSG:32632\".",
-    "crumbs": [
-      "Advanced",
-      "Projections"
-    ]
-  },
-  {
-    "objectID": "index.html#course-outline",
-    "href": "index.html#course-outline",
-    "title": "R als GIS",
-    "section": "Course Outline",
-    "text": "Course Outline\n\nOverview of the course topics\n\n\n\n\n\n\n\n\n\nMonday\nTuesday\nWednesday\nThursday\nFriday\n\n\n\n\nGeodata I/O\nRaster data\nDigital Terrain Models\nUsing external GIS software\nProgramming\nProjects\n\n\n\n\n\n\n\n\n\nVector data\nProjections\nVisualizations\nR Markdown\nProjects",
-    "crumbs": [
-      "R als GIS"
-    ]
-  },
-  {
-    "objectID": "rsaga.html",
-    "href": "rsaga.html",
-    "title": "RSAGA",
-    "section": "",
-    "text": "In SAGA GIS we have seen how hydrological analysis is done with SAGA GIS. However, the work we did there is not optimal:\n\nit required manual clicking\nthe overall workflow was brocken\nno documentation\nhard to reproduce\n\nWe want to change all of this by working with SAGA GIS modules from inside a R Script.\n\n\n\nSAGA has to be installed on your computer and R needs to know where\n\n\nlibrary(RSAGA)\nrsaga.env()\n\nSearch for SAGA command line program and modules... \nDone\n\n\n$workspace\n[1] \".\"\n\n$cmd\n[1] \"saga_cmd\"\n\n$path\n[1] \"/usr/bin\"\n\n$modules\n[1] \"/usr/lib64/saga\"\n\n$version\n[1] \"9.3.1\"\n\n$cores\n[1] NA\n\n$parallel\n[1] FALSE\n\n$lib.prefix\n[1] \"lib\"\n\n\nIf for some reason (e.g. working with a university computer) RSAGA throws an error, try the following:\n\nlibrary(link2GI)\nlinkSAGA() # wenn Pfad zu SAGA unbekannt\nmyenv &lt;- rsaga.env(path=\"C:\\\\Program Files\\\\QGIS 3.8\\\\apps\\\\saga-ltr\")\n\n\n\n\n\nrsaga.get.libraries()\n\nSearch for SAGA command line program and modules... \nDone\n\n\n [1] \"climate_tools\"           \"contrib_perego\"         \n [3] \"db_odbc\"                 \"db_pgsql\"               \n [5] \"docs_html\"               \"garden_fractals\"        \n [7] \"garden_games\"            \"garden_webservices\"     \n [9] \"grid_analysis\"           \"grid_calculus_bsl\"      \n[11] \"grid_calculus\"           \"grid_filter\"            \n[13] \"grid_gridding\"           \"grid_spline\"            \n[15] \"grid_tools\"              \"grid_visualisation\"     \n[17] \"grids_tools\"             \"imagery_classification\" \n[19] \"imagery_isocluster\"      \"imagery_maxent\"         \n[21] \"imagery_opencv\"          \"imagery_photogrammetry\" \n[23] \"imagery_segmentation\"    \"imagery_svm\"            \n[25] \"imagery_tools\"           \"io_esri_e00\"            \n[27] \"io_gdal\"                 \"io_gps\"                 \n[29] \"io_grid_image\"           \"io_grid\"                \n[31] \"io_shapes\"               \"io_table\"               \n[33] \"io_virtual\"              \"io_webservices\"         \n[35] \"pj_georeference\"         \"pj_geotrans\"            \n[37] \"pj_proj4\"                \"pointcloud_tools\"       \n[39] \"shapes_grid\"             \"shapes_lines\"           \n[41] \"shapes_points\"           \"shapes_polygons\"        \n[43] \"shapes_tools\"            \"shapes_transect\"        \n[45] \"sim_air_flow\"            \"sim_cellular_automata\"  \n[47] \"sim_ecosystems_hugget\"   \"sim_erosion\"            \n[49] \"sim_fire_spreading\"      \"sim_geomorphology\"      \n[51] \"sim_hydrology\"           \"sim_ihacres\"            \n[53] \"sim_landscape_evolution\" \"sim_qm_of_esp\"          \n[55] \"sim_rivflow\"             \"statistics_grid\"        \n[57] \"statistics_kriging\"      \"statistics_points\"      \n[59] \"statistics_regression\"   \"ta_channels\"            \n[61] \"ta_cliffmetrics\"         \"ta_compound\"            \n[63] \"ta_hydrology\"            \"ta_lighting\"            \n[65] \"ta_morphometry\"          \"ta_preprocessor\"        \n[67] \"ta_profiles\"             \"ta_slope_stability\"     \n[69] \"table_calculus\"          \"table_tools\"            \n[71] \"tin_tools\"               \"vis_3d_viewer\"          \n\n\n\nrsaga.get.modules(libs = \"ta_hydrology\")\n\nSearch for SAGA command line program and modules... \nDone\n\n\n$ta_hydrology\n   code                                   name interactive\n1     0           Flow Accumulation (Top-Down)       FALSE\n2     1          Flow Accumulation (Recursive)       FALSE\n3     2       Flow Accumulation (Flow Tracing)       FALSE\n4     4                           Upslope Area       FALSE\n5     6                       Flow Path Length       FALSE\n6     7                           Slope Length       FALSE\n7    10                           Cell Balance       FALSE\n8    13                     Edge Contamination       FALSE\n9    15                     SAGA Wetness Index       FALSE\n10   18   Flow Accumulation (Mass-Flux Method)       FALSE\n11   19 Flow Width and Specific Catchment Area       FALSE\n12   20              Topographic Wetness Index       FALSE\n13   21                     Stream Power Index       FALSE\n14   22                              LS Factor       FALSE\n15   23               Melton Ruggedness Number       FALSE\n16   24                                TCI Low       FALSE\n17   25                 LS-Factor, Field Based       FALSE\n18   26        Slope Limited Flow Accumulation       FALSE\n19   27               Maximum Flow Path Length       FALSE\n20   28                    Flow between fields       FALSE\n21   29     Flow Accumulation (Parallelizable)       FALSE\n22   30              Isochrones Variable Speed       FALSE\n23   31                              CIT Index       FALSE\n24   32                       Terrain Flooding       FALSE\n\n\n\nrsaga.get.usage(lib = \"ta_hydrology\", module = \"SAGA Wetness Index\")\n\nSearch for SAGA command line program and modules... \nDone\nlibrary path: /usr/lib/saga/\nlibrary path: /usr/lib/saga/\nlibrary name: libta_hydrology\nlibrary     : ta_hydrology\nUsage: saga_cmd ta_hydrology 15 [-DEM &lt;str&gt;] [-WEIGHT &lt;str&gt;] [-AREA &lt;str&gt;] [-SLOPE &lt;str&gt;] [-AREA_MOD &lt;str&gt;] [-TWI &lt;str&gt;] [-SUCTION &lt;double&gt;] [-AREA_TYPE &lt;str&gt;] [-SLOPE_TYPE &lt;str&gt;] [-SLOPE_MIN &lt;double&gt;] [-SLOPE_OFF &lt;double&gt;] [-SLOPE_WEIGHT &lt;double&gt;]\n  -DEM:&lt;str&gt;                Elevation\n    grid, input\n  -WEIGHT:&lt;str&gt;             Weights\n    grid, input, optional\n  -AREA:&lt;str&gt;               Catchment Area\n    grid, output, optional\n  -SLOPE:&lt;str&gt;              Catchment Slope\n    grid, output, optional\n  -AREA_MOD:&lt;str&gt;           Modified Catchment Area\n    grid, output, optional\n  -TWI:&lt;str&gt;                Topographic Wetness Index\n    grid, output\n  -SUCTION:&lt;double&gt;         Suction\n    floating point number\n    Minimum: 0.000000\n    Default: 10.000000\n  -AREA_TYPE:&lt;str&gt;          Type of Area\n    choice\n    Available Choices:\n    [0] total catchment area\n    [1] square root of catchment area\n    [2] specific catchment area\n    Default: 2\n  -SLOPE_TYPE:&lt;str&gt;         Type of Slope\n    choice\n    Available Choices:\n    [0] local slope\n    [1] catchment slope\n    Default: 1\n  -SLOPE_MIN:&lt;double&gt;       Minimum Slope\n    floating point number\n    Minimum: 0.000000\n    Default: 0.000000\n  -SLOPE_OFF:&lt;double&gt;       Offset Slope\n    floating point number\n    Minimum: 0.000000\n    Default: 0.100000\n  -SLOPE_WEIGHT:&lt;double&gt;    Slope Weighting\n    floating point number\n    Minimum: 0.000000\n    Default: 1.000000 \n\n\n\n\n\n\nparams &lt;- list(DEM = \"dem.tif\", TWI =\"twi\")\nrsaga.geoprocessor(lib = \"ta_hydrology\",\n                   module = \"SAGA Wetness Index\",\n                   param = params)\n\n\n\n\n\n\n\nImportant\n\n\n\ndem.tif is a file on your computer! NOT an R Object!\n\n\nSome SAGA modules are are easier to execute via wrapper functions (see https://cran.r-project.org/web/packages/RSAGA/index.html)\nWith such a wrapper, the Topographic Wetness Index can be computed like this:\n\nrsaga.wetness.index(in.dem = \"dem.tif\", out.wetness.index = \"twi\")\n\n\n\n\n\n\n\nTask: SAGA R Workflows\n\n\n\nCreate a reproducible workflow with SAGA and RSAGA for flow accumulation from a digital elevation model.\n\nFill Sinks\nChannel Network and Drainage Basins\nFlow Accumulation\n\nVisualize the results in R.",
-    "crumbs": [
-      "Advanced",
-      "RSAGA"
-    ]
-  },
-  {
-    "objectID": "rsaga.html#rsaga-setup",
-    "href": "rsaga.html#rsaga-setup",
-    "title": "RSAGA",
-    "section": "",
-    "text": "SAGA has to be installed on your computer and R needs to know where\n\n\nlibrary(RSAGA)\nrsaga.env()\n\nSearch for SAGA command line program and modules... \nDone\n\n\n$workspace\n[1] \".\"\n\n$cmd\n[1] \"saga_cmd\"\n\n$path\n[1] \"/usr/bin\"\n\n$modules\n[1] \"/usr/lib64/saga\"\n\n$version\n[1] \"9.3.1\"\n\n$cores\n[1] NA\n\n$parallel\n[1] FALSE\n\n$lib.prefix\n[1] \"lib\"\n\n\nIf for some reason (e.g. working with a university computer) RSAGA throws an error, try the following:\n\nlibrary(link2GI)\nlinkSAGA() # wenn Pfad zu SAGA unbekannt\nmyenv &lt;- rsaga.env(path=\"C:\\\\Program Files\\\\QGIS 3.8\\\\apps\\\\saga-ltr\")",
-    "crumbs": [
-      "Advanced",
-      "RSAGA"
-    ]
-  },
-  {
-    "objectID": "rsaga.html#rsaga-functions",
-    "href": "rsaga.html#rsaga-functions",
-    "title": "RSAGA",
-    "section": "",
-    "text": "rsaga.get.libraries()\n\nSearch for SAGA command line program and modules... \nDone\n\n\n [1] \"climate_tools\"           \"contrib_perego\"         \n [3] \"db_odbc\"                 \"db_pgsql\"               \n [5] \"docs_html\"               \"garden_fractals\"        \n [7] \"garden_games\"            \"garden_webservices\"     \n [9] \"grid_analysis\"           \"grid_calculus_bsl\"      \n[11] \"grid_calculus\"           \"grid_filter\"            \n[13] \"grid_gridding\"           \"grid_spline\"            \n[15] \"grid_tools\"              \"grid_visualisation\"     \n[17] \"grids_tools\"             \"imagery_classification\" \n[19] \"imagery_isocluster\"      \"imagery_maxent\"         \n[21] \"imagery_opencv\"          \"imagery_photogrammetry\" \n[23] \"imagery_segmentation\"    \"imagery_svm\"            \n[25] \"imagery_tools\"           \"io_esri_e00\"            \n[27] \"io_gdal\"                 \"io_gps\"                 \n[29] \"io_grid_image\"           \"io_grid\"                \n[31] \"io_shapes\"               \"io_table\"               \n[33] \"io_virtual\"              \"io_webservices\"         \n[35] \"pj_georeference\"         \"pj_geotrans\"            \n[37] \"pj_proj4\"                \"pointcloud_tools\"       \n[39] \"shapes_grid\"             \"shapes_lines\"           \n[41] \"shapes_points\"           \"shapes_polygons\"        \n[43] \"shapes_tools\"            \"shapes_transect\"        \n[45] \"sim_air_flow\"            \"sim_cellular_automata\"  \n[47] \"sim_ecosystems_hugget\"   \"sim_erosion\"            \n[49] \"sim_fire_spreading\"      \"sim_geomorphology\"      \n[51] \"sim_hydrology\"           \"sim_ihacres\"            \n[53] \"sim_landscape_evolution\" \"sim_qm_of_esp\"          \n[55] \"sim_rivflow\"             \"statistics_grid\"        \n[57] \"statistics_kriging\"      \"statistics_points\"      \n[59] \"statistics_regression\"   \"ta_channels\"            \n[61] \"ta_cliffmetrics\"         \"ta_compound\"            \n[63] \"ta_hydrology\"            \"ta_lighting\"            \n[65] \"ta_morphometry\"          \"ta_preprocessor\"        \n[67] \"ta_profiles\"             \"ta_slope_stability\"     \n[69] \"table_calculus\"          \"table_tools\"            \n[71] \"tin_tools\"               \"vis_3d_viewer\"          \n\n\n\nrsaga.get.modules(libs = \"ta_hydrology\")\n\nSearch for SAGA command line program and modules... \nDone\n\n\n$ta_hydrology\n   code                                   name interactive\n1     0           Flow Accumulation (Top-Down)       FALSE\n2     1          Flow Accumulation (Recursive)       FALSE\n3     2       Flow Accumulation (Flow Tracing)       FALSE\n4     4                           Upslope Area       FALSE\n5     6                       Flow Path Length       FALSE\n6     7                           Slope Length       FALSE\n7    10                           Cell Balance       FALSE\n8    13                     Edge Contamination       FALSE\n9    15                     SAGA Wetness Index       FALSE\n10   18   Flow Accumulation (Mass-Flux Method)       FALSE\n11   19 Flow Width and Specific Catchment Area       FALSE\n12   20              Topographic Wetness Index       FALSE\n13   21                     Stream Power Index       FALSE\n14   22                              LS Factor       FALSE\n15   23               Melton Ruggedness Number       FALSE\n16   24                                TCI Low       FALSE\n17   25                 LS-Factor, Field Based       FALSE\n18   26        Slope Limited Flow Accumulation       FALSE\n19   27               Maximum Flow Path Length       FALSE\n20   28                    Flow between fields       FALSE\n21   29     Flow Accumulation (Parallelizable)       FALSE\n22   30              Isochrones Variable Speed       FALSE\n23   31                              CIT Index       FALSE\n24   32                       Terrain Flooding       FALSE\n\n\n\nrsaga.get.usage(lib = \"ta_hydrology\", module = \"SAGA Wetness Index\")\n\nSearch for SAGA command line program and modules... \nDone\nlibrary path: /usr/lib/saga/\nlibrary path: /usr/lib/saga/\nlibrary name: libta_hydrology\nlibrary     : ta_hydrology\nUsage: saga_cmd ta_hydrology 15 [-DEM &lt;str&gt;] [-WEIGHT &lt;str&gt;] [-AREA &lt;str&gt;] [-SLOPE &lt;str&gt;] [-AREA_MOD &lt;str&gt;] [-TWI &lt;str&gt;] [-SUCTION &lt;double&gt;] [-AREA_TYPE &lt;str&gt;] [-SLOPE_TYPE &lt;str&gt;] [-SLOPE_MIN &lt;double&gt;] [-SLOPE_OFF &lt;double&gt;] [-SLOPE_WEIGHT &lt;double&gt;]\n  -DEM:&lt;str&gt;                Elevation\n    grid, input\n  -WEIGHT:&lt;str&gt;             Weights\n    grid, input, optional\n  -AREA:&lt;str&gt;               Catchment Area\n    grid, output, optional\n  -SLOPE:&lt;str&gt;              Catchment Slope\n    grid, output, optional\n  -AREA_MOD:&lt;str&gt;           Modified Catchment Area\n    grid, output, optional\n  -TWI:&lt;str&gt;                Topographic Wetness Index\n    grid, output\n  -SUCTION:&lt;double&gt;         Suction\n    floating point number\n    Minimum: 0.000000\n    Default: 10.000000\n  -AREA_TYPE:&lt;str&gt;          Type of Area\n    choice\n    Available Choices:\n    [0] total catchment area\n    [1] square root of catchment area\n    [2] specific catchment area\n    Default: 2\n  -SLOPE_TYPE:&lt;str&gt;         Type of Slope\n    choice\n    Available Choices:\n    [0] local slope\n    [1] catchment slope\n    Default: 1\n  -SLOPE_MIN:&lt;double&gt;       Minimum Slope\n    floating point number\n    Minimum: 0.000000\n    Default: 0.000000\n  -SLOPE_OFF:&lt;double&gt;       Offset Slope\n    floating point number\n    Minimum: 0.000000\n    Default: 0.100000\n  -SLOPE_WEIGHT:&lt;double&gt;    Slope Weighting\n    floating point number\n    Minimum: 0.000000\n    Default: 1.000000",
-    "crumbs": [
-      "Advanced",
-      "RSAGA"
-    ]
-  },
-  {
-    "objectID": "rsaga.html#topographic-wetness-index",
-    "href": "rsaga.html#topographic-wetness-index",
-    "title": "RSAGA",
-    "section": "",
-    "text": "params &lt;- list(DEM = \"dem.tif\", TWI =\"twi\")\nrsaga.geoprocessor(lib = \"ta_hydrology\",\n                   module = \"SAGA Wetness Index\",\n                   param = params)\n\n\n\n\n\n\n\nImportant\n\n\n\ndem.tif is a file on your computer! NOT an R Object!\n\n\nSome SAGA modules are are easier to execute via wrapper functions (see https://cran.r-project.org/web/packages/RSAGA/index.html)\nWith such a wrapper, the Topographic Wetness Index can be computed like this:\n\nrsaga.wetness.index(in.dem = \"dem.tif\", out.wetness.index = \"twi\")\n\n\n\n\n\n\n\nTask: SAGA R Workflows\n\n\n\nCreate a reproducible workflow with SAGA and RSAGA for flow accumulation from a digital elevation model.\n\nFill Sinks\nChannel Network and Drainage Basins\nFlow Accumulation\n\nVisualize the results in R.",
-    "crumbs": [
-      "Advanced",
-      "RSAGA"
-    ]
-  },
-  {
-    "objectID": "vector_data.html",
-    "href": "vector_data.html",
-    "title": "Vector Data",
-    "section": "",
-    "text": "Vector Data",
-    "crumbs": [
-      "Basics",
-      "Vector Data"
-    ]
-  },
-  {
-    "objectID": "slides/saga01.html#simple-terrain-modell-processing",
-    "href": "slides/saga01.html#simple-terrain-modell-processing",
-    "title": "SAGA GIS",
-    "section": "Simple terrain modell processing",
-    "text": "Simple terrain modell processing"
-  },
-  {
-    "objectID": "slides/saga01.html#why-extrernal-gis-software",
-    "href": "slides/saga01.html#why-extrernal-gis-software",
-    "title": "SAGA GIS",
-    "section": "Why extrernal GIS Software?",
-    "text": "Why extrernal GIS Software?\n\nsome functionalities not implemented in R but in QGIS, SAGA, GRASS, ArcGIS…\ne.g. tools in the field of hydrology and morphometry not common in R but in SAGA\nLinks to functionalities via R Packages: RSAGA, rgrass7, RQIS, RPyGeo\nWorkflow-centric in R\n\nno manual processing steps\nreproducible"
-  },
-  {
-    "objectID": "slides/saga01.html#saga-gis",
-    "href": "slides/saga01.html#saga-gis",
-    "title": "SAGA GIS",
-    "section": "SAGA GIS",
-    "text": "SAGA GIS\nimage 01"
-  },
-  {
-    "objectID": "slides/saga01.html#task",
-    "href": "slides/saga01.html#task",
-    "title": "SAGA GIS",
-    "section": "Task",
-    "text": "Task\nimage 02"
-  },
-  {
-    "objectID": "slides/saga01.html#flow-accumulation",
-    "href": "slides/saga01.html#flow-accumulation",
-    "title": "SAGA GIS",
-    "section": "Flow accumulation",
-    "text": "Flow accumulation\nimage 03"
-  },
-  {
-    "objectID": "gis_software.html",
-    "href": "gis_software.html",
-    "title": "External GIS Software",
-    "section": "",
-    "text": "External GIS Software\n\n\n\n\nBefore we combine R and SAGA, let’s first have a look at a SAGA module separately to get a feel for what we can do with it.\n\n\n\n\n\n\nTask: SAGA GIS I\n\n\n\n\nImport a terrain model into SAGA.\n\nImport/Export\nGDAL\nImport Raster\n\nPreprocess the terrain model for the hydrological analysis with the Fill Sinks tool.\n\n\n\n\n\n\n\n\nFill Sinks for flow accumulation (https://sagatutorials.wordpress.com/preprocessing-and-catchment-deliniation/)\n\n\n\n\n\n\n\n\n\n\nTask: SAGA GIS II\n\n\n\n\nDelinate catchment areas from the preprocessed terrain model with the tool Channel network and Drainage Basins.\nAlso calculate the flow accumulation.",
-    "crumbs": [
-      "Advanced",
-      "External GIS Software"
+      "Advanced R",
+      "R Control Structures"
     ]
   },
   {
@@ -276,7 +343,6 @@
     "section": "",
     "text": "a: Digital Photography\n\n\n\n\n\n\n\nb: Pixel Art\n\n\n\n\n\n\n\n\n\nc: Mona Lisa in Excel\n\n\n\n\nDifferent forms of raster data\n\n\n\nTechnically, raster images are a regular grid of values. This is pretty easy to imagine and visualize with the pixel art depicted in Figure 1 where each grid cell contains the color information. In the same way, remote sensing imagery is build from regular grids of values. In most cases, we have multiple layers in the raster. Each layer contains different information - for example the blue, green and red color information from the Sentinel-2 Sensor (Figure 2)\n\n\n\n\n\n\n\n\nFigure 1: Values in the raster image\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2: Sentinel-2 bands contain color information that can be visualized as a True Color Composite\n\n\n\n\n\n\n\n\n\nextent\npixel size / spatial resolution\ncoordinate reference system",
     "crumbs": [
-      "Basics",
       "Raster Data"
     ]
   },
@@ -287,7 +353,6 @@
     "section": "",
     "text": "a: Digital Photography\n\n\n\n\n\n\n\nb: Pixel Art\n\n\n\n\n\n\n\n\n\nc: Mona Lisa in Excel\n\n\n\n\nDifferent forms of raster data\n\n\n\nTechnically, raster images are a regular grid of values. This is pretty easy to imagine and visualize with the pixel art depicted in Figure 1 where each grid cell contains the color information. In the same way, remote sensing imagery is build from regular grids of values. In most cases, we have multiple layers in the raster. Each layer contains different information - for example the blue, green and red color information from the Sentinel-2 Sensor (Figure 2)\n\n\n\n\n\n\n\n\nFigure 1: Values in the raster image\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2: Sentinel-2 bands contain color information that can be visualized as a True Color Composite",
     "crumbs": [
-      "Basics",
       "Raster Data"
     ]
   },
@@ -298,7 +363,6 @@
     "section": "",
     "text": "extent\npixel size / spatial resolution\ncoordinate reference system",
     "crumbs": [
-      "Basics",
       "Raster Data"
     ]
   },
@@ -309,7 +373,6 @@
     "section": "",
     "text": "Vector Exercise 01\n\n\n\n\n\nThe OSM Logo\n\n\n\n\n\n\n\n\n\n\nTask 1: OSM Data\n\n\n\n\ndownload OpenStreetMap as shapefile data for Muenster here: https://download.geofabrik.de/\nload the points of interest (POIs), land use and streets into R\nplot the data with the mapview package\n\n\n\n\nLogical operators\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTask 2: Thematic querries\n\n\n\n\nHow many bakeries are there in Muenster?\nHow many hotels and hostels are there in Muenster?\nWhere is the A1?\nHow many “recreation_ground” are Freibäder? (i.e. have “Freibad” or “freibad” in their name)\n\n\n\n\n\n\n\n\nGeometric operations of the sf package; source: Geocomputation with R\n\n\n\n\n\n\n\n\n\n\nTask 3: Topological / Spatial querries\n\n\n\n\nHow many benches are in forests?\nWhich forests are within 25km distance to the A1?\n\nTipp: st_is_within_distance()\nWhat could be a different solution to this problem?\n\nHow many bakeries are within 1km from the Geo1 building?\n\n\n\n\n\n\n\n\n\nTask 4: Distances, Lengths, Areas\n\n\n\nTest the functions st_area(), st_length() and st_distance() in the following examples:\n\nHow large are the forests in the Münsterland on average?\nHow long is the A1 in the Münsterland?\nHow far away are bakeries in the Münsterland on average from the next bakery? What is the standard deviation?",
     "crumbs": [
-      "Basics",
       "Vector Exercise 01"
     ]
   }

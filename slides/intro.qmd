@@ -11,6 +11,8 @@ format: revealjs
 knitr::include_graphics("../assets/rgis.png")
 ```
 
+Hanna Meyer & Marvin Ludwig
+
 
 ## Target audience
 

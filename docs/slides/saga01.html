@@ -333,9 +333,10 @@
 </div>
 
 </section>
-<section id="simple-terrain-modell-processing" class="slide level2">
-<h2>Simple terrain modell processing</h2>
-</section>
+<section id="simple-terrain-model-processing" class="slide level2">
+<h2>Simple terrain model processing</h2>
+
+<img data-src="../assets/flowacc01.png" width="914" class="r-stretch"></section>
 <section id="why-extrernal-gis-software" class="slide level2">
 <h2>Why extrernal GIS Software?</h2>
 <ul>
@@ -351,17 +352,17 @@
 </section>
 <section id="saga-gis" class="slide level2">
 <h2>SAGA GIS</h2>
-<p>image 01</p>
-</section>
+
+<img data-src="https://saga-gis.sourceforge.io/_images/start_02.jpg" class="r-stretch"></section>
 <section id="task" class="slide level2">
 <h2>Task</h2>
-<p>image 02</p>
-</section>
+
+<img data-src="../assets/flowacc02.png" width="718" class="r-stretch"></section>
 <section id="flow-accumulation" class="slide level2">
 <h2>Flow accumulation</h2>
-<p>image 03</p>
 
-<div class="quarto-auto-generated-content">
+
+<img data-src="https://pro.arcgis.com/de/pro-app/latest/tool-reference/spatial-analyst/GUID-9C3A8153-1359-4F0B-8D9A-BC256957AD28-web.png" class="r-stretch"><div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
 </div>
@@ -579,6 +580,44 @@
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {

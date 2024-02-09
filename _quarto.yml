@@ -9,19 +9,20 @@ website:
     search: false
     contents:
       - index.qmd
-      - section: "Basics"
-        contents:
-          - geodata.qmd
-          - geodata_r.qmd
-          - vector_data.qmd
-          - vector_ex01.qmd
-          - raster_data.qmd
-          - raster_ex01.qmd
-      - section: "Advanced"
+      - geodata.qmd
+      - geodata_r.qmd
+      - vector_data.qmd
+      - vector_ex01.qmd
+      - raster_data.qmd
+      - raster_ex01.qmd
+      - projections.qmd
+      - section: "GIS Software"
         contents: 
-          - projections.qmd
           - gis_software.qmd
           - rsaga.qmd
+      - section: "Advanced R"
+        contents: 
+          - r_programming.qmd
       - section: "Additional Resources"
         contents:
           - literature.qmd
