@@ -1,0 +1,31 @@
+---
+format: revealjs
+---
+
+
+# Raster-Vector Interaction
+
+
+
+## 
+
+```{r}
+#| echo: false
+knitr::include_graphics("https://r.geocompx.org/figures/cropmask-1.png")
+```
+
+
+
+
+##
+
+```{r}
+knitr::include_graphics("https://r.geocompx.org/figures/raster-vectorization1-1.png")
+```
+
+##
+
+```{r}
+knitr::include_graphics("https://r.geocompx.org/figures/06-raster-vector-40-1.png")
+```
+

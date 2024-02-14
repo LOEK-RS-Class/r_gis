@@ -1,0 +1,31 @@
+# Topology
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, include = TRUE)
+```
+
+
+```{r}
+#| fig-cap: "Geometric operations of the sf package; source: Geocomputation with R"
+knitr::include_graphics("https://r.geocompx.org/figures/venn-clip-1.png")
+```
+
+
+
+:::{.callout-important}
+## Task
+
+* How many benches are in forests?
+* Which forests are within 25km distance to the A1?
+  * Tipp: `st_is_within_distance()`
+  * What could be a different solution to this problem?
+* How many bakeries are within 1km from the Geo1 building?
+
+:::
+
+
+
+
+
+
+

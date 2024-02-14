@@ -1,0 +1,24 @@
+# Raster merging
+
+```{r}
+#| echo: false
+knitr::include_graphics("assets/raster_merge_problem.svg")
+```
+
+
+::: {.callout-note}
+## Task: Think first!
+
+* Which steps are needed (conceptually), such that the SRTM and land cover raster fit exactly on top of each other?
+:::
+
+
+::: {.callout-important}
+## Task
+
+* Create a multi-layer raster from the SRTM and land cover raster.
+* Give both layers an appropriate name.
+* Plot the raster.
+* Save the raster as a ".tif" file.
+:::
+

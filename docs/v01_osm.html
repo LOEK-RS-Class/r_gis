@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -113,7 +79,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./projections.html">Projections</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./v01_osm.html">Vectors</a></li><li class="breadcrumb-item"><a href="./v01_osm.html">OSM Data</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -159,7 +125,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./v01_osm.html" class="sidebar-item-text sidebar-link">
+  <a href="./v01_osm.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">OSM Data</span></a>
   </div>
 </li>
@@ -220,7 +186,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./projections.html" class="sidebar-item-text sidebar-link active">
+  <a href="./projections.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Projections</span></a>
   </div>
 </li>
@@ -299,222 +265,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="projections" class="level1">
-<h1>Projections</h1>
-<section id="why-projections-in-this-course" class="level2">
-<h2 class="anchored" data-anchor-id="why-projections-in-this-course">Why Projections in this course?</h2>
-<p>If you gather spatial data for your project, in own field campaigns or through download form different web sources there is a very high chance that the projection i.e.&nbsp;the coordinate reference system is not the same for all data. During processing, in the <strong>best case</strong> you will get error messages left and right about missmatches due to different projections. In the <strong>worst case</strong>, function still work without errors, however, the results will not be the one you desire. For a proper processing and analysis of spatial data in R, handling projection is therefore crucial for trustful results. In short:</p>
-<ul>
-<li>In R, there is no “on the fly” projection</li>
-<li>some functions change the projection internally, some not <strong>This is problematic</strong></li>
-<li><strong>Consequence for you:</strong> Check that every dataset is in the same projection.</li>
-<li>Projections in R are defined as
-<ul>
-<li>a <a href="https://docs.ogc.org/is/18-010r7/18-010r7.html">WKT2 String</a></li>
-<li>a <a href="https://inbo.github.io/tutorials/tutorials/spatial_crs_coding/">proj4string</a> (kind of outdated)</li>
-<li>a <a href="https://spatialreference.org/">EPSG Code</a></li>
-</ul></li>
-</ul>
-</section>
-<section id="about-map-projections-and-some-examples" class="level2">
-<h2 class="anchored" data-anchor-id="about-map-projections-and-some-examples">About map projections and some Examples</h2>
-<details>
-<summary>
-A field guide to map projections:
-</summary>
-<p><a href="https://cdn.shopify.com/s/files/1/0279/4094/5994/files/WEM_Map_Projections2020_2.jpg?v=1580582102">https://cdn.shopify.com/s/files/1/0279/4094/5994/files/WEM_Map_Projections2020_2.jpg?v=1580582102</a></p>
+<section id="osm-data" class="level1">
+<h1>OSM Data</h1>
 <div class="cell">
 <div class="cell-output-display">
-<div>
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://cdn.shopify.com/s/files/1/0279/4094/5994/files/WEM_Map_Projections2020_2.jpg?v=1580582102" class="img-fluid figure-img"></p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Openstreetmap_logo.svg" class="img-fluid figure-img"></p>
+<figcaption>The OSM Logo</figcaption>
 </figure>
 </div>
 </div>
 </div>
-</details>
-<p>Interactive website to compare different projections: <a href="https://map-projections.net/imglist.php">https://map-projections.net/imglist.php</a></p>
-</section>
-<section id="projections-in-r" class="level2">
-<h2 class="anchored" data-anchor-id="projections-in-r">Projections in R</h2>
-<section id="raster" class="level3">
-<h3 class="anchored" data-anchor-id="raster">Raster</h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(terra)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>r <span class="ot">=</span> <span class="fu">rast</span>(<span class="fu">system.file</span>(<span class="st">"ex/elev.tif"</span>, <span class="at">package =</span> <span class="st">"terra"</span>))</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>r</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>class       : SpatRaster 
-dimensions  : 90, 95, 1  (nrow, ncol, nlyr)
-resolution  : 0.008333333, 0.008333333  (x, y)
-extent      : 5.741667, 6.533333, 49.44167, 50.19167  (xmin, xmax, ymin, ymax)
-coord. ref. : lon/lat WGS 84 (EPSG:4326) 
-source      : elev.tif 
-name        : elevation 
-min value   :       141 
-max value   :       547 </code></pre>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># using a proj4string</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>r_lambert <span class="ot">=</span> <span class="fu">project</span>(r, <span class="st">"+proj=lcc +lon_0=-90 +lat_1=33 +lat_2=45"</span>)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># using a EPSG code</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>r_ee <span class="ot">=</span> <span class="fu">project</span>(r, <span class="st">"EPSG:8857"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div>
-
-</div>
-<div class="cell quarto-layout-panel" data-layout-ncol="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="projections_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="projections_files/figure-html/unnamed-chunk-3-2.png" class="img-fluid" width="672"></p>
+<div class="callout-title-container flex-fill">
+Task
 </div>
 </div>
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="projections_files/figure-html/unnamed-chunk-3-3.png" class="img-fluid" width="672"></p>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Download OpenStreetMap as shapefile data for Muenster here: <a href="https://download.geofabrik.de/" class="uri">https://download.geofabrik.de/</a>.</li>
+<li>Load the points of interest (POIs), land use and streets into R.</li>
+<li>Plot the data with the <code>mapview</code> package.</li>
+</ul>
 </div>
 </div>
-</div>
-</section>
-<section id="vectors-i-spatvector" class="level3">
-<h3 class="anchored" data-anchor-id="vectors-i-spatvector">Vectors I: spatvector</h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>v <span class="ot">&lt;-</span> <span class="fu">vect</span>(<span class="fu">system.file</span>(<span class="st">"ex/lux.shp"</span>, <span class="at">package =</span> <span class="st">"terra"</span>))</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>v</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> class       : SpatVector 
- geometry    : polygons 
- dimensions  : 12, 6  (geometries, attributes)
- extent      : 5.74414, 6.528252, 49.44781, 50.18162  (xmin, xmax, ymin, ymax)
- source      : lux.shp
- coord. ref. : lon/lat WGS 84 (EPSG:4326) 
- names       :  ID_1   NAME_1  ID_2   NAME_2  AREA   POP
- type        : &lt;num&gt;    &lt;chr&gt; &lt;num&gt;    &lt;chr&gt; &lt;num&gt; &lt;int&gt;
- values      :     1 Diekirch     1 Clervaux   312 18081
-                   1 Diekirch     2 Diekirch   218 32543
-                   1 Diekirch     3  Redange   259 18664</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># UTM zone of luxemburg</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>v_utm31 <span class="ot">=</span> <span class="fu">project</span>(v, <span class="st">"EPSG:25831"</span>)</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># UTM zone of ireland</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>v_utm29 <span class="ot">=</span> <span class="fu">project</span>(v, <span class="st">"EPSG:32629"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div>
-
-</div>
-<div class="cell quarto-layout-panel" data-layout-ncol="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="projections_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="projections_files/figure-html/unnamed-chunk-5-2.png" class="img-fluid" width="672"></p>
-</div>
-</div>
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="projections_files/figure-html/unnamed-chunk-5-3.png" class="img-fluid" width="672"></p>
-</div>
-</div>
-</div>
-<p>If you are interested in the difference between ETRS89 and WGS84 UTM format <a href="https://www.killetsoft.de/t_1009_e.htm">here is an article that explains it</a>.</p>
-</section>
-<section id="vectors-ii-sf" class="level3">
-<h3 class="anchored" data-anchor-id="vectors-ii-sf">Vectors II: sf</h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rnaturalearth)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>earth <span class="ot">=</span> rnaturalearth<span class="sc">::</span><span class="fu">ne_countries</span>(<span class="at">returnclass =</span> <span class="st">"sf"</span>)</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>earth <span class="ot">=</span> earth[,<span class="st">"name"</span>]</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="co"># sf stores the projection as a wkt string</span></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="fu">st_crs</span>(earth)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Coordinate Reference System:
-  User input: WGS 84 
-  wkt:
-GEOGCRS["WGS 84",
-    DATUM["World Geodetic System 1984",
-        ELLIPSOID["WGS 84",6378137,298.257223563,
-            LENGTHUNIT["metre",1]]],
-    PRIMEM["Greenwich",0,
-        ANGLEUNIT["degree",0.0174532925199433]],
-    CS[ellipsoidal,2],
-        AXIS["geodetic latitude (Lat)",north,
-            ORDER[1],
-            ANGLEUNIT["degree",0.0174532925199433]],
-        AXIS["geodetic longitude (Lon)",east,
-            ORDER[2],
-            ANGLEUNIT["degree",0.0174532925199433]],
-    ID["EPSG",4326]]</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># but you can use just the EPSG number</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>earth_ee <span class="ot">=</span> <span class="fu">st_transform</span>(earth, <span class="dv">8857</span>)</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># or a proj4string</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>earth_moll <span class="ot">=</span> <span class="fu">st_transform</span>(earth, <span class="st">"+proj=moll +lon_0=0 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs +type=crs"</span>)</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co"># or the "EPSG:XX" format</span></span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>earth_pseudo <span class="ot">=</span> <span class="fu">st_transform</span>(earth, <span class="st">"EPSG:3857"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div>
-
-</div>
-<div class="cell quarto-layout-panel" data-layout-ncol="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="projections_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="projections_files/figure-html/unnamed-chunk-7-2.png" class="img-fluid" width="672"></p>
-</div>
-</div>
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="projections_files/figure-html/unnamed-chunk-7-3.png" class="img-fluid" width="672"></p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="projections_files/figure-html/unnamed-chunk-7-4.png" class="img-fluid" width="672"></p>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section id="what-if-the-projection-is-missing" class="level2">
-<h2 class="anchored" data-anchor-id="what-if-the-projection-is-missing">What if the projection is missing?</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>corrupted_raster</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>class       : SpatRaster 
-dimensions  : 10, 10, 1  (nrow, ncol, nlyr)
-resolution  : 36, 18  (x, y)
-extent      : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
-coord. ref. :  </code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># manually assign a projection</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">crs</span>(corrupted_raster) <span class="ot">&lt;-</span> <span class="st">"EPSG:32632"</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>corrupted_raster</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>class       : SpatRaster 
-dimensions  : 10, 10, 1  (nrow, ncol, nlyr)
-resolution  : 36, 18  (x, y)
-extent      : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
-coord. ref. : WGS 84 / UTM zone 32N (EPSG:32632) </code></pre>
-</div>
-</div>
-<p>With the <code>sf</code> package, the function would be <code>st_crs(corrupted_vector) &lt;- "EPSG:32632"</code>.</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

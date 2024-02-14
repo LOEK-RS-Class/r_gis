@@ -53,5 +53,7 @@ knitr::include_graphics("../assets/flowacc02.png")
 
 ```{r}
 #| echo: false
+#| fig-link: https://pro.arcgis.com/de
+#| fig-cap: "arc-gis"
 knitr::include_graphics("https://pro.arcgis.com/de/pro-app/latest/tool-reference/spatial-analyst/GUID-9C3A8153-1359-4F0B-8D9A-BC256957AD28-web.png")
 ```

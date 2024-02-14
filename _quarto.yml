@@ -11,10 +11,18 @@ website:
       - index.qmd
       - geodata.qmd
       - geodata_r.qmd
-      - vector_data.qmd
-      - vector_ex01.qmd
-      - raster_data.qmd
-      - raster_ex01.qmd
+      - section: Vectors
+        contents:
+        - v01_osm.qmd
+        - v02_thematic.qmd
+        - v03_topology.qmd
+        - v04_distances.qmd
+      - section: Raster
+        contents:
+        - r01_raster_intro.qmd
+        - r02_merging.qmd
+        - r03_math.qmd
+        - r04_raster_vector.qmd
       - projections.qmd
       - section: "GIS Software"
         contents: 
@@ -40,6 +48,7 @@ format:
     grid:
       sidebar-width: 350px
 execute: 
+  echo: false
   warning: false
   message: false
 

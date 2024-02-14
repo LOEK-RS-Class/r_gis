@@ -1,0 +1,13 @@
+# Distances, Lengths, Areas
+
+
+:::{.callout-important}
+## Task
+
+Test the functions `st_area()`, `st_length()` and `st_distance()` in the following examples:
+
+* How large are the forests in the Münsterland on average?
+* How long is the A1 in the Münsterland?
+* How far away are bakeries in the Münsterland on average from the next bakery? What is the standard deviation?
+
+:::

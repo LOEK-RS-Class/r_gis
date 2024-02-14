@@ -1,0 +1,27 @@
+# What is raster data?
+
+```{r}
+#| echo: false
+
+knitr::include_url("r01_slides.html")
+```
+
+
+::: {.callout-important}
+## Task 1: Raster Input
+* Download SRTM and land cover tiles from the learnweb.
+* Load the SRTM and land cover tiles into R.
+* Create one combined SRTM layer and one combined land cover layer out of the tiles.
+* Plot both rasters.
+:::
+
+
+Plot here
+
+
+::: {.callout-important}
+## Task 2: Simple querries
+
+* How often does each land cover class occur in this area?
+* What is the lowest and highest elevation in this area?
+:::

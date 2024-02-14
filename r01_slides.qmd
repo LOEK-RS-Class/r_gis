@@ -1,4 +1,9 @@
-# Raster Data
+---
+format: revealjs
+---
+
+
+# Raster Data {slide-background="assets/raster.svg"}
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, include = TRUE)
 ```
@@ -7,24 +12,27 @@ knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, include = 
 
 
 ```{r raster-examples}
-#| layout-ncol: 2
-#| fig-cap: "Different forms of raster data"
-#| fig-subcap:
-#|   - "a: Digital Photography"
-#|   - "b: Pixel Art"
-#|   - "c: Mona Lisa in Excel"
-
+#| fig-cap: "Digital Photography"
 knitr::include_graphics("https://www.heise.de/select/ct/2019/16/1564492523348234/contentimages/image-1563263232981928.jpg")
+```
 
+
+## What is raster data?
+
+```{r}
+#| fig-cap: "Pixel Art"
 knitr::include_graphics("https://www.seekpng.com/png/detail/169-1692024_mario-pixel-art-koopa.png")
+```
 
+## What is raster data?
+
+```{r}
+#| fig-cap: "Mona Lisa in Excel"
 knitr::include_graphics("https://media.techeblog.com/images/mona_lisa_excel.jpg")
 ```
 
 
-Technically, raster images are a regular grid of values. This is pretty easy to imagine and visualize with the pixel art depicted in @fig-raster-values where each grid cell contains the color information. In the same way, remote sensing imagery is build from regular grids of values. In most cases, we have multiple layers in the raster. Each layer contains different information - for example the blue, green and red color information from the Sentinel-2 Sensor (@fig-sentinel-composite)
-
-
+## What is raster data?
 
 ```{r raster-values}
 #| label: fig-raster-values
@@ -32,14 +40,24 @@ Technically, raster images are a regular grid of values. This is pretty easy to 
 knitr::include_graphics("assets/koopa_raster.png")
 ```
 
+- regular grid
+- grid cell contain information, here: color information
+
+## Example: Satellite imagery
+
+- multiple layers, multiple information 
+  - e.g. blue, green and red reflectance
+- all layers have the identical regular grid
+  - extent
+  - pixel size
+  - pixel orientation
+  
 
 ```{r sentinel-composite}
 #| label: fig-sentinel-composite
 #| fig-cap: "Sentinel-2 bands contain color information that can be visualized as a True Color Composite"
 knitr::include_graphics("assets/sentinel2-composite.png")
 ```
-
-
 
 
 ## What makes a raster spatial?

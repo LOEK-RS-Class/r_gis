@@ -1,0 +1,24 @@
+# Raster math
+
+
+
+```{r}
+#| echo: false
+#| fig-link: https://r.geocompx.org/spatial-operations.html#local-operations
+#| fig-cap: "Raster operations"
+knitr::include_graphics("https://r.geocompx.org/figures/04-local-operations.png")
+```
+
+
+
+::: {.callout-important}
+## Task
+
+* On average, are forests or agricultural areas found at higher elevations?
+* Divide the terrain model into "slopes" and "flats".
+* In flat areas, which land cover class is the most common?
+* Find and visualize all forests at southern slopes.
+:::
+
+
+

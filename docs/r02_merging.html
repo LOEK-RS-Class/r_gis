@@ -79,7 +79,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./vector_ex01.html">Vector Exercise 01</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./r01_raster_intro.html">Raster</a></li><li class="breadcrumb-item"><a href="./r02_merging.html">Raster merging</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -114,30 +114,76 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Geodata in R</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Vectors</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./vector_data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Vector Data</span></a>
+  <a href="./v01_osm.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">OSM Data</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./vector_ex01.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Vector Exercise 01</span></a>
+  <a href="./v02_thematic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Thematic queries</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./raster_data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Raster Data</span></a>
+  <a href="./v03_topology.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Topology</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./raster_ex01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Raster Exercise 01</span></a>
+  <a href="./v04_distances.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Distances, Lengths, Areas</span></a>
   </div>
 </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">Raster</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./r01_raster_intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">What is raster data?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./r02_merging.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Raster merging</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./r03_math.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Raster math</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./r04_raster_vector.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Raster-Vector interaction</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./projections.html" class="sidebar-item-text sidebar-link">
@@ -146,13 +192,13 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
  <span class="menu-text">GIS Software</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./gis_software.html" class="sidebar-item-text sidebar-link">
@@ -169,13 +215,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
  <span class="menu-text">Advanced R</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./r_programming.html" class="sidebar-item-text sidebar-link">
@@ -186,13 +232,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
  <span class="menu-text">Additional Resources</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./literature.html" class="sidebar-item-text sidebar-link">
@@ -219,92 +265,29 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="vector-exercise-01" class="level1">
-<h1>Vector Exercise 01</h1>
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Openstreetmap_logo.svg" class="img-fluid figure-img"></p>
-<figcaption>The OSM Logo</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Task 1: OSM Data
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li>download OpenStreetMap as shapefile data for Muenster here: <a href="https://download.geofabrik.de/">https://download.geofabrik.de/</a></li>
-<li>load the points of interest (POIs), land use and streets into R</li>
-<li>plot the data with the <code>mapview</code> package</li>
-</ul>
-</div>
-</div>
-<section id="logical-operators" class="level3">
-<h3 class="anchored" data-anchor-id="logical-operators">Logical operators</h3>
+<section id="raster-merging" class="level1">
+<h1>Raster merging</h1>
 <div class="cell">
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="https://bookdown.org/ndphillips/YaRrr/YaRrr_files/figure-html/comparison-1.png" class="img-fluid figure-img"></p>
+<p><img src="assets/raster_merge_problem.svg" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Task 2: Thematic querries
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ol type="1">
-<li>How many bakeries are there in Muenster?</li>
-<li>How many hotels and hostels are there in Muenster?</li>
-<li>Where is the A1?</li>
-<li>How many “recreation_ground” are Freibäder? (i.e.&nbsp;have “Freibad” or “freibad” in their name)</li>
-</ol>
-</div>
-</div>
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://r.geocompx.org/figures/venn-clip-1.png" class="img-fluid figure-img"></p>
-<figcaption>Geometric operations of the sf package; source: Geocomputation with R</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Task 3: Topological / Spatial querries
+Task: Think first!
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li>How many benches are in forests?</li>
-<li>Which forests are within 25km distance to the A1?
-<ul>
-<li>Tipp: <code>st_is_within_distance()</code></li>
-<li>What could be a different solution to this problem?</li>
-</ul></li>
-<li>How many bakeries are within 1km from the Geo1 building?</li>
+<li>Which steps are needed (conceptually), such that the SRTM and land cover raster fit exactly on top of each other?</li>
 </ul>
 </div>
 </div>
@@ -314,21 +297,20 @@ Task 3: Topological / Spatial querries
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Task 4: Distances, Lengths, Areas
+Task
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Test the functions <code>st_area()</code>, <code>st_length()</code> and <code>st_distance()</code> in the following examples:</p>
 <ul>
-<li>How large are the forests in the Münsterland on average?</li>
-<li>How long is the A1 in the Münsterland?</li>
-<li>How far away are bakeries in the Münsterland on average from the next bakery? What is the standard deviation?</li>
+<li>Create a multi-layer raster from the SRTM and land cover raster.</li>
+<li>Give both layers an appropriate name.</li>
+<li>Plot the raster.</li>
+<li>Save the raster as a “.tif” file.</li>
 </ul>
 </div>
 </div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
