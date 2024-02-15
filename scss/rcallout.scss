@@ -1,0 +1,31 @@
+/*-- scss:defaults --*/
+$border-color-left: #165caa !default;
+$icon: url('../assets/rgis.png') !default;
+
+$background-color: #bfe4eb !default;
+
+
+/*-- scss:rules --*/
+
+div.callout-r.callout {
+  border-left-color: $border-color-left;
+}
+
+div.callout-r.callout-style-default>.callout-header {
+  background-color: $background-color;
+}
+
+.callout-r.icon .callout-icon {
+  display: unset !important;
+}
+
+div.callout-r.icon.callout-captioned .callout-icon::before {
+  background-image: $icon;
+}
+
+.callout-r.icon.callout-style-default div.callout-icon-container {
+  padding-top: 0.1em;
+  padding-right: 0.35em;
+}
+
+

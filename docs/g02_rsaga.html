@@ -79,7 +79,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./geodata_r.html">Geodata in R</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./g01_saga.html">GIS Software</a></li><li class="breadcrumb-item"><a href="./g02_rsaga.html">RSAGA</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -104,13 +104,13 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./geodata.html" class="sidebar-item-text sidebar-link">
+  <a href="./i01_geodata.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction to Geodata</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./geodata_r.html" class="sidebar-item-text sidebar-link active">
+  <a href="./i02_geodata_r.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Geodata in R</span></a>
   </div>
 </li>
@@ -201,13 +201,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./gis_software.html" class="sidebar-item-text sidebar-link">
+  <a href="./g01_saga.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">SAGA GIS</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./rsaga.html" class="sidebar-item-text sidebar-link">
+  <a href="./g02_rsaga.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">RSAGA</span></a>
   </div>
 </li>
@@ -216,7 +216,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
- <span class="menu-text">Advanced R</span></a>
+ <span class="menu-text">Utility</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -224,8 +224,32 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r_programming.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">R Control Structures</span></a>
+  <a href="./u01_for.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">for-loops</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./u02_if.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">if-else</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./u03_functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./u04_lapply.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">lapply-loops</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./u05_markdown.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">markdown</span></a>
   </div>
 </li>
       </ul>
@@ -265,48 +289,226 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="geodata-in-r" class="level1">
-<h1>Geodata in R</h1>
-<p>We will use two main packages in this course for working with geodata. <code>sf</code> (simple features) is used for vector data and <code>terra</code> will handle raster data.</p>
-<p>Both packages are relatively new and are successors: * <code>sf</code> replaces the deprecated package <code>sp</code>. * <code>terra</code> replaces the deprecated package <code>raster</code>.</p>
-<p>You will probably find a lot of code examples online (e.g.&nbsp;on Stack Overflow) that uses these old packages. <strong>DO NOT USE the <code>sp</code> OR the <code>raster</code> PACKAGES ANYMORE!</strong></p>
+<section id="rsaga" class="level1">
+<h1>RSAGA</h1>
+<p>In SAGA GIS we have seen how hydrological analysis is done with SAGA GIS. However, the work we did there is not optimal:</p>
+<ul>
+<li>it required manual clicking</li>
+<li>the overall workflow was brocken</li>
+<li>no documentation</li>
+<li>hard to reproduce</li>
+</ul>
+<p>We want to change all of this by working with SAGA GIS modules from inside a R Script.</p>
+<section id="rsaga-setup" class="level2">
+<h2 class="anchored" data-anchor-id="rsaga-setup">RSAGA Setup</h2>
+<ul>
+<li>SAGA has to be installed on your computer and R needs to know where</li>
+</ul>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>Search for SAGA command line program and modules... 
+Done</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$workspace
+[1] "."
+
+$cmd
+[1] "saga_cmd"
+
+$path
+[1] "/usr/bin"
+
+$modules
+[1] "/usr/lib64/saga"
+
+$version
+[1] "9.3.1"
+
+$cores
+[1] NA
+
+$parallel
+[1] FALSE
+
+$lib.prefix
+[1] "lib"</code></pre>
+</div>
+</div>
+<p>If for some reason (e.g.&nbsp;working with a university computer) RSAGA throws an error, try the following:</p>
+</section>
+<section id="rsaga-functions" class="level2">
+<h2 class="anchored" data-anchor-id="rsaga-functions">RSAGA Functions</h2>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>Search for SAGA command line program and modules... 
+Done</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "climate_tools"           "contrib_perego"         
+ [3] "db_odbc"                 "db_pgsql"               
+ [5] "docs_html"               "garden_fractals"        
+ [7] "garden_games"            "garden_webservices"     
+ [9] "grid_analysis"           "grid_calculus_bsl"      
+[11] "grid_calculus"           "grid_filter"            
+[13] "grid_gridding"           "grid_spline"            
+[15] "grid_tools"              "grid_visualisation"     
+[17] "grids_tools"             "imagery_classification" 
+[19] "imagery_isocluster"      "imagery_maxent"         
+[21] "imagery_opencv"          "imagery_photogrammetry" 
+[23] "imagery_segmentation"    "imagery_svm"            
+[25] "imagery_tools"           "io_esri_e00"            
+[27] "io_gdal"                 "io_gps"                 
+[29] "io_grid_image"           "io_grid"                
+[31] "io_shapes"               "io_table"               
+[33] "io_virtual"              "io_webservices"         
+[35] "pj_georeference"         "pj_geotrans"            
+[37] "pj_proj4"                "pointcloud_tools"       
+[39] "shapes_grid"             "shapes_lines"           
+[41] "shapes_points"           "shapes_polygons"        
+[43] "shapes_tools"            "shapes_transect"        
+[45] "sim_air_flow"            "sim_cellular_automata"  
+[47] "sim_ecosystems_hugget"   "sim_erosion"            
+[49] "sim_fire_spreading"      "sim_geomorphology"      
+[51] "sim_hydrology"           "sim_ihacres"            
+[53] "sim_landscape_evolution" "sim_qm_of_esp"          
+[55] "sim_rivflow"             "statistics_grid"        
+[57] "statistics_kriging"      "statistics_points"      
+[59] "statistics_regression"   "ta_channels"            
+[61] "ta_cliffmetrics"         "ta_compound"            
+[63] "ta_hydrology"            "ta_lighting"            
+[65] "ta_morphometry"          "ta_preprocessor"        
+[67] "ta_profiles"             "ta_slope_stability"     
+[69] "table_calculus"          "table_tools"            
+[71] "tin_tools"               "vis_3d_viewer"          </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>Search for SAGA command line program and modules... 
+Done</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$ta_hydrology
+   code                                   name interactive
+1     0           Flow Accumulation (Top-Down)       FALSE
+2     1          Flow Accumulation (Recursive)       FALSE
+3     2       Flow Accumulation (Flow Tracing)       FALSE
+4     4                           Upslope Area       FALSE
+5     6                       Flow Path Length       FALSE
+6     7                           Slope Length       FALSE
+7    10                           Cell Balance       FALSE
+8    13                     Edge Contamination       FALSE
+9    15                     SAGA Wetness Index       FALSE
+10   18   Flow Accumulation (Mass-Flux Method)       FALSE
+11   19 Flow Width and Specific Catchment Area       FALSE
+12   20              Topographic Wetness Index       FALSE
+13   21                     Stream Power Index       FALSE
+14   22                              LS Factor       FALSE
+15   23               Melton Ruggedness Number       FALSE
+16   24                                TCI Low       FALSE
+17   25                 LS-Factor, Field Based       FALSE
+18   26        Slope Limited Flow Accumulation       FALSE
+19   27               Maximum Flow Path Length       FALSE
+20   28                    Flow between fields       FALSE
+21   29     Flow Accumulation (Parallelizable)       FALSE
+22   30              Isochrones Variable Speed       FALSE
+23   31                              CIT Index       FALSE
+24   32                       Terrain Flooding       FALSE</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>Search for SAGA command line program and modules... 
+Done
+library path: /usr/lib/saga/
+library path: /usr/lib/saga/
+library name: libta_hydrology
+library     : ta_hydrology
+Usage: saga_cmd ta_hydrology 15 [-DEM &lt;str&gt;] [-WEIGHT &lt;str&gt;] [-AREA &lt;str&gt;] [-SLOPE &lt;str&gt;] [-AREA_MOD &lt;str&gt;] [-TWI &lt;str&gt;] [-SUCTION &lt;double&gt;] [-AREA_TYPE &lt;str&gt;] [-SLOPE_TYPE &lt;str&gt;] [-SLOPE_MIN &lt;double&gt;] [-SLOPE_OFF &lt;double&gt;] [-SLOPE_WEIGHT &lt;double&gt;]
+  -DEM:&lt;str&gt;                Elevation
+    grid, input
+  -WEIGHT:&lt;str&gt;             Weights
+    grid, input, optional
+  -AREA:&lt;str&gt;               Catchment Area
+    grid, output, optional
+  -SLOPE:&lt;str&gt;              Catchment Slope
+    grid, output, optional
+  -AREA_MOD:&lt;str&gt;           Modified Catchment Area
+    grid, output, optional
+  -TWI:&lt;str&gt;                Topographic Wetness Index
+    grid, output
+  -SUCTION:&lt;double&gt;         Suction
+    floating point number
+    Minimum: 0.000000
+    Default: 10.000000
+  -AREA_TYPE:&lt;str&gt;          Type of Area
+    choice
+    Available Choices:
+    [0] total catchment area
+    [1] square root of catchment area
+    [2] specific catchment area
+    Default: 2
+  -SLOPE_TYPE:&lt;str&gt;         Type of Slope
+    choice
+    Available Choices:
+    [0] local slope
+    [1] catchment slope
+    Default: 1
+  -SLOPE_MIN:&lt;double&gt;       Minimum Slope
+    floating point number
+    Minimum: 0.000000
+    Default: 0.000000
+  -SLOPE_OFF:&lt;double&gt;       Offset Slope
+    floating point number
+    Minimum: 0.000000
+    Default: 0.100000
+  -SLOPE_WEIGHT:&lt;double&gt;    Slope Weighting
+    floating point number
+    Minimum: 0.000000
+    Default: 1.000000 </code></pre>
+</div>
+</div>
+</section>
+<section id="topographic-wetness-index" class="level2">
+<h2 class="anchored" data-anchor-id="topographic-wetness-index">Topographic Wetness Index</h2>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Task: Geodata I/O
+Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<ul>
-<li><p>Organize yourself some geodata.</p></li>
-<li><p>Install the <code>terra</code> and <code>sf</code> packages.</p></li>
-<li><p>Try to load a raster and a vector dataset into R.</p></li>
-<li><p>What attributes does the geodata have?</p></li>
-<li><p>Visualize the data.</p></li>
-</ul>
+<p><code>dem.tif</code> is a file on your computer! NOT an R Object!</p>
 </div>
 </div>
+<p>Some SAGA modules are are easier to execute via wrapper functions (see <a href="https://cran.r-project.org/web/packages/RSAGA/index.html">https://cran.r-project.org/web/packages/RSAGA/index.html</a>)</p>
+<p>With such a wrapper, the Topographic Wetness Index can be computed like this:</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Task: Geodata R Convinience
+Task: SAGA R Workflows
 </div>
 </div>
 <div class="callout-body-container callout-body">
+<p>Create a reproducible workflow with SAGA and RSAGA for flow accumulation from a digital elevation model.</p>
 <ul>
-<li>Install the <code>geodata</code> package</li>
-<li>Check out what it can do.</li>
+<li>Fill Sinks</li>
+<li>Channel Network and Drainage Basins</li>
+<li>Flow Accumulation</li>
 </ul>
+<p>Visualize the results in R.</p>
 </div>
 </div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

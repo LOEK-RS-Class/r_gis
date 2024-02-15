@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -79,7 +113,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./geodata.html">Introduction to Geodata</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./u01_for.html">Utility</a></li><li class="breadcrumb-item"><a href="./u05_markdown.html">markdown</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -104,13 +138,13 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./geodata.html" class="sidebar-item-text sidebar-link active">
+  <a href="./i01_geodata.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction to Geodata</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./geodata_r.html" class="sidebar-item-text sidebar-link">
+  <a href="./i02_geodata_r.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Geodata in R</span></a>
   </div>
 </li>
@@ -201,13 +235,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./gis_software.html" class="sidebar-item-text sidebar-link">
+  <a href="./g01_saga.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">SAGA GIS</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./rsaga.html" class="sidebar-item-text sidebar-link">
+  <a href="./g02_rsaga.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">RSAGA</span></a>
   </div>
 </li>
@@ -216,7 +250,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
- <span class="menu-text">Advanced R</span></a>
+ <span class="menu-text">Utility</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -224,8 +258,32 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r_programming.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">R Control Structures</span></a>
+  <a href="./u01_for.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">for-loops</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./u02_if.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">if-else</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./u03_functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./u04_lapply.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">lapply-loops</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./u05_markdown.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">markdown</span></a>
   </div>
 </li>
       </ul>
@@ -265,96 +323,89 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="introduction-to-geodata" class="level1">
-<h1>Introduction to Geodata</h1>
-<div class="cell">
-<iframe src="slides/slides_geodata.html" width="672" height="400px" data-external="1">
-</iframe>
-</div>
-<section id="open-data-examples" class="level2">
-<h2 class="anchored" data-anchor-id="open-data-examples">Open Data Examples</h2>
-<section id="opengeodata.nrw.de" class="level3">
-<h3 class="anchored" data-anchor-id="opengeodata.nrw.de"><a href="https://www.opengeodata.nrw.de/produkte/">opengeodata.nrw.de</a></h3>
+<section id="markdown" class="level1">
+<h1>markdown</h1>
+<p>Rstudio is much more than a code editor for R. It supports a variety of programming languages, documentation formats and data types. One of Rstudio’s most used and most powerful features is the creation of markdown documents with integrated R code. In fact, this entire course page is written in markdown within Rstudio and then <a href="https://quarto.org/docs/websites/">rendered as a website</a>. As with Rstudio Version v2022.07, the markdown system of choice is <code>quarto</code> - “An open-source scientific and technical publishing system” <a href="https://quarto.org/" class="uri">https://quarto.org/</a>. Older versions use <code>rmarkdown</code>. <a href="https://rmarkdown.rstudio.com/" class="uri">https://rmarkdown.rstudio.com/</a>.</p>
+<p>Depending on the markdown system you are using, the typical file ending for the markdown files are either <code>.qmd</code> or <code>.rmd</code>.</p>
+<section id="what-is-markdown" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-markdown">What is markdown?</h2>
+<p>Markdown is a “language” to format text. There are dedicated symbols for different purposes:</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Markdown Syntax</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>*italics*, **bold**, ***bold italics***</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><em>italics</em>, <strong>bold</strong>, <strong><em>bold italics</em></strong></td>
+</tr>
+<tr class="even">
+<td><div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Header 1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><h1 id="header-1" class="heading-output">Header 1</h1></td>
+</tr>
+<tr class="odd">
+<td><div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Header 2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><h2 id="header-2" class="heading-output anchored">Header 2</h2></td>
+</tr>
+<tr class="even">
+<td><div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Quarto</span><span class="co">](https://quarto.org)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><a href="https://quarto.org">Quarto</a></td>
+</tr>
+</tbody>
+</table>
+<p>These examples are taken from <a href="https://quarto.org/docs/authoring/markdown-basics.html" class="uri">https://quarto.org/docs/authoring/markdown-basics.html</a> where you can find more more markdown syntax.</p>
+</section>
+<section id="using-markdown-in-rstudio" class="level2">
+<h2 class="anchored" data-anchor-id="using-markdown-in-rstudio">Using markdown in Rstudio</h2>
+<p>Simply go to <code>File - New File - Quarto Document...</code> or <code>File - New File - R Markdown...</code> to create a markdown file with some example code and work your way from there. Or if you want to jump right into markdown projects go to <code>New Project... - New Directory</code> and choose an appropriate Template (e.g.&nbsp;Quarto Homepage).</p>
+</section>
+<section id="file-structure" class="level2">
+<h2 class="anchored" data-anchor-id="file-structure">File Structure</h2>
 <div class="cell">
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><a href="https://www.opengeodata.nrw.de/produkte/"><img src="https://www.wms.nrw.de/rssfeeds/content/geoportal/images/komkonzepte_vorschau.PNG" class="img-fluid figure-img"></a></p>
+<p><img src="assets/markdown.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="gadm---global-administrative-areas" class="level3">
-<h3 class="anchored" data-anchor-id="gadm---global-administrative-areas"><a href="https://gadm.org/">GADM - Global administrative areas</a></h3>
+<section id="file-paths" class="level2">
+<h2 class="anchored" data-anchor-id="file-paths">File Paths</h2>
+<p>If you want to use external files in your markdown document, e.g.&nbsp;data input in an R code chunk or an image you want to include, it is highly recommended that you use <strong>relative file paths</strong>.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><a href="https://gadm.org/"><img src="https://gadm.org/img/480/gadm/CHE/CHE_divs.png" class="img-fluid figure-img"></a></p>
+<p><img src="assets/relative_paths.png" class="img-fluid figure-img" style="width:40.0%"></p>
 </figure>
 </div>
 </div>
 </div>
-</section>
-<section id="openstreetmap" class="level3">
-<h3 class="anchored" data-anchor-id="openstreetmap"><a href="https://www.openstreetmap.de">OpenStreetMap</a></h3>
-<ul>
-<li>worldwide collaborative and free web map</li>
-<li><a href="https://download.geofabrik.de/europe/germany/nordrhein-westfalen.html">https://download.geofabrik.de/europe/germany/nordrhein-westfalen.html</a></li>
-</ul>
 <div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><a href="https://www.openstreetmap.de"><img src="https://www.openstreetmap.de/img/btn_map.png" class="img-fluid figure-img"></a></p>
-</figure>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>ndvi <span class="ot">=</span> terra<span class="sc">::</span><span class="fu">rast</span>(<span class="st">"data/ndvi.tif"</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"figures/sentinel.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Task
 </div>
 </div>
-</div>
-</section>
-<section id="worldclim" class="level3">
-<h3 class="anchored" data-anchor-id="worldclim"><a href="https://www.worldclim.org/data/index.html">Worldclim</a></h3>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><a href="https://www.worldclim.org/data/index.html"><img src="https://developers.google.com/earth-engine/datasets/images/WORLDCLIM/WORLDCLIM_V1_MONTHLY_sample.png" class="img-fluid figure-img"></a></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="corine-land-cover" class="level3">
-<h3 class="anchored" data-anchor-id="corine-land-cover"><a href="https://land.copernicus.eu/en/products/corine-land-cover">Corine Land Cover</a></h3>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><a href="https://land.copernicus.eu/en/products/corine-land-cover"><img src="https://land.copernicus.eu/en/products/corine-land-cover/@@images/image-400-7d8e8dfc63d50c9bf89ff5a7475dcd46.png" class="img-fluid figure-img"></a></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="gbif-the-global-biodiversity-information-facility" class="level3">
-<h3 class="anchored" data-anchor-id="gbif-the-global-biodiversity-information-facility"><a href="https://www.gbif.org/">GBIF — the Global Biodiversity Information Facility</a></h3>
-<ul>
-<li>Species occurrence data</li>
-<li></li>
-</ul>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><a href="https://www.gbif.org/"><img src="https://observation.org/media/download/gbif-observation.org.jpg" class="img-fluid figure-img"></a></p>
-</figure>
-</div>
+<div class="callout-body-container callout-body">
+<p>Create a new quarto markdown file. Document your learning outcomes with data, code and figures.</p>
 </div>
 </div>
 
 
-</section>
 </section>
 </section>
 

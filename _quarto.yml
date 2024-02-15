@@ -1,6 +1,10 @@
 project:
   type: website
   output-dir: docs
+  render:
+  - "*.qmd"
+  - "*.Rmd"
+  - "!backlog/"
 
 website:
   title: "Spatial R - Using R as a GIS"
@@ -9,15 +13,15 @@ website:
     search: false
     contents:
       - index.qmd
-      - geodata.qmd
-      - geodata_r.qmd
-      - section: Vectors
+      - i01_geodata.qmd
+      - i02_geodata_r.qmd
+      - section: "Vectors"
         contents:
         - v01_osm.qmd
         - v02_thematic.qmd
         - v03_topology.qmd
         - v04_distances.qmd
-      - section: Raster
+      - section: "Raster"
         contents:
         - r01_raster_intro.qmd
         - r02_merging.qmd
@@ -26,19 +30,25 @@ website:
       - projections.qmd
       - section: "GIS Software"
         contents: 
-          - gis_software.qmd
-          - rsaga.qmd
-      - section: "Advanced R"
+          - g01_saga.qmd
+          - g02_rsaga.qmd
+      - section: "Utility"
         contents: 
-          - r_programming.qmd
+          - u01_for.qmd
+          - u02_if.qmd
+          - u03_functions.qmd
+          - u04_lapply.qmd
+          - u05_markdown.qmd
       - section: "Additional Resources"
         contents:
           - literature.qmd
           - references.qmd
 
-    
 
-bibliography: "../../literature/zotero/references.bib"
+
+  
+
+bibliography: "../../../literature/zotero/references.bib"
 number-depth: 0
 
 format:

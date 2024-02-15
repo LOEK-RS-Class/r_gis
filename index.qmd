@@ -18,7 +18,7 @@ knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, include = 
 
 ```{r}
 #| echo: false
-knitr::include_url("slides/intro.html")
+knitr::include_url("i00_intro_slides.html")
 ```
 
 

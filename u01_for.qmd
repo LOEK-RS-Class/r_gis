@@ -1,0 +1,110 @@
+# for-loops
+
+
+## What is a loop?
+
+* repetition of the same tasks
+* e.g. same processing steps for multiple datasets
+* reduces code redundancies
+  * less work
+  * clearer workflow
+  * errors easier to fix
+
+## for-loop syntax
+
+* do something `for()` every element of e.g. a vector
+* the iterator (`i`) can be used directly
+* or as an index for something else
+
+```{r}
+#| echo: true
+
+# using `i` directly
+x <- seq(10)
+
+for(i in x){
+  print(2^i)
+}
+
+```
+
+
+```{r}
+#| echo: true
+
+x <- 2:20
+
+# using `i` as an index
+for(i in 1:length(x)){
+  print(x[i]^2)
+}
+```
+
+
+
+
+```{r}
+#| echo: true
+
+# using `i` as an index
+for(i in c(2, 4, 11, 7)){
+  print(x[i]^2)
+}
+```
+
+
+:::{.callout-important}
+## NA?
+Why is there an `NA` output in the second example?
+:::
+
+
+```{r}
+#| echo: true
+
+x <- 1:10
+for(i in x){
+  result <- x[i]^2
+}
+
+result
+```
+
+
+
+:::{.callout-important}
+## result
+
+Why is the `result` 100? What did you expect?
+:::
+
+
+
+
+## Storing results of a for loop 
+
+If you want to save the result of the loop, you have to assign the output to e.g. element of a vector.
+
+
+```{r}
+#| echo: true
+
+x <- 1:10
+result <- c()
+
+for(i in x){
+  result[i] <- x[i]^2
+}
+
+result
+```
+
+
+:::{.callout-important}
+## Task
+* Create a vector with 10 random numbers.
+* Create a loop that does the following:
+  * multiply the number with 2 and print the result
+  * divide the number by 3 and save the result
+:::
+

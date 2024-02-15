@@ -3,7 +3,7 @@
 
 ```{r}
 #| echo: false
-knitr::include_url("slides/slides_geodata.html")
+knitr::include_url("i01_geodata_slides.html")
 ```
 
 

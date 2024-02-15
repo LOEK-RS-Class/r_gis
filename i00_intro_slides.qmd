@@ -8,7 +8,7 @@ format: revealjs
 
 
 ```{r, echo = FALSE}
-knitr::include_graphics("../assets/rgis.png")
+knitr::include_graphics("assets/rgis.png")
 ```
 
 Hanna Meyer & Marvin Ludwig

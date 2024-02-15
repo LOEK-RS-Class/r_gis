@@ -1,0 +1,38 @@
+# GDAL
+
+
+```{r, message = TRUE, warning=TRUE}
+library(rgdal)
+```
+
+
+
+
+```{r}
+input = "~/data/global_environmental_layer/elevation.grd"
+output = "~/global_contours.gpkg"
+
+cmd = paste0("gdal_contour -i 1000 -p ", input, " ", output)
+system(cmd)
+
+
+
+```
+
+
+```{r}
+library(sf)
+
+
+cont = st_read("~/global_contours.gpkg")
+
+
+plot(cont)
+mapview::mapview(cont)
+```
+
+
+
+
+
+

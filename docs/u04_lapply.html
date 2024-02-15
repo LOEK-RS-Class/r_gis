@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -79,7 +113,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./gis_software.html">GIS Software</a></li><li class="breadcrumb-item"><a href="./gis_software.html">SAGA GIS</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./u01_for.html">Utility</a></li><li class="breadcrumb-item"><a href="./u04_lapply.html">lapply-loops</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -104,13 +138,13 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./geodata.html" class="sidebar-item-text sidebar-link">
+  <a href="./i01_geodata.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction to Geodata</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./geodata_r.html" class="sidebar-item-text sidebar-link">
+  <a href="./i02_geodata_r.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Geodata in R</span></a>
   </div>
 </li>
@@ -201,13 +235,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./gis_software.html" class="sidebar-item-text sidebar-link active">
+  <a href="./g01_saga.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">SAGA GIS</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./rsaga.html" class="sidebar-item-text sidebar-link">
+  <a href="./g02_rsaga.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">RSAGA</span></a>
   </div>
 </li>
@@ -216,7 +250,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
- <span class="menu-text">Advanced R</span></a>
+ <span class="menu-text">Utility</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -224,8 +258,32 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r_programming.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">R Control Structures</span></a>
+  <a href="./u01_for.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">for-loops</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./u02_if.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">if-else</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./u03_functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./u04_lapply.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">lapply-loops</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./u05_markdown.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">markdown</span></a>
   </div>
 </li>
       </ul>
@@ -265,58 +323,32 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="saga-gis" class="level1">
-<h1>SAGA GIS</h1>
+<section id="lapply-loops" class="level1">
+<h1>lapply-loops</h1>
+<p>R has some more specific loop types that work very well with <code>vectors</code> and <code>lists</code>. They are called <code>lapply</code> loops in R and make use of <code>functions</code> that are applied over the element of a <code>vector</code> or <code>list</code>.</p>
+<p>The syntax of the <code>lapply</code> loop can be a bit confusing at first as it is the other way around as the <code>for</code> loop. The biggest difference is, that <code>lapply</code> returns a list of values for every iteration step. So the output of the loop can be assigned directly to a variable.</p>
 <div class="cell">
-<iframe src="slides/saga01.html" width="672" height="400px" data-external="1">
-</iframe>
-</div>
-<p>Before we combine R and SAGA, let’s first have a look at a SAGA module separately to get a feel for what we can do with it.</p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Task: SAGA GIS I
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li>Import a terrain model into SAGA.
-<ul>
-<li>Import/Export</li>
-<li>GDAL</li>
-<li>Import Raster</li>
-</ul></li>
-<li>Preprocess the terrain model for the hydrological analysis with the <code>Fill Sinks</code> tool.</li>
-</ul>
-</div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">lapply</span>(i, FUN)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># compared to:</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> x){</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  result[i] <span class="ot">&lt;-</span> FUN</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://sagatutorials.wordpress.com/preprocessing-and-catchment-deliniation/"><img src="https://sagatutorials.files.wordpress.com/2016/11/image072.png" class="img-fluid figure-img" alt="Fill Sinks for flow accumulation (https://sagatutorials.wordpress.com/preprocessing-and-catchment-deliniation/)"></a></p>
-<figcaption>Fill Sinks for flow accumulation (https://sagatutorials.wordpress.com/preprocessing-and-catchment-deliniation/)</figcaption>
-</figure>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lapply</span>() <span class="co"># list apply</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sapply</span>() <span class="co"># apply with vector output</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>() <span class="co"># loop over rows or columns of a data.frame</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-</div>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Task: SAGA GIS II
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li>Delinate catchment areas from the preprocessed terrain model with the tool <code>Channel network and Drainage Basins</code>.</li>
-<li>Also calculate the flow accumulation.</li>
-</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sapply</span>(<span class="fu">seq</span>(<span class="dv">10</span>), <span class="cf">function</span>(x){</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  x<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1]   1   4   9  16  25  36  49  64  81 100</code></pre>
 </div>
 </div>
 
