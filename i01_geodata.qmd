@@ -7,72 +7,91 @@ knitr::include_url("i01_geodata_slides.html")
 ```
 
 
-
+```{r}
+#| echo: false
+#| fig-link: https://www.opengeodata.nrw.de/produkte/
+#| column: margin
+knitr::include_graphics("https://www.wms.nrw.de/rssfeeds/content/geoportal/images/komkonzepte_vorschau.PNG")
+```
 
 ## Open Data Examples
 
 ### [opengeodata.nrw.de](https://www.opengeodata.nrw.de/produkte/)
 
-```{r}
-#| echo: false
-#| fig-link: https://www.opengeodata.nrw.de/produkte/
-knitr::include_graphics("https://www.wms.nrw.de/rssfeeds/content/geoportal/images/komkonzepte_vorschau.PNG")
-```
+Data portal of NRW. Has lots of thematic data in vector or raster format.
+
+* city planning
+* environmental data
+* administrative boundaries
+* land use
 
 
-
-
-### [GADM - Global administrative areas](https://gadm.org/)
 
 
 ```{r}
 #| echo: false
 #| fig-link: https://gadm.org/
+#| column: margin
 knitr::include_graphics("https://gadm.org/img/480/gadm/CHE/CHE_divs.png")
 ```
 
+### [GADM - Global administrative areas](https://gadm.org/)
+
+* Standardised administrative bondaries
+* Example Germany:
+  * Level 1: countries
+  * Level 2: states
+  * Level 3: municipalities
+
+
+```{r}
+#| echo: false
+#| fig-link: https://www.openstreetmap.de
+#| column: margin
+knitr::include_graphics("https://www.openstreetmap.de/img/btn_map.png")
+```
 
 
 ### [OpenStreetMap](https://www.openstreetmap.de)
 
 * worldwide collaborative and free web map
-* [https://download.geofabrik.de/europe/germany/nordrhein-westfalen.html](https://download.geofabrik.de/europe/germany/nordrhein-westfalen.html)
-```{r}
-#| echo: false
-#| fig-link: https://www.openstreetmap.de
-knitr::include_graphics("https://www.openstreetmap.de/img/btn_map.png")
-```
+* [Download OSM data for NRW](https://download.geofabrik.de/europe/germany/nordrhein-westfalen.html)
 
 
 ### [Worldclim](https://www.worldclim.org/data/index.html)
 
-
-
-```{r}
-#| echo: false
-#| fig-link: https://www.worldclim.org/data/index.html
-knitr::include_graphics("https://developers.google.com/earth-engine/datasets/images/WORLDCLIM/WORLDCLIM_V1_MONTHLY_sample.png")
-```
-
-
-### [Corine Land Cover](https://land.copernicus.eu/en/products/corine-land-cover)
+* global climatic raster layer
+* future projections of various climate models
 
 ```{r}
 #| echo: false
 #| fig-link: https://land.copernicus.eu/en/products/corine-land-cover
+#| column: margin
+ 
 
 knitr::include_graphics("https://land.copernicus.eu/en/products/corine-land-cover/@@images/image-400-7d8e8dfc63d50c9bf89ff5a7475dcd46.png")
 ```
 
 
+### [Corine Land Cover](https://land.copernicus.eu/en/products/corine-land-cover)
+
+* land use / land cover of Europe
+* standardised, hirarchical classes
+* vector or raster
+
+
+
+
+
 ### [GBIF — the Global Biodiversity Information Facility](https://www.gbif.org/)
 
 * Species occurrence data
-* 
+* Collection of public observations and scientific datasets
 
 ```{r}
 #| echo: false
 #| fig-link: https://www.gbif.org/
+#| column: margin
  
 knitr::include_graphics("https://observation.org/media/download/gbif-observation.org.jpg")
 ```

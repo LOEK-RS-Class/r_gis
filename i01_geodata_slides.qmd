@@ -29,8 +29,16 @@ zugewiesen werden kann
 
 ### Vektordaten
 
+![Arten von Vektordaten](https://upload.wikimedia.org/wikipedia/en/9/97/GIS_PointsLinesPolygons.PNG)
+
+
+## Geodaten Modelle
 
 ### Rasterdaten
+
+![Example of spatial raster](assets/spatial_raster.png)
+
+
 
 
 :::{.callout-important }

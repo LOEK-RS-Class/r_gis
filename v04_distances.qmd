@@ -1,6 +1,14 @@
 # Distances, Lengths, Areas
 
 
+```{r}
+#| echo: false
+#| fig-link: https://www.chartandmapshop.com.au/blogs/blog/4-navigation-tools-need-chart-reading-plotting-courses
+knitr::include_graphics("https://cdn.shopify.com/s/files/1/0523/4189/9430/files/Navigation-Tools-700x450.jpg")
+```
+
+
+
 :::{.callout-important}
 ## Task
 

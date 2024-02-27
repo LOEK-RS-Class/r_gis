@@ -1,5 +1,23 @@
 # Geodata in R
 
+
+```{r}
+#| echo: true
+#| message: true
+library(terra)
+```
+
+
+```{r}
+#| echo: true
+#| message: true
+library(sf)
+```
+
+***
+***
+
+
 We will use two main packages in this course for working with geodata. `sf` (simple features) is used for vector data and `terra` will handle raster data.
 
 Both packages are relatively new and are successors:
@@ -7,7 +25,7 @@ Both packages are relatively new and are successors:
  * `terra` replaces the deprecated package `raster`.
 
 You will probably find a lot of code examples online (e.g. on Stack Overflow) that uses these old packages.
-**DO NOT USE the `sp` OR the `raster` PACKAGES ANYMORE!**
+**DO NOT USE ** `sp` **OR** `raster` **ANYMORE!**
 
 
 :::{.callout-important}
@@ -17,10 +35,11 @@ You will probably find a lot of code examples online (e.g. on Stack Overflow) th
 * Install the `terra` and `sf` packages.
 * Try to load a raster and a vector dataset into R.
 
-* What attributes does the geodata have?
+* What attributes are stored along the actual geodata?
 * Visualize the data.
 
 :::
+
 
 
 :::{.callout-important}

@@ -1,0 +1,15 @@
+# RGIS Project
+
+:::{.callout-important}
+## Your own R-GIS project
+
+To put everything together what you have learned in this course prepare a small case study
+that uses at least one raster and one vector dataset.
+
+Visualize and document you project in a markdown file and render a html or pdf file.
+
+
+:::
+
+
+

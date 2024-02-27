@@ -16,7 +16,23 @@ knitr::include_url("r01_raster_intro_slides.html")
 :::
 
 
-Plot here
+
+```{r}
+#| layout-ncol: 2
+library(tmap)
+
+lc = terra::rast("../data/elevation_landuse.tif")
+
+tm_shape(lc[[1]])+
+  tm_raster(col.scale = tm_scale_continuous())+
+  tm_layout(frame = FALSE, legend.frame = FALSE)
+
+tm_shape(lc[[2]])+
+  tm_raster(col.scale = tm_scale_categorical())+
+  tm_layout(frame = FALSE, legend.frame = FALSE)
+```
+
+
 
 
 ::: {.callout-important}

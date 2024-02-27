@@ -1,0 +1,98 @@
+---
+format: revealjs
+---
+
+
+
+## Complex Information
+
+
+```{r}
+#| echo: false
+#| fig-link: https://www.arte.tv/de/videos/RC-014036/mit-offenen-karten/
+knitr::include_graphics("https://api-cdn.arte.tv/img/v2/image/XeC4nh86UbgUAfYtNpX3SK/1920x1080?type=TEXT&watermark=true")
+```
+
+
+## Communication
+
+```{r}
+#| echo: false
+#| fig-link: https://www.ipcc.ch/
+knitr::include_graphics("https://www.ipcc.ch/report/ar6/wg1/downloads/figures/IPCC_AR6_WGI_Atlas_Figure_12.png")
+```
+
+## Choropleth or continuous? {.scrollable}
+
+```{r}
+#| echo: false
+#| fig-subcap: 
+#|   - (c) wikimedia
+#|   - (c)
+#| layout-ncol: 2
+knitr::include_graphics("https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Average_yearly_temperature_%28%C2%B0C%29.png/2560px-Average_yearly_temperature_%28%C2%B0C%29.png")
+
+knitr::include_graphics("https://upload.wikimedia.org/wikipedia/commons/9/92/Annual_Average_Temperature_Map.png")
+```
+
+
+## 
+
+```{r}
+#| echo: false
+#| fig-cap: "nytimes.com"
+#| fig-link: https://www.nytimes.com/interactive/2016/11/01/upshot/many-ways-to-map-election-results.html
+knitr::include_graphics("https://static01.nyt.com/newsgraphics/2016/11/01/election-map-forms/738e8fe0f4e6d89ec6cb63555d3deb92e772f916/counties.png")
+```
+
+## People vote, not area {.scrollable}
+
+```{r}
+#| echo: false
+#| layout-ncol: 2
+#| fig-link: https://www.nytimes.com/interactive/2016/11/01/upshot/many-ways-to-map-election-results.html
+knitr::include_graphics("https://static01.nyt.com/newsgraphics/2016/11/01/election-map-forms/738e8fe0f4e6d89ec6cb63555d3deb92e772f916/counties.png")
+
+
+knitr::include_graphics("https://static01.nyt.com/newsgraphics/2016/11/01/election-map-forms/738e8fe0f4e6d89ec6cb63555d3deb92e772f916/circles.png")
+```
+
+
+## Color scales
+
+
+```{r}
+#| echo: false
+#| layout-ncol: 3
+#| fig-subcap:
+#|   - "greyscale"
+#|   - "rainbow"
+#|   - "viridis" 
+
+knitr::include_graphics("https://d3i71xaburhd42.cloudfront.net/86851dda0b031507d215d04b049fd99eaf8f4b4f/3-Figure2-1.png")
+knitr::include_graphics("https://d3i71xaburhd42.cloudfront.net/86851dda0b031507d215d04b049fd99eaf8f4b4f/3-Figure3-1.png")
+knitr::include_graphics("https://d3i71xaburhd42.cloudfront.net/86851dda0b031507d215d04b049fd99eaf8f4b4f/4-Figure4-1.png")
+```
+
+Niccoli & Lynch (2014): A More Perceptual Color Palette for Structure Maps
+
+
+## Map Projections
+
+```{r}
+#| echo: false
+#| layout-ncol: 2
+#| fig-subcap: 
+#|   - "Equal Earth"
+#|   - "Mercator"
+
+
+knitr::include_graphics("https://map-projections.net/img/jpg/equalearth.jpg")
+knitr::include_graphics("https://map-projections.net/img/jpg/mercator-84.jpg")
+
+```
+
+
+
+
+

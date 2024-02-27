@@ -5,11 +5,12 @@ knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, include = 
 ```
 
 
-```{r}
-#| fig-cap: "Geometric operations of the sf package; source: Geocomputation with R"
-knitr::include_graphics("https://r.geocompx.org/figures/venn-clip-1.png")
-```
 
+
+```{r}
+#| out-width: "15cm"
+knitr::include_graphics("https://www.publicdomainpictures.net/pictures/30000/velka/bench-in-the-forest.jpg")
+```
 
 
 :::{.callout-important}
@@ -24,7 +25,10 @@ knitr::include_graphics("https://r.geocompx.org/figures/venn-clip-1.png")
 :::
 
 
-
+```{r}
+#| fig-cap: "Geometric operations of the sf package; source: Geocomputation with R"
+knitr::include_graphics("https://r.geocompx.org/figures/venn-clip-1.png")
+```
 
 
 

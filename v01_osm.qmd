@@ -5,8 +5,12 @@ knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, include = 
 ```
 
 ```{r}
-#| fig-cap: "The OSM Logo"
-knitr::include_graphics("https://upload.wikimedia.org/wikipedia/commons/b/b0/Openstreetmap_logo.svg")
+#| echo: false
+#| message: false
+library(mapview)
+mapviewOptions(basemaps = c("OpenStreetMap.DE"))
+mapview()
+
 ```
 
 ::: callout-important

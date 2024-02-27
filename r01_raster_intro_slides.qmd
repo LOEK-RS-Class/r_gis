@@ -3,7 +3,8 @@ format: revealjs
 ---
 
 
-# Raster Data {slide-background="assets/raster.svg"}
+## Raster Data 
+
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, include = TRUE)
 ```
@@ -51,7 +52,8 @@ knitr::include_graphics("assets/koopa_raster.png")
   - extent
   - pixel size
   - pixel orientation
-  
+
+## Example: Satellite imagery
 
 ```{r sentinel-composite}
 #| label: fig-sentinel-composite
@@ -66,21 +68,19 @@ knitr::include_graphics("assets/sentinel2-composite.png")
 * pixel size / spatial resolution
 * coordinate reference system
 
+
+## What makes a raster spatial?
+
 ```{r}
 knitr::include_graphics("assets/spatial_raster.png")
 ```
+
+## What makes a raster spatial?
 
 
 ```{r}
 knitr::include_graphics("assets/resolution.png")
 ```
-
-
-
-
-
-
-
 
 
 

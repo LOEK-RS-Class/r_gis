@@ -9,73 +9,6 @@ In SAGA GIS we have seen how hydrological analysis is done with SAGA GIS. Howeve
 
 We want to change all of this by working with SAGA GIS modules from inside a R Script.
 
-
-## RSAGA Setup
-
-* SAGA has to be installed on your computer and R needs to know where
-
-```{r}
-#| eval: true
-library(RSAGA)
-rsaga.env()
-```
-
-If for some reason (e.g. working with a university computer) RSAGA throws an error, try the following:
-
-```{r}
-#| eval: false
-library(link2GI)
-linkSAGA() # wenn Pfad zu SAGA unbekannt
-myenv <- rsaga.env(path="C:\\Program Files\\QGIS 3.8\\apps\\saga-ltr")
-```
-
-
-## RSAGA Functions
-
-
-```{r}
-rsaga.get.libraries()
-```
-
-
-```{r}
-rsaga.get.modules(libs = "ta_hydrology")
-```
-
-
-```{r}
-#| warning: false
-#| message: false
-rsaga.get.usage(lib = "ta_hydrology", module = "SAGA Wetness Index")
-```
-
-## Topographic Wetness Index
-
-```{r}
-#| eval: false
-params <- list(DEM = "dem.tif", TWI ="twi")
-rsaga.geoprocessor(lib = "ta_hydrology",
-                   module = "SAGA Wetness Index",
-                   param = params)
-```
-
-:::{.callout-important}
-`dem.tif` is a file on your computer! NOT an R Object!
-:::
-
-Some SAGA modules are are easier to execute via wrapper functions (see [https://cran.r-project.org/web/packages/RSAGA/index.html
-](https://cran.r-project.org/web/packages/RSAGA/index.html
-))
-
-With such a wrapper, the Topographic Wetness Index can be computed like this:
-
-```{r}
-#| eval: false
-rsaga.wetness.index(in.dem = "dem.tif", out.wetness.index = "twi")
-```
-
-
-
 :::{.callout-important}
 ## Task: SAGA R Workflows
 
@@ -90,5 +23,76 @@ Visualize the results in R.
 :::
 
 
+## RSAGA Setup
+
+SAGA has to be installed on your computer and R needs to know where.
+
+```{r}
+#| eval: true
+#| echo: true
+library(RSAGA)
+rsaga.env()
+```
+
+If for some reason (e.g. working with a university computer) RSAGA throws an error, try the following:
+
+```{r}
+#| eval: false
+#| echo: true
+library(link2GI)
+linkSAGA() # wenn Pfad zu SAGA unbekannt
+myenv <- rsaga.env(path="C:\\Program Files\\QGIS 3.8\\apps\\saga-ltr")
+```
+
+
+## RSAGA Functions
+
+
+```{r}
+#| echo: true
+rsaga.get.libraries()
+```
+
+
+```{r}
+#| echo: true
+rsaga.get.modules(libs = "ta_hydrology")
+```
+
+
+```{r}
+#| echo: true
+#| warning: false
+#| message: false
+rsaga.get.usage(lib = "ta_hydrology", module = "SAGA Wetness Index")
+```
+
+## Topographic Wetness Index
+
+```{r}
+#| echo: true
+#| eval: false
+params <- list(DEM = "dem.tif", TWI ="twi")
+rsaga.geoprocessor(lib = "ta_hydrology",
+                   module = "SAGA Wetness Index",
+                   param = params)
+```
+
+::::{.column-margin}
+:::{.callout-important}
+`dem.tif` is a file on your computer! NOT an R Object!
+:::
+::::
+Some SAGA modules are easier to execute via wrapper functions (see [https://cran.r-project.org/web/packages/RSAGA/index.html
+](https://cran.r-project.org/web/packages/RSAGA/index.html
+))
+
+With such a wrapper, the Topographic Wetness Index can be computed like this:
+
+```{r}
+#| eval: false
+#| echo: true
+rsaga.wetness.index(in.dem = "dem.tif", out.wetness.index = "twi")
+```
 
 

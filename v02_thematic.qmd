@@ -1,5 +1,9 @@
 # Thematic queries
 
+```{r}
+#| echo: false
+knitr::include_graphics("https://www.krimphove.de/images/layout/branding.png")
+```
 
 
 ::: {.callout-important}

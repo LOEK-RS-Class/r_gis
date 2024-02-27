@@ -28,17 +28,20 @@ website:
         - r03_math.qmd
         - r04_raster_vector.qmd
       - projections.qmd
+      - maps.qmd
       - section: "GIS Software"
         contents: 
+          - g00_rgis_toolchain.qmd
           - g01_saga.qmd
           - g02_rsaga.qmd
       - section: "Utility"
         contents: 
+          - u05_markdown.qmd
           - u01_for.qmd
           - u02_if.qmd
           - u03_functions.qmd
           - u04_lapply.qmd
-          - u05_markdown.qmd
+      - project.qmd
       - section: "Additional Resources"
         contents:
           - literature.qmd

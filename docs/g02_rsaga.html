@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.549">
+<meta name="generator" content="quarto-1.4.550">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -70,7 +104,7 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="nav-sidebar floating fullcontent">
+<body class="nav-sidebar floating slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -79,7 +113,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./g01_saga.html">GIS Software</a></li><li class="breadcrumb-item"><a href="./g02_rsaga.html">RSAGA</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./g00_rgis_toolchain.html">GIS Software</a></li><li class="breadcrumb-item"><a href="./g02_rsaga.html">RSAGA</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -190,6 +224,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Projections</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./maps.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Map making</span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
@@ -199,6 +239,12 @@ ul.task-list li input[type="checkbox"] {
           </a> 
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./g00_rgis_toolchain.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R-GIS Toolchains</span></a>
+  </div>
+</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./g01_saga.html" class="sidebar-item-text sidebar-link">
@@ -224,6 +270,12 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./u05_markdown.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">markdown</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./u01_for.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">for-loops</span></a>
   </div>
@@ -246,14 +298,14 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">lapply-loops</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./u05_markdown.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">markdown</span></a>
-  </div>
-</li>
       </ul>
   </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./project.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">RGIS Project</span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
@@ -282,14 +334,16 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 
 
 
-<section id="rsaga" class="level1">
+<section id="rsaga" class="level1 page-columns page-full">
 <h1>RSAGA</h1>
 <p>In SAGA GIS we have seen how hydrological analysis is done with SAGA GIS. However, the work we did there is not optimal:</p>
 <ul>
@@ -299,12 +353,31 @@ ul.task-list li input[type="checkbox"] {
 <li>hard to reproduce</li>
 </ul>
 <p>We want to change all of this by working with SAGA GIS modules from inside a R Script.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Task: SAGA R Workflows
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Create a reproducible workflow with SAGA and RSAGA for flow accumulation from a digital elevation model.</p>
+<ul>
+<li>Fill Sinks</li>
+<li>Channel Network and Drainage Basins</li>
+<li>Flow Accumulation</li>
+</ul>
+<p>Visualize the results in R.</p>
+</div>
+</div>
 <section id="rsaga-setup" class="level2">
 <h2 class="anchored" data-anchor-id="rsaga-setup">RSAGA Setup</h2>
-<ul>
-<li>SAGA has to be installed on your computer and R needs to know where</li>
-</ul>
+<p>SAGA has to be installed on your computer and R needs to know where.</p>
 <div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RSAGA)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rsaga.env</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Search for SAGA command line program and modules... 
 Done</code></pre>
@@ -336,10 +409,16 @@ $lib.prefix
 </div>
 </div>
 <p>If for some reason (e.g.&nbsp;working with a university computer) RSAGA throws an error, try the following:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(link2GI)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">linkSAGA</span>() <span class="co"># wenn Pfad zu SAGA unbekannt</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>myenv <span class="ot">&lt;-</span> <span class="fu">rsaga.env</span>(<span class="at">path=</span><span class="st">"C:</span><span class="sc">\\</span><span class="st">Program Files</span><span class="sc">\\</span><span class="st">QGIS 3.8</span><span class="sc">\\</span><span class="st">apps</span><span class="sc">\\</span><span class="st">saga-ltr"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="rsaga-functions" class="level2">
 <h2 class="anchored" data-anchor-id="rsaga-functions">RSAGA Functions</h2>
 <div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rsaga.get.libraries</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Search for SAGA command line program and modules... 
 Done</code></pre>
@@ -384,6 +463,7 @@ Done</code></pre>
 </div>
 </div>
 <div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rsaga.get.modules</span>(<span class="at">libs =</span> <span class="st">"ta_hydrology"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Search for SAGA command line program and modules... 
 Done</code></pre>
@@ -418,6 +498,7 @@ Done</code></pre>
 </div>
 </div>
 <div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rsaga.get.usage</span>(<span class="at">lib =</span> <span class="st">"ta_hydrology"</span>, <span class="at">module =</span> <span class="st">"SAGA Wetness Index"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Search for SAGA command line program and modules... 
 Done
@@ -470,8 +551,16 @@ Usage: saga_cmd ta_hydrology 15 [-DEM &lt;str&gt;] [-WEIGHT &lt;str&gt;] [-AREA 
 </div>
 </div>
 </section>
-<section id="topographic-wetness-index" class="level2">
+<section id="topographic-wetness-index" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="topographic-wetness-index">Topographic Wetness Index</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>params <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">DEM =</span> <span class="st">"dem.tif"</span>, <span class="at">TWI =</span><span class="st">"twi"</span>)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rsaga.geoprocessor</span>(<span class="at">lib =</span> <span class="st">"ta_hydrology"</span>,</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>                   <span class="at">module =</span> <span class="st">"SAGA Wetness Index"</span>,</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>                   <span class="at">param =</span> params)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+
+<div class="no-row-height column-margin column-container"><div class="">
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -485,26 +574,10 @@ Important
 <p><code>dem.tif</code> is a file on your computer! NOT an R Object!</p>
 </div>
 </div>
-<p>Some SAGA modules are are easier to execute via wrapper functions (see <a href="https://cran.r-project.org/web/packages/RSAGA/index.html">https://cran.r-project.org/web/packages/RSAGA/index.html</a>)</p>
+</div></div><p>Some SAGA modules are easier to execute via wrapper functions (see <a href="https://cran.r-project.org/web/packages/RSAGA/index.html">https://cran.r-project.org/web/packages/RSAGA/index.html</a>)</p>
 <p>With such a wrapper, the Topographic Wetness Index can be computed like this:</p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Task: SAGA R Workflows
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Create a reproducible workflow with SAGA and RSAGA for flow accumulation from a digital elevation model.</p>
-<ul>
-<li>Fill Sinks</li>
-<li>Channel Network and Drainage Basins</li>
-<li>Flow Accumulation</li>
-</ul>
-<p>Visualize the results in R.</p>
-</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rsaga.wetness.index</span>(<span class="at">in.dem =</span> <span class="st">"dem.tif"</span>, <span class="at">out.wetness.index =</span> <span class="st">"twi"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 

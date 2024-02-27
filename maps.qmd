@@ -1,0 +1,47 @@
+# Map making
+
+
+```{r}
+#| echo: false
+knitr::include_url("maps_slides.html")
+```
+
+
+
+While we can make simple maps with the included `plot` function from `terra` or `sf`, there is also the `tmap` package that offers some more fancy options in terms of map making. With `tmap` you can build maps from the ground up (quite literally) as you stack different map layers on top of each other. The syntax is quite similar to `ggplot` as you can combine different layers with the `+` operator.
+
+:::{.callout-important}
+## tmap
+
+* Install and load the `tmap` package.
+* Visualize the land use, elevation and some of the OSM data we used previously.
+* Use appropriate color scales!
+
+:::
+
+```{r}
+#| echo: false
+biomass = terra::rast("../data/raster/Global_Biomass_IPCC.grd")
+```
+
+Here is some example code to get you started.
+
+```{r}
+#| echo: true
+
+library(tmap)
+library(viridis)
+
+
+tm_shape(biomass, title = "Biomass")+
+  tm_raster(col.scale = tm_scale_continuous_log1p(values = viridis(50)))+
+  tm_layout(frame = FALSE,
+            legend.position = c("left", "bottom"),
+            legend.frame = FALSE,
+            legend.text.color = "white", legend.title.color = "white",
+            legend.reverse = TRUE)
+
+
+```
+
+
