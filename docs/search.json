@@ -322,7 +322,7 @@
     "href": "i01_geodata.html",
     "title": "Introduction to Geodata",
     "section": "",
-    "text": "Data portal of NRW. Has lots of thematic data in vector or raster format.\n\ncity planning\nenvironmental data\nadministrative boundaries\nland use\n\n\n# tip: download data from within R\ndownload.file(\"https://www.opengeodata.nrw.../dlm50_EPSG25832_Shape.zip\", destfile=\"dlm.zip\")\n\nunzip(\"dlm.zip\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStandardised administrative bondaries\nExample Germany:\n\nLevel 1: countries\nLevel 2: states\nLevel 3: municipalities\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nworldwide collaborative and free web map\nDownload OSM data for NRW\n\n\n\n\n\nglobal climatic raster layer\nfuture projections of various climate models\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nland use / land cover of Europe\nstandardised, hirarchical classes\nvector or raster\n\n\n\n\n\nSpecies occurrence data\nCollection of public observations and scientific datasets",
+    "text": "Data portal of NRW. Has lots of thematic data in vector or raster format.\n\ncity planning\nenvironmental data\nadministrative boundaries\nland use\n\n\n# tip: download data from within R\ndownload.file(\"https://www.opengeodata.nrw.../dlm50_EPSG25832_Shape.zip\", destfile=\"dlm.zip\")\n\nunzip(\"dlm.zip\", exdir = \"dlm\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStandardised administrative bondaries\nExample Germany:\n\nLevel 1: countries\nLevel 2: states\nLevel 3: municipalities\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nworldwide collaborative and free web map\nDownload OSM data for NRW\n\n\n\n\n\nglobal climatic raster layer\nfuture projections of various climate models\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nland use / land cover of Europe\nstandardised, hirarchical classes\nvector or raster\n\n\n\n\n\nSpecies occurrence data\nCollection of public observations and scientific datasets",
     "crumbs": [
       "Introduction to Geodata"
     ]
@@ -332,7 +332,7 @@
     "href": "i01_geodata.html#open-data-examples",
     "title": "Introduction to Geodata",
     "section": "",
-    "text": "Data portal of NRW. Has lots of thematic data in vector or raster format.\n\ncity planning\nenvironmental data\nadministrative boundaries\nland use\n\n\n# tip: download data from within R\ndownload.file(\"https://www.opengeodata.nrw.../dlm50_EPSG25832_Shape.zip\", destfile=\"dlm.zip\")\n\nunzip(\"dlm.zip\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStandardised administrative bondaries\nExample Germany:\n\nLevel 1: countries\nLevel 2: states\nLevel 3: municipalities\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nworldwide collaborative and free web map\nDownload OSM data for NRW\n\n\n\n\n\nglobal climatic raster layer\nfuture projections of various climate models\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nland use / land cover of Europe\nstandardised, hirarchical classes\nvector or raster\n\n\n\n\n\nSpecies occurrence data\nCollection of public observations and scientific datasets",
+    "text": "Data portal of NRW. Has lots of thematic data in vector or raster format.\n\ncity planning\nenvironmental data\nadministrative boundaries\nland use\n\n\n# tip: download data from within R\ndownload.file(\"https://www.opengeodata.nrw.../dlm50_EPSG25832_Shape.zip\", destfile=\"dlm.zip\")\n\nunzip(\"dlm.zip\", exdir = \"dlm\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStandardised administrative bondaries\nExample Germany:\n\nLevel 1: countries\nLevel 2: states\nLevel 3: municipalities\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nworldwide collaborative and free web map\nDownload OSM data for NRW\n\n\n\n\n\nglobal climatic raster layer\nfuture projections of various climate models\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nland use / land cover of Europe\nstandardised, hirarchical classes\nvector or raster\n\n\n\n\n\nSpecies occurrence data\nCollection of public observations and scientific datasets",
     "crumbs": [
       "Introduction to Geodata"
     ]
@@ -609,7 +609,7 @@
     "href": "v01_osm.html",
     "title": "OSM Data",
     "section": "",
-    "text": "OSM Data\n\n\n\n\n\n\n\n\n\n\n\n\nTask\n\n\n\n\nDownload OpenStreetMap as shapefile data for Muenster here: https://download.geofabrik.de/.\nLoad the points of interest (POIs), land use and streets into R.\nPlot the data with the mapview package.",
+    "text": "OSM Data\n\n\n\n\n\n\n\n\n\n\n\n\nTask\n\n\n\n\nDownload OpenStreetMap as shapefile data for Muenster here: https://download.geofabrik.de/europe/germany/nordrhein-westfalen.html.\nLoad the points of interest (POIs), land use and streets into R.\nPlot the data with the mapview package.",
     "crumbs": [
       "Vectors",
       "OSM Data"

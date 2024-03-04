@@ -8,7 +8,7 @@
 #| echo: false
 #| fig-link: https://r.geocompx.org
 
-knitr::include_graphics("https://r.geocompx.org/images/cover.png//r.geocompx.org/images/cover.png")
+knitr::include_graphics("https://r.geocompx.org/images/cover.png")
 ```
 
 

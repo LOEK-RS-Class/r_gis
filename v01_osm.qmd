@@ -16,7 +16,7 @@ mapview()
 ::: callout-important
 ## Task
 
--   Download OpenStreetMap as shapefile data for Muenster here: <https://download.geofabrik.de/>.
+-   Download OpenStreetMap as shapefile data for Muenster here: <https://download.geofabrik.de/europe/germany/nordrhein-westfalen.html>.
 -   Load the points of interest (POIs), land use and streets into R.
 -   Plot the data with the `mapview` package.
 :::
