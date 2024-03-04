@@ -308,17 +308,6 @@
     "text": "Map Projections\n\n\n\n\n\n\nEqual Earth\n\n\n\n\n\n\n\nMercator"
   },
   {
-    "objectID": "literature.html",
-    "href": "literature.html",
-    "title": "Recommendations",
-    "section": "",
-    "text": "Recommendations",
-    "crumbs": [
-      "Additional Resources",
-      "Recommendations"
-    ]
-  },
-  {
     "objectID": "i02_geodata_r.html",
     "href": "i02_geodata_r.html",
     "title": "Geodata in R",
@@ -333,7 +322,7 @@
     "href": "i01_geodata.html",
     "title": "Introduction to Geodata",
     "section": "",
-    "text": "Data portal of NRW. Has lots of thematic data in vector or raster format.\n\ncity planning\nenvironmental data\nadministrative boundaries\nland use\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStandardised administrative bondaries\nExample Germany:\n\nLevel 1: countries\nLevel 2: states\nLevel 3: municipalities\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nworldwide collaborative and free web map\nDownload OSM data for NRW\n\n\n\n\n\nglobal climatic raster layer\nfuture projections of various climate models\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nland use / land cover of Europe\nstandardised, hirarchical classes\nvector or raster\n\n\n\n\n\nSpecies occurrence data\nCollection of public observations and scientific datasets",
+    "text": "Data portal of NRW. Has lots of thematic data in vector or raster format.\n\ncity planning\nenvironmental data\nadministrative boundaries\nland use\n\n\n# tip: download data from within R\ndownload.file(\"https://www.opengeodata.nrw.../dlm50_EPSG25832_Shape.zip\", destfile=\"dlm.zip\")\n\nunzip(\"dlm.zip\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStandardised administrative bondaries\nExample Germany:\n\nLevel 1: countries\nLevel 2: states\nLevel 3: municipalities\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nworldwide collaborative and free web map\nDownload OSM data for NRW\n\n\n\n\n\nglobal climatic raster layer\nfuture projections of various climate models\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nland use / land cover of Europe\nstandardised, hirarchical classes\nvector or raster\n\n\n\n\n\nSpecies occurrence data\nCollection of public observations and scientific datasets",
     "crumbs": [
       "Introduction to Geodata"
     ]
@@ -343,7 +332,7 @@
     "href": "i01_geodata.html#open-data-examples",
     "title": "Introduction to Geodata",
     "section": "",
-    "text": "Data portal of NRW. Has lots of thematic data in vector or raster format.\n\ncity planning\nenvironmental data\nadministrative boundaries\nland use\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStandardised administrative bondaries\nExample Germany:\n\nLevel 1: countries\nLevel 2: states\nLevel 3: municipalities\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nworldwide collaborative and free web map\nDownload OSM data for NRW\n\n\n\n\n\nglobal climatic raster layer\nfuture projections of various climate models\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nland use / land cover of Europe\nstandardised, hirarchical classes\nvector or raster\n\n\n\n\n\nSpecies occurrence data\nCollection of public observations and scientific datasets",
+    "text": "Data portal of NRW. Has lots of thematic data in vector or raster format.\n\ncity planning\nenvironmental data\nadministrative boundaries\nland use\n\n\n# tip: download data from within R\ndownload.file(\"https://www.opengeodata.nrw.../dlm50_EPSG25832_Shape.zip\", destfile=\"dlm.zip\")\n\nunzip(\"dlm.zip\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStandardised administrative bondaries\nExample Germany:\n\nLevel 1: countries\nLevel 2: states\nLevel 3: municipalities\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nworldwide collaborative and free web map\nDownload OSM data for NRW\n\n\n\n\n\nglobal climatic raster layer\nfuture projections of various climate models\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nland use / land cover of Europe\nstandardised, hirarchical classes\nvector or raster\n\n\n\n\n\nSpecies occurrence data\nCollection of public observations and scientific datasets",
     "crumbs": [
       "Introduction to Geodata"
     ]
@@ -517,7 +506,17 @@
     "href": "index.html#course-outline",
     "title": "R als GIS",
     "section": "Course Outline",
-    "text": "Course Outline\n\n\n\n\n\n\n\n\n\n\n\n\nMonday\nTuesday\nWednesday\nThursday\nFriday\n\n\n\n\n09:00\n12:00\nGeodata I/O\nRaster data\nDigital Terrain Models\nUsing GIS software in R\nProgramming\nProjects\n\n\n\n\n\n\n\n\n\n\n13:00\n16:00\nVector data\nProjections\nVisualizations\nR Markdown\nProjects\nProjects",
+    "text": "Course Outline\n\n\n\n\n\n\n\n\n\n\n\n\nMonday\nTuesday\nWednesday\nThursday\nFriday\n\n\n\n\n09:15\n12:00\nGeodata I/O\nRaster data\nDigital Terrain Models\nUsing GIS software in R\nProgramming\nProjects\n\n\n\n\n\n\n\n\n\n\n13:00\n16:00\nVector data\nProjections\nVisualizations\nR Markdown\nProjects\nProjects",
+    "crumbs": [
+      "R als GIS"
+    ]
+  },
+  {
+    "objectID": "index.html#rgis-course-project",
+    "href": "index.html#rgis-course-project",
+    "title": "R als GIS",
+    "section": "RGIS Course Project",
+    "text": "RGIS Course Project\nAt the end of this course, you should conduct a small GIS project from within R.\n\nUse at least one raster and one vector dataset\nUse geospatial methods learned in this course.\nTry out additional methods from terra, sf and / or external GIS software.\nDocument and visualize your project in a markdown file and render a html or pdf file.\n\n\n\n\n\n\n\nImportant\n\n\n\nUpload your html or pdf file latest two weeks after the course in the learnweb (22.03.2024).",
     "crumbs": [
       "R als GIS"
     ]
@@ -537,10 +536,7 @@
     "href": "project.html",
     "title": "RGIS Project",
     "section": "",
-    "text": "RGIS Project\n\n\n\n\n\n\nYour own R-GIS project\n\n\n\nTo put everything together what you have learned in this course prepare a small case study that uses at least one raster and one vector dataset.\nVisualize and document you project in a markdown file and render a html or pdf file.",
-    "crumbs": [
-      "RGIS Project"
-    ]
+    "text": "RGIS Project\n\n\n\n\n\n\nYour own R-GIS project\n\n\n\nTo put everything together what you have learned in this course prepare a small case study that uses at least one raster and one vector dataset.\nVisualize and document you project in a markdown file and render a html or pdf file."
   },
   {
     "objectID": "r01_raster_intro.html",

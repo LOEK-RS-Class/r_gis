@@ -26,6 +26,16 @@ Data portal of NRW. Has lots of thematic data in vector or raster format.
 * land use
 
 
+```{r}
+#| echo: true
+#| eval: false
+#| 
+
+# tip: download data from within R
+download.file("https://www.opengeodata.nrw.../dlm50_EPSG25832_Shape.zip", destfile="dlm.zip")
+
+unzip("dlm.zip", exdir = "dlm")
+```
 
 
 ```{r}

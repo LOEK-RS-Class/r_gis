@@ -41,7 +41,6 @@ website:
           - u02_if.qmd
           - u03_functions.qmd
           - u04_lapply.qmd
-      - project.qmd
       - section: "Additional Resources"
         contents:
           - literature.qmd

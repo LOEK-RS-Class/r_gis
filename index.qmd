@@ -27,7 +27,7 @@ knitr::include_url("i00_intro_slides.html")
 +-------+-------------+----------------+-----------------------------+-------------+-----------+
 |       | Monday      | Tuesday        | Wednesday                   | Thursday    | Friday    |
 +=======+=============+================+=============================+=============+===========+
-|09:00\ | Geodata I/O | Raster data    | Digital Terrain Models\     | Programming | Projects  |
+|09:15\ | Geodata I/O | Raster data    | Digital Terrain Models\     | Programming | Projects  |
 |12:00  |             |                | Using GIS software in R     |             |           |
 +-------+-------------+----------------+-----------------------------+-------------+-----------+
 |       |             |                |                             |             |           |
@@ -36,3 +36,16 @@ knitr::include_url("i00_intro_slides.html")
 |16:00  |             | Visualizations |                             |             |           |
 +-------+-------------+----------------+-----------------------------+-------------+-----------+
 
+
+## RGIS Course Project
+
+At the end of this course, you should conduct a small GIS project from within R.
+
+* Use at least one raster and one vector dataset
+* Use geospatial methods learned in this course.
+* Try out additional methods from `terra`, `sf` and / or external GIS software.
+* Document and visualize your project in a markdown file and render a html or pdf file.
+
+:::{.callout-important}
+Upload your html or pdf file latest two weeks after the course in the learnweb (22.03.2024).
+:::
