@@ -15,7 +15,7 @@
     "href": "v02_thematic.html",
     "title": "Thematic queries",
     "section": "",
-    "text": "Thematic queries\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTask\n\n\n\n\nHow many bakeries are there in Muenster?\nHow many hotels and hostels are there in Muenster?\nWhere is the A1?\nHow many “recreation_ground” are Freibäder? (i.e. have “Freibad” or “freibad” in their name)\n\n\n\n\nOverview of logical operators\n\n\n\n\n\nfrom: Phillips 2018 - YaRrr! The Pirate’s Guide to R",
+    "text": "Thematic queries\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTask\n\n\n\n\nHow many bakeries are there in the Muensterland?\nHow many hotels and hostels are there in the Muensterland?\nWhere is the A1?\nHow many “recreation_ground” are Freibäder? (i.e. have “Freibad” or “freibad” in their name)\n\n\n\n\nOverview of logical operators\n\n== - equal\n!= - not equal\n&lt; - less than\n&lt;= - less than or equal\n&gt; - greater than\n&gt;= - greater than or equal\n| - or\n& - and\n! - not\n%in% - is in the set",
     "crumbs": [
       "Vectors",
       "Thematic queries"

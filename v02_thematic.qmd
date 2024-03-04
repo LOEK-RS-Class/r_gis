@@ -9,8 +9,8 @@ knitr::include_graphics("https://www.krimphove.de/images/layout/branding.png")
 ::: {.callout-important}
 ## Task
 
-1. How many bakeries are there in Muenster?
-2. How many hotels and hostels are there in Muenster?
+1. How many bakeries are there in the Muensterland?
+2. How many hotels and hostels are there in the Muensterland?
 3. Where is the A1?
 4. How many "recreation_ground" are Freibäder? (i.e. have "Freibad" or "freibad" in their name)
 
@@ -20,9 +20,15 @@ knitr::include_graphics("https://www.krimphove.de/images/layout/branding.png")
 ### Overview of logical operators
 
 
-```{r}
-#| echo: false
-#| fig-link: https://bookdown.org/ndphillips/YaRrr/logical-indexing.html
-#| fig-cap: "from: Phillips 2018 - YaRrr! The Pirate’s Guide to R"
-knitr::include_graphics("https://bookdown.org/ndphillips/YaRrr/YaRrr_files/figure-html/comparison-1.png")
-```
+* `==` - equal
+* `!=` - not equal
+* `<` - less than
+* `<=` - less than or equal
+* `>` - greater than
+* `>=` - greater than or equal
+* `|` - or
+* `&` - and
+* `!` - not
+* `%in%` - is in the set
+
+
