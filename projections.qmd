@@ -39,6 +39,7 @@ Interactive website to compare different projections: [https://map-projections.n
 
 
 ```{r}
+#| echo: true
 library(terra)
 
 r = rast(system.file("ex/elev.tif", package = "terra"))
@@ -63,39 +64,15 @@ plot(r_ee, main = "Equal Earth Projection")
 ```
 
 
-### Vectors I: spatvector
-
-
-```{r}
-v <- vect(system.file("ex/lux.shp", package = "terra"))
-v
-
-# UTM zone of luxemburg
-v_utm31 = project(v, "EPSG:25831")
-
-# UTM zone of ireland
-v_utm29 = project(v, "EPSG:32629")
-```
-
-```{r}
-#| layout-ncol: 2
-#| echo: false
-
-plot(v, main = "lat/lon WGS84")
-plot(v_utm31, main = "ETRS89 / UTM zone 31N")
-plot(v_utm29, main = "WGS 84 / UTM zone 29N")
-```
-
-
-
 
 If you are interested in the difference between ETRS89 and WGS84 UTM format [here is an article that explains it](https://www.killetsoft.de/t_1009_e.htm).
 
 
-### Vectors II: sf
+### Vectors: sf
 
 
 ```{r}
+#| echo: true
 library(rnaturalearth)
 library(sf)
 
@@ -140,10 +117,12 @@ crs(corrupted_raster) = NA
 
 
 ```{r}
+#| echo: true
 corrupted_raster
 ```
 
 ```{r}
+#| echo: true
 # manually assign a projection
 crs(corrupted_raster) <- "EPSG:32632"
 corrupted_raster

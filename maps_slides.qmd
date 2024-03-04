@@ -3,6 +3,15 @@ format: revealjs
 ---
 
 
+## Maps
+
+```{r}
+#| echo: false
+#| fig-link: https://static.betzold.de/images/prod/A_5038/Kartenstaender-feststehend-A_5038_l-ZD.jpg
+knitr::include_graphics("https://static.betzold.de/images/prod/A_5038/Kartenstaender-feststehend-A_5038_l-ZD.jpg")
+```
+
+
 
 ## Complex Information
 

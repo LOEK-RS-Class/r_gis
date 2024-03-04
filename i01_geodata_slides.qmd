@@ -12,9 +12,9 @@ zugewiesen werden kann
 
 ### Geobasisdaten
 
-* Raumbezug hertellende Geodaten
+* Raumbezug herstellende Geodaten
 * i.d.R. von Vermessungsämtern zur Verfügung gestellt
-* Beispiel: erwaltungsgrenzen, Digitale Höhenmodelle, digitale Landschaftsmodelle, ...
+* Beispiel: Verwaltungsgrenzen, Digitale Höhenmodelle, digitale Landschaftsmodelle, ...
 * Für NRW: [https://www.opengeodata.nrw.de/produkte/geobasis/](https://www.opengeodata.nrw.de/produkte/geobasis/)
 
 ### Geofachdaten
@@ -39,7 +39,7 @@ zugewiesen werden kann
 ![Example of spatial raster](assets/spatial_raster.png)
 
 
-
+##
 
 :::{.callout-important }
 ## Task
