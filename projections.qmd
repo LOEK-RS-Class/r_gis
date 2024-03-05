@@ -68,7 +68,7 @@ plot(r_ee, main = "Equal Earth Projection")
 If you are interested in the difference between ETRS89 and WGS84 UTM format [here is an article that explains it](https://www.killetsoft.de/t_1009_e.htm).
 
 
-### Vectors: sf
+### Vectors
 
 
 ```{r}
