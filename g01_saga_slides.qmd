@@ -20,12 +20,12 @@ knitr::include_graphics("assets/flowacc01.png")
 
 
 
-## Why extrernal GIS Software?
+## Why link to extrernal GIS Software?
 
 * some functionalities not implemented in R but in QGIS, SAGA, GRASS, ArcGIS...
 * e.g. tools in the field of hydrology and morphometry not common in R but in SAGA
 * Links to functionalities via R Packages: RSAGA, rgrass7, RQIS, RPyGeo
-* Workflow-centric in R
+* Advantage: stay workflow-centric in R
   * no manual processing steps
   * reproducible
   
