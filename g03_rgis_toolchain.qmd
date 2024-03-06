@@ -1,0 +1,51 @@
+# R-GIS Toolchains
+
+
+```{r}
+#| echo: false
+knitr::include_graphics("assets/gis-toolchain.svg")
+```
+
+
+
+
+
+```{r}
+#| eval: false
+#| echo: true
+elevation = "dem_1m.tif"
+
+outdir = substr(elevation, start = 1, stop = nchar(elevation)-4)
+dir.create(outdir)
+
+accumulation = paste0(outdir, "/accumulation.tif")
+drainage = paste0(outdir, "/drainage.tif")
+basin = paste0(outdir, "/basin.tif")
+stream = paste0(outdir, "/stream.tif")
+half_basin = paste0(outdir, "/half_basin.tif")
+slope_length = paste0(outdir, "/slope_length.tif")
+slope_steepness = paste0(outdir, "/slope_steepness.tif")
+tci = paste0(outdir, "/twi.tif")
+spi = paste0(outdir, "/spi.tif")
+
+cmd = paste0("qgis_process run grass7:r.watershed",
+       " --distance_units=meters",
+       " --area_units=m2",
+       " --ellipsoid=EPSG:7019",
+       " --elevation=", elevation,
+       " --threshold=100 --convergence=5 --memory=300", 
+       " ---s=false ---m=false ---4=false ---a=true ---b=false",
+       " --accumulation=", accumulation,
+       " --drainage=", drainage,
+       " --basin=", basin, 
+       " --stream=", stream,
+       " --half_basin=", half_basin,
+       " --length_slope=", slope_length,
+       " --slope_steepness=", slope_steepness, 
+       " --tci=", tci,
+       " --spi=", spi,
+       " --GRASS_REGION_CELLSIZE_PARAMETER=0 --GRASS_RASTER_FORMAT_OPT= --GRASS_RASTER_FORMAT_META=")
+
+system(cmd)
+```
+
