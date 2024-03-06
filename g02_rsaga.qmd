@@ -72,10 +72,12 @@ rsaga.get.usage(lib = "ta_hydrology", module = "SAGA Wetness Index")
 ```{r}
 #| echo: true
 #| eval: false
-params <- list(DEM = "dem.tif", TWI ="twi")
+params <- list(DEM = "dem.sgrd", TWI ="twi")
 rsaga.geoprocessor(lib = "ta_hydrology",
                    module = "SAGA Wetness Index",
                    param = params)
+TWIdat <- rast("twi.sdat")
+plot(TWIdat)
 ```
 
 ::::{.column-margin}
@@ -92,7 +94,7 @@ With such a wrapper, the Topographic Wetness Index can be computed like this:
 ```{r}
 #| eval: false
 #| echo: true
-rsaga.wetness.index(in.dem = "dem.tif", out.wetness.index = "twi")
+rsaga.wetness.index(in.dem = "dem.sgrd", out.wetness.index = "twi")
 ```
 
 
