@@ -2,7 +2,7 @@
 
 ## Why Projections in this course?
 
-If you gather spatial data for your project, in own field campaigns or through download form different web sources there is a very high chance that the projection i.e. the coordinate reference system is not the same for all data. During processing, in the **best case** you will get error messages left and right about missmatches due to different projections. In the **worst case**, function still work without errors, however, the results will not be the one you desire. For a proper processing and analysis of spatial data in R, handling projection is therefore crucial for trustful results. In short:
+If you gather spatial data for your project, in own field campaigns or through download form different web sources there is a very high chance that the projection i.e. the coordinate reference system is not the same for all data. During processing, in the **best case** you will get error messages left and right about mismatches due to different projections. In the **worst case**, function still work without errors, however, the results will not be the one you desire. For a proper processing and analysis of spatial data in R, handling projection is therefore crucial for trustful results. In short:
 
 * In R, there is no "on the fly" projection
 * some functions change the projection internally, some not **This is problematic**
@@ -108,6 +108,9 @@ plot(earth_pseudo, main = "WGS84 / Pseudo-Mercator")
 ## What if the projection is missing?
 
 
+
+
+
 ```{r}
 #| include: false
 
@@ -121,14 +124,28 @@ crs(corrupted_raster) = NA
 corrupted_raster
 ```
 
+
+
+
 ```{r}
 #| echo: true
 # manually assign a projection
-crs(corrupted_raster) <- "EPSG:32632"
+crs(corrupted_raster) <- "EPSG:4326"
 corrupted_raster
 ```
 
-With the `sf` package, the function would be `st_crs(corrupted_vector) <- "EPSG:32632"`.
+:::{.column-margin}
+
+::::{.callout-warning}
+
+Only do this if you know correct reference system! \n
+Look in the data documentation or ask the dataset provider.
+::::
+
+
+:::
+
+With the `sf` package, the function would be `st_crs(corrupted_vector) <- "EPSG:4326"`.
 
 
 

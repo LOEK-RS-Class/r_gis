@@ -104,7 +104,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </head>
 
-<body class="nav-sidebar floating fullcontent">
+<body class="nav-sidebar floating slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -328,18 +328,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 
 
 
-<section id="projections" class="level1">
+<section id="projections" class="level1 page-columns page-full">
 <h1>Projections</h1>
 <section id="why-projections-in-this-course" class="level2">
 <h2 class="anchored" data-anchor-id="why-projections-in-this-course">Why Projections in this course?</h2>
-<p>If you gather spatial data for your project, in own field campaigns or through download form different web sources there is a very high chance that the projection i.e.&nbsp;the coordinate reference system is not the same for all data. During processing, in the <strong>best case</strong> you will get error messages left and right about missmatches due to different projections. In the <strong>worst case</strong>, function still work without errors, however, the results will not be the one you desire. For a proper processing and analysis of spatial data in R, handling projection is therefore crucial for trustful results. In short:</p>
+<p>If you gather spatial data for your project, in own field campaigns or through download form different web sources there is a very high chance that the projection i.e.&nbsp;the coordinate reference system is not the same for all data. During processing, in the <strong>best case</strong> you will get error messages left and right about mismatches due to different projections. In the <strong>worst case</strong>, function still work without errors, however, the results will not be the one you desire. For a proper processing and analysis of spatial data in R, handling projection is therefore crucial for trustful results. In short:</p>
 <ul>
 <li>In R, there is no “on the fly” projection</li>
 <li>some functions change the projection internally, some not <strong>This is problematic</strong></li>
@@ -417,8 +419,8 @@ max value   :       547 </code></pre>
 </div>
 <p>If you are interested in the difference between ETRS89 and WGS84 UTM format <a href="https://www.killetsoft.de/t_1009_e.htm">here is an article that explains it</a>.</p>
 </section>
-<section id="vectors-sf" class="level3">
-<h3 class="anchored" data-anchor-id="vectors-sf">Vectors: sf</h3>
+<section id="vectors" class="level3">
+<h3 class="anchored" data-anchor-id="vectors">Vectors</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rnaturalearth)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
@@ -480,7 +482,7 @@ GEOGCRS["WGS 84",
 </div>
 </section>
 </section>
-<section id="what-if-the-projection-is-missing" class="level2">
+<section id="what-if-the-projection-is-missing" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="what-if-the-projection-is-missing">What if the projection is missing?</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>corrupted_raster</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -494,17 +496,32 @@ coord. ref. :  </code></pre>
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># manually assign a projection</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">crs</span>(corrupted_raster) <span class="ot">&lt;-</span> <span class="st">"EPSG:32632"</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">crs</span>(corrupted_raster) <span class="ot">&lt;-</span> <span class="st">"EPSG:4326"</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>corrupted_raster</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>class       : SpatRaster 
 dimensions  : 10, 10, 1  (nrow, ncol, nlyr)
 resolution  : 36, 18  (x, y)
 extent      : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
-coord. ref. : WGS 84 / UTM zone 32N (EPSG:32632) </code></pre>
+coord. ref. : lon/lat WGS 84 (EPSG:4326) </code></pre>
 </div>
 </div>
-<p>With the <code>sf</code> package, the function would be <code>st_crs(corrupted_vector) &lt;- "EPSG:32632"</code>.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Only do this if you know correct reference system! Look in the data documentation or ask the dataset provider.</p>
+</div>
+</div>
+</div></div><p>With the <code>sf</code> package, the function would be <code>st_crs(corrupted_vector) &lt;- "EPSG:4326"</code>.</p>
 
 
 </section>
