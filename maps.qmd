@@ -44,4 +44,8 @@ tm_shape(biomass, title = "Biomass")+
 
 ```
 
+And here are some references where you get additional help:
+
+* [https://r-tmap.github.io/tmap/index.html](https://r-tmap.github.io/tmap/index.html)
+* [https://r.geocompx.org/adv-map](https://r.geocompx.org/adv-map)
 
