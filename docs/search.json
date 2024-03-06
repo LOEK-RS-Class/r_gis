@@ -384,9 +384,13 @@
   {
     "objectID": "g01_saga.html",
     "href": "g01_saga.html",
-    "title": "Spatial R - Using R as a GIS",
+    "title": "SAGA GIS",
     "section": "",
-    "text": "SAGA GIS\n\n\n\n\nBefore we combine R and SAGA, let’s first have a look at a SAGA module separately to get a feel for what we can do with it.\n\n\n\n\n\n\nTask: SAGA GIS I\n\n\n\n\nImport a terrain model into SAGA.\n\nImport/Export\nGDAL\nImport Raster\n\nPreprocess the terrain model for the hydrological analysis with the Fill Sinks tool.\n\n\n\n\n\n\n\n\nFill Sinks for flow accumulation (https://sagatutorials.wordpress.com/preprocessing-and-catchment-deliniation/)\n\n\n\n\n\n\n\n\n\n\nTask: SAGA GIS II\n\n\n\n\nDelinate catchment areas from the preprocessed terrain model with the tool Channel network and Drainage Basins.\nAlso calculate the flow accumulation."
+    "text": "SAGA GIS\n\n\n\n\nBefore we combine R and SAGA, let’s first have a look at a SAGA module separately to get a feel for what we can do with it.\n\n\n\n\n\n\nTask: SAGA GIS I\n\n\n\n\nImport a terrain model into SAGA.\n\nImport/Export\nGDAL\nImport Raster\n\nPreprocess the terrain model for the hydrological analysis with the Fill Sinks tool.\n\n\n\n\n\n\n\n\nFill Sinks for flow accumulation (https://sagatutorials.wordpress.com/preprocessing-and-catchment-deliniation/)\n\n\n\n\n\n\n\n\n\n\nTask: SAGA GIS II\n\n\n\n\nDelinate catchment areas from the preprocessed terrain model with the tool Channel network and Drainage Basins.\nAlso calculate the flow accumulation.",
+    "crumbs": [
+      "GIS Software",
+      "SAGA GIS"
+    ]
   },
   {
     "objectID": "g00_rgis_toolchain.html",
@@ -407,11 +411,11 @@
     "text": "Simple terrain model processing"
   },
   {
-    "objectID": "g01_saga_slides.html#why-extrernal-gis-software",
-    "href": "g01_saga_slides.html#why-extrernal-gis-software",
+    "objectID": "g01_saga_slides.html#why-link-to-extrernal-gis-software",
+    "href": "g01_saga_slides.html#why-link-to-extrernal-gis-software",
     "title": "SAGA GIS",
-    "section": "Why extrernal GIS Software?",
-    "text": "Why extrernal GIS Software?\n\nsome functionalities not implemented in R but in QGIS, SAGA, GRASS, ArcGIS…\ne.g. tools in the field of hydrology and morphometry not common in R but in SAGA\nLinks to functionalities via R Packages: RSAGA, rgrass7, RQIS, RPyGeo\nWorkflow-centric in R\n\nno manual processing steps\nreproducible"
+    "section": "Why link to extrernal GIS Software?",
+    "text": "Why link to extrernal GIS Software?\n\nsome functionalities not implemented in R but in QGIS, SAGA, GRASS, ArcGIS…\ne.g. tools in the field of hydrology and morphometry not common in R but in SAGA\nLinks to functionalities via R Packages: RSAGA, rgrass7, RQIS, RPyGeo\nAdvantage: stay workflow-centric in R\n\nno manual processing steps\nreproducible"
   },
   {
     "objectID": "g01_saga_slides.html#saga-gis",
@@ -621,12 +625,5 @@
       "Vectors",
       "Topology"
     ]
-  },
-  {
-    "objectID": "g01_saga_slides.html#why-link-to-extrernal-gis-software",
-    "href": "g01_saga_slides.html#why-link-to-extrernal-gis-software",
-    "title": "SAGA GIS",
-    "section": "Why link to extrernal GIS Software?",
-    "text": "Why link to extrernal GIS Software?\n\nsome functionalities not implemented in R but in QGIS, SAGA, GRASS, ArcGIS…\ne.g. tools in the field of hydrology and morphometry not common in R but in SAGA\nLinks to functionalities via R Packages: RSAGA, rgrass7, RQIS, RPyGeo\nAdvantage: stay workflow-centric in R\n\nno manual processing steps\nreproducible"
   }
 ]
