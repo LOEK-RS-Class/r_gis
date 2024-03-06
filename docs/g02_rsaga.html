@@ -244,17 +244,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./g00_rgis_toolchain.html" class="sidebar-item-text sidebar-link">R-GIS Toolchains</a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./g01_saga.html" class="sidebar-item-text sidebar-link">SAGA GIS</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./g02_rsaga.html" class="sidebar-item-text sidebar-link active">RSAGA</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./g03_rgis_toolchain.html" class="sidebar-item-text sidebar-link">R-GIS Toolchains</a>
   </div>
 </li>
       </ul>
@@ -336,25 +336,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>hard to reproduce</li>
 </ul>
 <p>We want to change all of this by working with SAGA GIS modules from inside a R Script.</p>
-<div class="callout-important callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Task: SAGA R Workflows
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Create a reproducible workflow with SAGA and RSAGA for flow accumulation from a digital elevation model.</p>
-<ul>
-<li>Fill Sinks</li>
-<li>Channel Network and Drainage Basins</li>
-<li>Flow Accumulation</li>
-</ul>
-<p>Visualize the results in R.</p>
-</div>
-</div>
 <section id="rsaga-setup" class="level2">
 <h2 class="anchored" data-anchor-id="rsaga-setup">RSAGA Setup</h2>
 <p>SAGA has to be installed on your computer and R needs to know where.</p>
@@ -397,9 +378,11 @@ $lib.prefix
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">linkSAGA</span>() <span class="co"># wenn Pfad zu SAGA unbekannt</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>myenv <span class="ot">&lt;-</span> <span class="fu">rsaga.env</span>(<span class="at">path=</span><span class="st">"C:</span><span class="sc">\\</span><span class="st">Program Files</span><span class="sc">\\</span><span class="st">QGIS 3.8</span><span class="sc">\\</span><span class="st">apps</span><span class="sc">\\</span><span class="st">saga-ltr"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>From now on, you will need to include “myenv” everytime you run RSAGA commands (e.g.&nbsp;in rsaga.geoprocessor)</p>
 </section>
-<section id="rsaga-functions" class="level2">
-<h2 class="anchored" data-anchor-id="rsaga-functions">RSAGA Functions</h2>
+<section id="rsaga-get-help" class="level2">
+<h2 class="anchored" data-anchor-id="rsaga-get-help">RSAGA get help</h2>
+<p>Get to know what modules are available and how to use the modules using rsaga.get.libraries(), rsaga.get.modules() and rsaga.get.usage()</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rsaga.get.libraries</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -443,9 +426,11 @@ Done</code></pre>
 [67] "table_calculus"          "table_tools"            
 [69] "tin_tools"               "tin_viewer"             </code></pre>
 </div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#if myenv needs to be specified</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">#rsaga.get.libraries(path=myenv$modules)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rsaga.get.modules</span>(<span class="at">libs =</span> <span class="st">"ta_hydrology"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rsaga.get.modules</span>(<span class="at">libs =</span> <span class="st">"ta_hydrology"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Search for SAGA command line program and modules... 
 Done</code></pre>
@@ -476,9 +461,10 @@ Done</code></pre>
 21   28                    Flow between fields       FALSE
 22   29     Flow Accumulation (Parallelizable)       FALSE</code></pre>
 </div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">#rsaga.get.modules(lib="ta_hydrology",env=myenv)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rsaga.get.usage</span>(<span class="at">lib =</span> <span class="st">"ta_hydrology"</span>, <span class="at">module =</span> <span class="st">"SAGA Wetness Index"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rsaga.get.usage</span>(<span class="at">lib =</span> <span class="st">"ta_hydrology"</span>, <span class="at">module =</span> <span class="st">"SAGA Wetness Index"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Search for SAGA command line program and modules... 
 Done
@@ -529,15 +515,22 @@ Usage: saga_cmd ta_hydrology 15 [-DEM &lt;str&gt;] [-WEIGHT &lt;str&gt;] [-AREA 
 </div>
 </div>
 </section>
-<section id="topographic-wetness-index" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="topographic-wetness-index">Topographic Wetness Index</h2>
+<section id="rsaga-run-modules" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="rsaga-run-modules">RSAGA: Run modules</h2>
+<p>Example: Topographic Wetness Index. Use the help on how to use the module from above (especially on the parameters).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>params <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">DEM =</span> <span class="st">"dem.sgrd"</span>, <span class="at">TWI =</span><span class="st">"twi"</span>)</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rsaga.geoprocessor</span>(<span class="at">lib =</span> <span class="st">"ta_hydrology"</span>,</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>                   <span class="at">module =</span> <span class="st">"SAGA Wetness Index"</span>,</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>                   <span class="at">param =</span> params)</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>TWIdat <span class="ot">&lt;-</span> <span class="fu">rast</span>(<span class="st">"twi.sdat"</span>)</span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(TWI)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># raster is required as saga grid (sgrd+sdat)</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>dem <span class="ot">&lt;-</span> <span class="fu">rast</span>(<span class="st">"dem.tif"</span>)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">writeRaster</span>(dem, <span class="st">"dem_sgrd.sdat"</span>)  </span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>params <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">DEM =</span> <span class="st">"dem_sgrd.sgrd"</span>, <span class="at">TWI =</span><span class="st">"twi"</span>)</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="fu">rsaga.geoprocessor</span>(<span class="at">lib =</span> <span class="st">"ta_hydrology"</span>,</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>                   <span class="at">module =</span> <span class="st">"SAGA Wetness Index"</span>,</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>                   <span class="at">param =</span> params) <span class="co">#,env=myenv</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="co"># load results in R and visualize</span></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>TWIdat <span class="ot">&lt;-</span> <span class="fu">rast</span>(<span class="st">"twi.sdat"</span>)</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(TWIdat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 <div class="no-row-height column-margin column-container"><div class="">
@@ -551,13 +544,36 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><code>dem.tif</code> is a file on your computer! NOT an R Object!</p>
+<p><code>dem.sgrd</code> is a file on your computer! NOT an R Object!</p>
 </div>
 </div>
 </div></div><p>Some SAGA modules are easier to execute via wrapper functions (see <a href="https://cran.r-project.org/web/packages/RSAGA/index.html">https://cran.r-project.org/web/packages/RSAGA/index.html</a>)</p>
 <p>With such a wrapper, the Topographic Wetness Index can be computed like this:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rsaga.wetness.index</span>(<span class="at">in.dem =</span> <span class="st">"dem.sgrd"</span>, <span class="at">out.wetness.index =</span> <span class="st">"twi"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rsaga.wetness.index</span>(<span class="at">in.dem =</span> <span class="st">"dem_sgrd.sgrd"</span>,</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>                    <span class="at">out.wetness.index =</span> <span class="st">"twi"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="task-saga-r-workflows" class="level2">
+<h2 class="anchored" data-anchor-id="task-saga-r-workflows">Task: SAGA R Workflows</h2>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Create a reproducible workflow with SAGA and RSAGA for flow accumulation from a digital elevation model.</p>
+<ul>
+<li>Fill Sinks</li>
+<li>optional: derive Channel Network and Drainage Basins</li>
+<li>Flow Accumulation</li>
+</ul>
+<p>Visualize the results in R.</p>
+</div>
 </div>
 
 
