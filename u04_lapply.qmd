@@ -58,20 +58,25 @@ sapply(seq(10), function(x){
 :::{.callout-important}
 ## Task
 
-Ihr habt 5 Satellitenszenen (MSG SEVIRI) im
-Tagesverlauf. Schreibt eine Schleife, die die
-Daten nacheinander einliest und ein RGB
-Komposit erstellt, welches als pdf gespeichert
-wird.
-- Tipp 1: Nutzt list.files(,pattern=”.tif$”) um eine
-Variable mit den Ausgangsdaten zu erstellen
-- Tipp 2: Setzt bei plotRGB das Argument
-“asp” auf 1 um Verzerrung zu vermeiden
-- Tipp 3: Zur Benennung des Pdf’s bietet sich
-eine Nummerierung an. Z.B.
-pdf(paste0(“output”,i,”.pdf”))
+In the Learnweb, download the 5 Meteosat scenes (MSG SEVIRI). 
+
+* Write a loop that:
+  * reads one scene
+  * creates a RGB composite
+  * save a pdf file of the RGB composite.
 
 :::
+
+
+Hints:
+
+* with `list.files("directory_path" , pattern = ".tif$")` you can create a vector that contain the file paths
+* use `plotRGB` from the `terra` package with the argument `asp = 1` to prevent image distortions
+* to name the pdf output files, use the iterator variable like this `paste0(“output”,i,”.pdf”)`
+
+
+
+
 
 
 
