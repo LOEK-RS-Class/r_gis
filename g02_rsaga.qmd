@@ -9,18 +9,6 @@ In SAGA GIS we have seen how hydrological analysis is done with SAGA GIS. Howeve
 
 We want to change all of this by working with SAGA GIS modules from inside a R Script.
 
-:::{.callout-important}
-## Task: SAGA R Workflows
-
-Create a reproducible workflow with SAGA and RSAGA for flow accumulation from a digital elevation model.
-
-* Fill Sinks
-* Channel Network and Drainage Basins
-* Flow Accumulation
-
-Visualize the results in R.
-
-:::
 
 
 ## RSAGA Setup
@@ -44,19 +32,24 @@ linkSAGA() # wenn Pfad zu SAGA unbekannt
 myenv <- rsaga.env(path="C:\\Program Files\\QGIS 3.8\\apps\\saga-ltr")
 ```
 
+From now on, you will need to include "myenv" everytime you run RSAGA commands (e.g. in rsaga.geoprocessor)
 
-## RSAGA Functions
-
+## RSAGA get help
+Get to know what modules are available and how to use the modules using rsaga.get.libraries(),
+rsaga.get.modules() and rsaga.get.usage()
 
 ```{r}
 #| echo: true
 rsaga.get.libraries()
+#if myenv needs to be specified
+#rsaga.get.libraries(path=myenv$modules)
 ```
 
 
 ```{r}
 #| echo: true
 rsaga.get.modules(libs = "ta_hydrology")
+#rsaga.get.modules(lib="ta_hydrology",env=myenv)
 ```
 
 
@@ -67,30 +60,26 @@ rsaga.get.modules(libs = "ta_hydrology")
 rsaga.get.usage(lib = "ta_hydrology", module = "SAGA Wetness Index")
 ```
 
-## Topographic Wetness Index
-
-
-SAGA requires raster data input in the format `.sgrd` and `.sdat`. So before we can use it in the RSAGA workflow, we have to convert existing data first.
-
+## RSAGA: Run modules
+Example: Topographic Wetness Index.
+Use the help on how to use the module from above (especially on the parameters).
 
 ```{r}
 #| echo: true
 #| eval: false
 
-dem = rast("dem.tif")
-writeRaster(dem, "dem.sgrd")
+# raster is required as saga grid (sgrd+sdat)
+dem <- rast("dem.tif")
+writeRaster(dem, "dem_sgrd.sdat")
 
-```
-
-
-
-```{r}
-#| echo: true
-#| eval: false
-params <- list(DEM = "dem.sgrd", TWI ="twi.sgrd")
+params <- list(DEM = "dem_sgrd.sgrd", TWI ="twi")
 rsaga.geoprocessor(lib = "ta_hydrology",
                    module = "SAGA Wetness Index",
-                   param = params)
+                   param = params) #,env=myenv
+
+# load results in R and visualize
+TWIdat <- rast("twi.sdat")
+plot(TWIdat)
 ```
 
 ::::{.column-margin}
@@ -107,7 +96,19 @@ With such a wrapper, the Topographic Wetness Index can be computed like this:
 ```{r}
 #| eval: false
 #| echo: true
-rsaga.wetness.index(in.dem = "dem.tif", out.wetness.index = "twi")
+rsaga.wetness.index(in.dem = "dem_sgrd.sgrd",
+                    out.wetness.index = "twi")
 ```
 
+## Task: SAGA R Workflows
+:::{.callout-important}
+Create a reproducible workflow with SAGA and RSAGA for flow accumulation from a digital elevation model.
+
+* Fill Sinks
+* optional: derive Channel Network and Drainage Basins
+* Flow Accumulation
+
+Visualize the results in R.
+
+:::
 

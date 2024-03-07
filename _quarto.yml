@@ -31,9 +31,9 @@ website:
       - maps.qmd
       - section: "GIS Software"
         contents: 
-          - g00_rgis_toolchain.qmd
           - g01_saga.qmd
           - g02_rsaga.qmd
+          - g03_rgis_toolchain.qmd
       - section: "Utility"
         contents: 
           - u05_markdown.qmd
