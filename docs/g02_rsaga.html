@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.550">
+<meta name="generator" content="quarto-1.4.551">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -547,11 +547,16 @@ Usage: saga_cmd ta_hydrology 15 [-DEM &lt;str&gt;] [-WEIGHT &lt;str&gt;] [-AREA 
 </section>
 <section id="topographic-wetness-index" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="topographic-wetness-index">Topographic Wetness Index</h2>
+<p>SAGA requires raster data input in the format <code>.sgrd</code> and <code>.sdat</code>. So before we can use it in the RSAGA workflow, we have to convert existing data first.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>params <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">DEM =</span> <span class="st">"dem.tif"</span>, <span class="at">TWI =</span><span class="st">"twi"</span>)</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rsaga.geoprocessor</span>(<span class="at">lib =</span> <span class="st">"ta_hydrology"</span>,</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>                   <span class="at">module =</span> <span class="st">"SAGA Wetness Index"</span>,</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>                   <span class="at">param =</span> params)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>dem <span class="ot">=</span> <span class="fu">rast</span>(<span class="st">"dem.tif"</span>)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">writeRaster</span>(dem, <span class="st">"dem.sgrd"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>params <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">DEM =</span> <span class="st">"dem.sgrd"</span>, <span class="at">TWI =</span><span class="st">"twi.sgrd"</span>)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rsaga.geoprocessor</span>(<span class="at">lib =</span> <span class="st">"ta_hydrology"</span>,</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>                   <span class="at">module =</span> <span class="st">"SAGA Wetness Index"</span>,</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>                   <span class="at">param =</span> params)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 <div class="no-row-height column-margin column-container"><div class="">
@@ -565,13 +570,13 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><code>dem.tif</code> is a file on your computer! NOT an R Object!</p>
+<p><code>dem.sgrd</code> is a file on your computer! NOT an R Object!</p>
 </div>
 </div>
 </div></div><p>Some SAGA modules are easier to execute via wrapper functions (see <a href="https://cran.r-project.org/web/packages/RSAGA/index.html">https://cran.r-project.org/web/packages/RSAGA/index.html</a>)</p>
 <p>With such a wrapper, the Topographic Wetness Index can be computed like this:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rsaga.wetness.index</span>(<span class="at">in.dem =</span> <span class="st">"dem.tif"</span>, <span class="at">out.wetness.index =</span> <span class="st">"twi"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rsaga.wetness.index</span>(<span class="at">in.dem =</span> <span class="st">"dem.tif"</span>, <span class="at">out.wetness.index =</span> <span class="st">"twi"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 
@@ -658,6 +663,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -692,7 +715,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');

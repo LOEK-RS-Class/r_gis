@@ -19,14 +19,8 @@ for(i in x){
 ```
 
 
-```{r}
 
-
-
-
-```
-
-
+There are multiple forms of apply loops. `lapply` and `sapply` only differ in their output format. `apply` is used for `data.frames`.
 
 
 ```{r}
@@ -39,9 +33,45 @@ sapply() # apply with vector output
 apply() # loop over rows or columns of a data.frame
 ```
 
+
+
+```{r}
+#| echo: true
+lapply(seq(10), function(x){
+  x^2
+})
+```
+
+
 ```{r}
 #| echo: true
 sapply(seq(10), function(x){
   x^2
 })
 ```
+
+
+
+
+
+
+:::{.callout-important}
+## Task
+
+Ihr habt 5 Satellitenszenen (MSG SEVIRI) im
+Tagesverlauf. Schreibt eine Schleife, die die
+Daten nacheinander einliest und ein RGB
+Komposit erstellt, welches als pdf gespeichert
+wird.
+- Tipp 1: Nutzt list.files(,pattern=”.tif$”) um eine
+Variable mit den Ausgangsdaten zu erstellen
+- Tipp 2: Setzt bei plotRGB das Argument
+“asp” auf 1 um Verzerrung zu vermeiden
+- Tipp 3: Zur Benennung des Pdf’s bietet sich
+eine Nummerierung an. Z.B.
+pdf(paste0(“output”,i,”.pdf”))
+
+:::
+
+
+

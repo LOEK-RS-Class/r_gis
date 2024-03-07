@@ -69,10 +69,25 @@ rsaga.get.usage(lib = "ta_hydrology", module = "SAGA Wetness Index")
 
 ## Topographic Wetness Index
 
+
+SAGA requires raster data input in the format `.sgrd` and `.sdat`. So before we can use it in the RSAGA workflow, we have to convert existing data first.
+
+
 ```{r}
 #| echo: true
 #| eval: false
-params <- list(DEM = "dem.tif", TWI ="twi")
+
+dem = rast("dem.tif")
+writeRaster(dem, "dem.sgrd")
+
+```
+
+
+
+```{r}
+#| echo: true
+#| eval: false
+params <- list(DEM = "dem.sgrd", TWI ="twi.sgrd")
 rsaga.geoprocessor(lib = "ta_hydrology",
                    module = "SAGA Wetness Index",
                    param = params)
@@ -80,7 +95,7 @@ rsaga.geoprocessor(lib = "ta_hydrology",
 
 ::::{.column-margin}
 :::{.callout-important}
-`dem.tif` is a file on your computer! NOT an R Object!
+`dem.sgrd` is a file on your computer! NOT an R Object!
 :::
 ::::
 Some SAGA modules are easier to execute via wrapper functions (see [https://cran.r-project.org/web/packages/RSAGA/index.html
