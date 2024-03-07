@@ -492,6 +492,33 @@ Task
 </ul>
 </div>
 </div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Task
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In the Learnweb, download the 5 Meteosat scenes (MSG SEVIRI).</p>
+<ul>
+<li>Write a loop that:
+<ul>
+<li>reads one scene</li>
+<li>creates a RGB composite</li>
+<li>save a pdf file of the RGB composite.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<p>Hints:</p>
+<ul>
+<li>with <code>list.files("directory_path" , pattern = ".tif$")</code> you can create a vector that contain the file paths</li>
+<li>use <code>plotRGB</code> from the <code>terra</code> package with the argument <code>asp = 1</code> to prevent image distortions</li>
+<li>to name the pdf output files, use the iterator variable like this <code>paste0(“output”,i,”.pdf”)</code></li>
+</ul>
 
 
 </section>
